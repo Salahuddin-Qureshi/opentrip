@@ -1,129 +1,120 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
+import Dialog from "../../components/common/Dialog";
+import Button from "../../components/common/Button";
 import Icon from "../../components/common/Icon";
+import { allDestinations } from "../../data/home";
 export default function TripDialog({ trip, onClose }) {
-  const ref = useRef(null);
-  const [complete, setComplete] = useState(false);
-  useEffect(() => {
-    const previous = document.activeElement;
-    const dialog = ref.current;
-    dialog.showModal();
-    const overflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = overflow;
-      previous?.focus();
-    };
-  }, []);
+  const [summary, setSummary] = useState(null);
   return (
-    <dialog
-      ref={ref}
-      className="trip-dialog"
-      aria-label="Plan your Opentrip journey"
-      onCancel={onClose}
-      onClick={(e) => {
-        if (e.target === ref.current) onClose();
-      }}
+    <Dialog
+      title={
+        summary
+          ? "Your next chapter starts here."
+          : trip?.name || "Where do you dream of going?"
+      }
+      onClose={onClose}
     >
-      <button
-        className="dialog-close"
-        onClick={onClose}
-        aria-label="Close trip planner"
-      >
-        <Icon name="close" />
-      </button>
-      {complete ? (
-        <div className="plan-complete">
-          <span className="success-icon">
-            <Icon name="check" size={30} />
-          </span>
-          <p className="eyebrow">YOUR NEXT CHAPTER</p>
-          <h2>Your adventure starts here.</h2>
+      {summary ? (
+        <div className="trip-summary">
+          <p>Your trip idea is ready:</p>
+          <dl>
+            {Object.entries(summary).map(([key, value]) => (
+              <div key={key}>
+                <dt>{key}</dt>
+                <dd>{value || "Flexible"}</dd>
+              </div>
+            ))}
+          </dl>
           <p>
-            Your trip idea is ready. This is a frontend preview, so no request
-            has been sent or booking made.
+            No booking has been made. Save these preferences for when you’re
+            ready to plan.
           </p>
-          <button className="button dark" onClick={onClose}>
-            Keep exploring <Icon />
-          </button>
+          <Button onClick={onClose}>
+            Keep Exploring <Icon />
+          </Button>
         </div>
       ) : (
         <>
-          <p className="eyebrow">MAKE ROOM FOR A LITTLE WONDER</p>
-          <h2>{trip ? trip.name : "Where do you dream of going?"}</h2>
+          {trip?.image && (
+            <img
+              className="dialog-image"
+              src={trip.image}
+              alt={trip.destination || trip.name}
+            />
+          )}
           <p>
-            {trip
-              ? trip.description
-              : "A few details to imagine a journey that feels like you."}
+            {trip?.description ||
+              "Tell us a little about the journey you have in mind."}
           </p>
-          {trip && (
+          {trip?.highlights && (
             <ul className="trip-highlights">
               {trip.highlights.map((item) => (
                 <li key={item}>
-                  <Icon name="check" size={17} />
+                  <Icon name="check" size={16} />
                   {item}
                 </li>
               ))}
             </ul>
           )}
           <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              setComplete(true);
+            className="planner-form"
+            onSubmit={(event) => {
+              event.preventDefault();
+              setSummary(Object.fromEntries(new FormData(event.currentTarget)));
             }}
           >
             <label>
-              Your name
-              <input
-                name="name"
-                placeholder="First and last name"
+              Destination
+              <select
+                name="destination"
+                defaultValue={trip?.destination || ""}
                 required
-                autoComplete="name"
-              />
+              >
+                <option value="" disabled>
+                  Choose a destination
+                </option>
+                {allDestinations.map((item) => (
+                  <option key={item.name}>{item.name}</option>
+                ))}
+                {trip?.destination &&
+                  !allDestinations.some(
+                    (item) => item.name === trip.destination,
+                  ) && <option>{trip.destination}</option>}
+                <option>Surprise me</option>
+              </select>
             </label>
-            <label>
-              Email address
-              <input
-                name="email"
-                type="email"
-                placeholder="you@example.com"
-                required
-                autoComplete="email"
-              />
-            </label>
-            <div className="form-row">
+            <div className="planner-row">
               <label>
-                Destination
-                <select
-                  name="destination"
-                  defaultValue={trip?.name || ""}
-                  required
-                >
-                  <option value="" disabled>
-                    Choose a place
-                  </option>
-                  <option>Hunza Valley</option>
-                  <option>Bali</option>
-                  <option>Cappadocia</option>
-                  <option>Surprise me</option>
+                Travellers
+                <select name="travellers" defaultValue="2">
+                  {[1, 2, 3, 4, 5, 6].map((n) => (
+                    <option key={n}>{n}</option>
+                  ))}
                 </select>
               </label>
               <label>
-                Travelers
-                <select name="travelers">
-                  <option>1 traveler</option>
-                  <option>2 travelers</option>
-                  <option>3–5 travelers</option>
-                  <option>6+ travelers</option>
-                </select>
+                Departure date
+                <input type="date" name="departure" />
               </label>
             </div>
-            <button className="button dark" type="submit">
-              Create my trip idea <Icon />
-            </button>
-            <small>Just dreaming for now. No payment or reservation.</small>
+            <label>
+              Your kind of journey
+              <textarea
+                name="preferences"
+                placeholder="Slow mornings, mountain trails, a special occasion…"
+                rows="3"
+              />
+            </label>
+            <Button type="submit">
+              Create My Trip Idea <Icon />
+            </Button>
+            <small>
+              This planner saves no personal data and does not make a
+              reservation.
+            </small>
           </form>
         </>
       )}
-    </dialog>
+    </Dialog>
   );
 }
