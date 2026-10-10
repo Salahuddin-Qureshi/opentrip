@@ -1,0 +1,13 @@
+.search-wrap { position: relative; z-index: 4; margin-top: -47px; padding-bottom: 48px; }
+.trip-search { display: grid; grid-template-columns: 1.5fr 1.05fr .95fr .9fr auto; align-items: center; gap: 24px; padding: 29px 32px; border-radius: 20px; background: #fff; color: var(--ink); box-shadow: 0 12px 32px #173c3610; border: 1px solid #eee; }
+.search-field { display: flex; flex-direction: column; gap: 11px; min-width: 0; }
+.search-label { font-size: 13px; font-weight: 700; }
+.search-input { display: flex; align-items: center; gap: 10px; color: #d7987b; min-width: 0; }
+.search-input input, .search-input select { width: 100%; min-width: 0; border: 0; background: transparent; color: #7e8585; font-size: 12px; padding: 3px 0; }
+.search-input svg { flex-shrink: 0; }
+.search-input input::placeholder { color: #8b9090; }
+.trip-search .button { min-height: 54px; font-size: 12px; padding-inline: 26px; }
+.search-summary { margin-top: 22px; padding: 22px 28px; border-radius: 12px; border: 1px solid #d2e2df; background: #fff; line-height: 1.8; }
+.search-summary small { color: #667b7b; }
+@media (max-width: 1050px) { .trip-search { gap: 18px; padding: 25px; grid-template-columns: 1.4fr 1.1fr 1fr 1fr; } .trip-search .button { grid-column: 1 / -1; justify-self: end; } }
+@media (max-width: 700px) { .search-wrap { margin-top: -30px; } .trip-search { grid-template-columns: 1fr 1fr; gap: 25px 18px; padding: 25px 20px; border-radius: 16px; } .search-field:first-child { grid-column: 1 / -1; } .trip-search .button { width: 100%; } .search-label { font-size: 12px; } }

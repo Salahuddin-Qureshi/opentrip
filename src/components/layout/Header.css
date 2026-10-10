@@ -1,0 +1,15 @@
+.site-header { position: relative; z-index: 3; border-bottom: 1px solid #ffffff12; }
+.header-inner { height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.logo { display: inline-flex; align-items: center; font-size: 28px; font-weight: 700; letter-spacing: -.8px; }
+.logo svg { width: 25px; height: 25px; fill: var(--coral); stroke: var(--coral); stroke-width: 1.2; margin-left: 2px; }
+.nav-links, .header-actions { display: flex; align-items: center; gap: 32px; }
+.nav-links { font-size: 13px; font-weight: 600; }
+.nav-links button { border: 0; padding: 0; background: transparent; }
+.nav-links button:disabled { opacity: .65; cursor: default; }
+.nav-links a { position: relative; padding: 12px 0; }
+.nav-links .active::after { content: ''; position: absolute; bottom: 0; left: 0; width: 24px; height: 1px; background: #bde3e2; }
+.header-actions { gap: 25px; }
+.header-actions .button { min-height: 46px; padding-inline: 26px; font-size: 12px; }
+.menu-button { display: none !important; }
+@media (max-width: 900px) { .nav-links { gap: 20px; } .header-actions { gap: 12px; } .header-search { display: none !important; } }
+@media (max-width: 700px) { .header-inner { height: 76px; gap: 12px; } .logo { font-size: 24px; } .header-actions .button { min-height: 40px; padding-inline: 16px; } .menu-button { display: inline-flex !important; } .nav-links { display: none; position: absolute; top: 76px; left: 0; right: 0; padding: 22px; background: #063c40; box-shadow: 0 12px 20px #002e3433; } .nav-links.is-open { display: flex; flex-direction: column; align-items: flex-start; } }
