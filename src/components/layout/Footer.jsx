@@ -2,8 +2,12 @@ import { useState } from "react";
 import { Logo } from "./Header";
 import Icon from "../common/Icon";
 import { allDestinations } from "../../data/home";
+import { useNavigation } from "../../context/NavigationContext";
+
 export default function Footer({ onPlan, onDestination, onPolicy }) {
   const [subscribed, setSubscribed] = useState(false);
+  const nav = useNavigation();
+
   return (
     <footer className="site-footer" id="contact">
       <div className="container footer-grid">
@@ -18,17 +22,73 @@ export default function Footer({ onPlan, onDestination, onPolicy }) {
             className="footer-compass"
             href="#home"
             aria-label="Back to the top"
+            onClick={(e) => {
+              if (nav) {
+                e.preventDefault();
+                nav.navigate("home");
+              }
+            }}
           >
             <Icon name="compass" size={26} />
           </a>
         </div>
         <div>
           <h3>Quick Links</h3>
-          <a href="#home">Home</a>
-          <a href="#destinations">Destinations</a>
-          <a href="#packages">Packages</a>
-          <a href="#about">About Us</a>
-          <a href="#journal">Travel Journal</a>
+          <a
+            href="#home"
+            onClick={(e) => {
+              if (nav) {
+                e.preventDefault();
+                nav.navigate("home");
+              }
+            }}
+          >
+            Home
+          </a>
+          <a
+            href="#destinations"
+            onClick={(e) => {
+              if (nav) {
+                e.preventDefault();
+                nav.navigate("destinations");
+              }
+            }}
+          >
+            Destinations
+          </a>
+          <a
+            href="#packages"
+            onClick={(e) => {
+              if (nav) {
+                e.preventDefault();
+                nav.navigate("packages");
+              }
+            }}
+          >
+            Packages
+          </a>
+          <a
+            href="#about"
+            onClick={(e) => {
+              if (nav) {
+                e.preventDefault();
+                nav.navigate("about");
+              }
+            }}
+          >
+            About Us
+          </a>
+          <a
+            href="#journal"
+            onClick={(e) => {
+              if (nav && nav.page !== "home") {
+                e.preventDefault();
+                nav.navigate("home", "#journal");
+              }
+            }}
+          >
+            Travel Journal
+          </a>
         </div>
         <div>
           <h3>Popular Destinations</h3>
@@ -91,7 +151,17 @@ export default function Footer({ onPlan, onDestination, onPolicy }) {
             Booking information
           </button>
         </div>
-        <a className="back-to-top" href="#home" aria-label="Back to top">
+        <a
+          className="back-to-top"
+          href="#home"
+          aria-label="Back to top"
+          onClick={(e) => {
+            if (nav) {
+              e.preventDefault();
+              nav.navigate("home");
+            }
+          }}
+        >
           <Icon name="chevronLeft" size={18} />
         </a>
       </div>

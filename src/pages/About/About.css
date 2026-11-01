@@ -1,0 +1,976 @@
+/* =========================================================
+   ABOUT PAGE STYLES - OPEN TRIP (PVT.) LTD. KARACHI
+   Modern Luxury Travel Agency Aesthetic
+   - Hero Height Exactly Matches Home Hero (570px min-height)
+   - Right-side Floating Glass Card Mirroring Home Balance
+   - Unique, Balanced Light Backgrounds Across Sections:
+     * Stats Strip: Warm Pearl-Peach (#fbf5f2)
+     * Story: Crisp Luxury White (#ffffff)
+     * 4 Pillars: Serene Ice-Teal (#eef6f7)
+     * Specialized Divisions: Warm Ivory/Peach (#fff8f5)
+     * Compliance: Calm Pale Sage-Teal (#f1f7f7)
+     * Karachi Lounge CTA: Signature Deep Teal (#043e45)
+   ========================================================= */
+
+.about-page {
+  background-color: #f7f9f9;
+  color: #172b2d;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-main {
+  flex: 1;
+}
+
+/* ==================== 1. HERO SECTION (EXACT HOME HERO HEIGHT) ==================== */
+.about-hero {
+  position: relative;
+  isolation: isolate;
+  color: #ffffff;
+  background: #043e45;
+  overflow: hidden;
+  border-bottom: 2px solid #ff805f;
+}
+
+.about-hero-bg,
+.about-hero-shade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.about-hero-bg {
+  object-fit: cover;
+  object-position: center 48%;
+  filter: brightness(0.96) saturate(1.08);
+  transition: transform 0.6s ease;
+}
+
+.about-hero:hover .about-hero-bg {
+  transform: scale(1.015);
+}
+
+/* Signature dual teal overlay */
+.about-hero-shade {
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      #003b43f0 0%,
+      #003b43ac 32%,
+      #003b4335 65%,
+      #001c2295 100%
+    ),
+    linear-gradient(0deg, #003c4373 0%, transparent 45%);
+}
+
+/* EXACT HOME HERO HEIGHT & BALANCE */
+.about-hero-body {
+  position: relative;
+  min-height: 570px; /* Exact match with home hero min-height */
+  padding-top: 64px;
+  padding-bottom: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 36px;
+}
+
+.about-hero-copy {
+  max-width: 660px;
+}
+
+.about-hero .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: #eb9b78;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2.8px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.about-hero h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: clamp(44px, 4.8vw, 68px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+  color: #ffffff;
+  margin: 0 0 18px;
+}
+
+.about-hero-subtitle {
+  font-size: clamp(14.5px, 1.25vw, 16px);
+  line-height: 1.6;
+  color: #e0eff0;
+  max-width: 620px;
+  margin: 0 0 28px;
+  letter-spacing: 0.1px;
+}
+
+.about-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.about-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ff805f;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(255, 128, 95, 0.35);
+}
+
+.about-btn-primary:hover {
+  background-color: #f16f4c;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(255, 128, 95, 0.45);
+}
+
+.about-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(8px);
+}
+
+.about-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: #ffffff;
+}
+
+/* FLOATING GLASS CARD (MATCHES HOME HERO'S RIGHT SELECTOR BALANCE) */
+.about-hero-glass-card {
+  background: rgba(4, 62, 69, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: 24px;
+  max-width: 380px;
+  width: 100%;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+  flex-shrink: 0;
+}
+
+.glass-card-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 128, 95, 0.18);
+  border: 1px solid rgba(255, 128, 95, 0.45);
+  color: #ffb8a5;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 3px 9px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.glass-pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #22c55e;
+  box-shadow: 0 0 6px #22c55e;
+}
+
+.about-hero-glass-card h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  color: #ffffff;
+  margin: 0 0 6px;
+}
+
+.about-hero-glass-card p {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0 0 14px;
+}
+
+.glass-card-features {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 12px;
+}
+
+.glass-feature-item {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  font-size: 12px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.glass-feature-bullet {
+  color: #ff805f;
+  font-size: 11px;
+}
+
+/* ==================== 2. MILESTONES STATS STRIP (WARM LIGHT PEARL-PEACH BG) ==================== */
+.about-stats-strip {
+  background-color: #fbf5f2; /* Soft warm pearl-peach tint */
+  border-bottom: 1px solid #f0e1da;
+  padding: 28px 0;
+}
+
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.about-stat-card {
+  background: #ffffff;
+  border: 1px solid #eedad2;
+  border-radius: 14px;
+  padding: 16px 20px;
+  box-shadow: 0 4px 14px rgba(255, 128, 95, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.about-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(255, 128, 95, 0.12);
+  border-color: #ff805f;
+}
+
+.about-stat-number {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #043e45;
+  line-height: 1.1;
+  margin-bottom: 3px;
+}
+
+.about-stat-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ff805f;
+  margin-bottom: 2px;
+}
+
+.about-stat-caption {
+  font-size: 11.5px;
+  color: #617779;
+  line-height: 1.4;
+}
+
+/* ==================== 3. SECTION 1: EDITORIAL STORY (CRISP LUXURY WHITE BG) ==================== */
+.about-story-section {
+  padding: 72px 0;
+  background-color: #ffffff; /* Crisp Pure White */
+}
+
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.section-eyebrow {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ff805f;
+  margin-bottom: 8px;
+}
+
+.about-story-heading {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(28px, 3.2vw, 38px);
+  font-weight: 500;
+  line-height: 1.25;
+  color: #043e45;
+  margin: 0 0 16px;
+}
+
+.about-story-lead {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #3b5052;
+  margin: 0 0 20px;
+}
+
+/* 3 SLEEK FEATURE PILLS */
+.story-highlights-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.story-highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #f8fafb;
+  border: 1px solid #e3eaea;
+  border-radius: 12px;
+  padding: 12px 16px;
+  transition: all 0.2s ease;
+}
+
+.story-highlight-item:hover {
+  border-color: #043e45;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(4, 62, 69, 0.05);
+}
+
+.highlight-bullet {
+  color: #ff805f;
+  font-size: 14px;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+.story-highlight-item strong {
+  display: block;
+  font-size: 13.5px;
+  color: #043e45;
+  margin-bottom: 2px;
+}
+
+.story-highlight-item span {
+  font-size: 12.5px;
+  color: #556a6c;
+}
+
+.about-quote-box {
+  padding: 18px 22px;
+  background-color: #f2f8f8;
+  border-left: 4px solid #043e45;
+  border-radius: 0 12px 12px 0;
+}
+
+.about-quote-text {
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #0f3d43;
+  margin: 0 0 8px;
+}
+
+.about-quote-author strong {
+  display: block;
+  font-size: 13px;
+  color: #043e45;
+}
+
+.about-quote-author span {
+  display: block;
+  font-size: 11.5px;
+  color: #657b7d;
+}
+
+/* GORGEOUS LUXURY TRAVEL MEDIA STACK */
+.about-media-stack {
+  position: relative;
+  padding-bottom: 30px;
+}
+
+.about-image-card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(4, 62, 69, 0.16);
+  position: relative;
+}
+
+.about-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-image-card.main-image {
+  height: 400px;
+}
+
+.about-image-card.sub-image {
+  position: absolute;
+  bottom: -16px;
+  right: -16px;
+  width: 260px;
+  height: 190px;
+  border: 4px solid #ffffff;
+}
+
+.about-image-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: rgba(4, 62, 69, 0.92);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.about-image-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  background: rgba(4, 62, 69, 0.94);
+  color: #ffffff;
+  padding: 14px 14px 10px;
+}
+
+.about-image-caption strong {
+  display: block;
+  font-size: 13.5px;
+}
+
+.about-image-caption small {
+  font-size: 11px;
+  opacity: 0.85;
+}
+
+/* ==================== 4. SECTION 2: THE 4 PILLARS (SERENE ICE-TEAL WASH BG) ==================== */
+.about-pillars-section {
+  padding: 72px 0;
+  background-color: #eef6f7; /* Serene soft ice-teal wash */
+  border-top: 1px solid #dce8ea;
+  border-bottom: 1px solid #dce8ea;
+}
+
+.about-section-header {
+  max-width: 680px;
+  margin: 0 auto 38px;
+}
+
+.about-section-header.text-center {
+  text-align: center;
+}
+
+.about-section-header h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 500;
+  color: #043e45;
+  margin: 0 0 10px;
+}
+
+.about-section-header p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #55696b;
+  margin: 0;
+}
+
+.about-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.about-pillar-card {
+  background-color: #ffffff;
+  border: 1px solid #d3e3e5;
+  border-radius: 16px;
+  padding: 26px 28px;
+  transition: all 0.25s ease;
+  position: relative;
+  box-shadow: 0 4px 16px rgba(4, 62, 69, 0.04);
+}
+
+.about-pillar-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(4, 62, 69, 0.09);
+  border-color: #043e45;
+}
+
+.pillar-header {
+  margin-bottom: 12px;
+}
+
+.pillar-badge {
+  display: inline-block;
+  background-color: #e8f5f6;
+  color: #043e45;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  padding: 4px 11px;
+  border-radius: 999px;
+  border: 1px solid #c2e2e4;
+}
+
+.pillar-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  color: #043e45;
+  margin: 0 0 4px;
+}
+
+.pillar-subtitle {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #ff805f;
+  margin-bottom: 10px;
+}
+
+.pillar-description {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #4d6062;
+  margin: 0 0 16px;
+}
+
+.pillar-perks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #edf2f2;
+  padding-top: 12px;
+}
+
+.pillar-perks li {
+  font-size: 12.5px;
+  color: #2b3e40;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.check-bullet {
+  color: #043e45;
+  font-weight: bold;
+}
+
+/* ==================== 5. SECTION 3: SPECIALIZED DIVISIONS (WARM PEACH/IVORY BG) ==================== */
+.about-divisions-section {
+  padding: 72px 0;
+  background-color: #fff8f5; /* Warm soft peach/ivory wash */
+  border-bottom: 1px solid #f2e3dc;
+}
+
+.division-tabs-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.division-tab-btn {
+  background: #ffffff;
+  border: 1px solid #ecd9d1;
+  border-radius: 14px;
+  padding: 14px 14px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s ease;
+}
+
+.division-tab-btn:hover {
+  background: #fff1ec;
+  border-color: #ff805f;
+}
+
+.division-tab-btn.active {
+  background: #043e45;
+  border-color: #043e45;
+  color: #ffffff;
+  box-shadow: 0 8px 22px rgba(4, 62, 69, 0.2);
+}
+
+.division-tab-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: currentColor;
+}
+
+.division-tab-texts strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.division-tab-texts small {
+  display: block;
+  font-size: 10.5px;
+  opacity: 0.8;
+}
+
+.division-active-card {
+  background: #ffffff;
+  border: 1.5px solid #ebd8d0;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  overflow: hidden;
+  box-shadow: 0 12px 34px rgba(255, 128, 95, 0.08);
+}
+
+.division-content-col {
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.division-badge {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  background: #fff0ec;
+  color: #ff805f;
+  font-weight: 700;
+  font-size: 11.5px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid #ffd3c7;
+  margin-bottom: 12px;
+}
+
+.division-headline {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  color: #043e45;
+  line-height: 1.3;
+  margin: 0 0 12px;
+}
+
+.division-lead {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4a5c5e;
+  margin: 0 0 18px;
+}
+
+.division-features-list {
+  margin-bottom: 24px;
+}
+
+.division-features-list h4 {
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #043e45;
+  margin: 0 0 8px;
+}
+
+.division-features-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.division-features-list li {
+  font-size: 13px;
+  color: #2b3e40;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  line-height: 1.45;
+}
+
+.feat-bullet {
+  color: #ff805f;
+  font-size: 10px;
+}
+
+.division-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.about-btn-outline {
+  background: transparent;
+  border: 1.5px solid #043e45;
+  color: #043e45;
+  font-weight: 600;
+  font-size: 13.5px;
+  padding: 11px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.about-btn-outline:hover {
+  background: #043e45;
+  color: #ffffff;
+}
+
+.division-media-col {
+  position: relative;
+  min-height: 360px;
+}
+
+.division-media-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+/* ==================== 6. SECTION 4: COMPLIANCE (CALM PALE SAGE-TEAL BG) ==================== */
+.about-compliance-section {
+  padding: 68px 0;
+  background-color: #f1f7f7; /* Calm pale sage-teal wash */
+  border-bottom: 1px solid #dbe8e8;
+}
+
+.about-compliance-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.compliance-card {
+  background: #ffffff;
+  border: 1px solid #d9e6e6;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 3px 12px rgba(4, 62, 69, 0.03);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.compliance-card:hover {
+  transform: translateY(-2px);
+  border-color: #043e45;
+}
+
+.compliance-badge {
+  display: inline-block;
+  background: #eef6f6;
+  color: #043e45;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.compliance-card h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  color: #043e45;
+  margin: 0 0 6px;
+}
+
+.compliance-card p {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #55696b;
+  margin: 0;
+}
+
+/* ==================== 7. SECTION 5: VISIT CTA SECTION (SIGNATURE DEEP TEAL) ==================== */
+.about-cta-section {
+  background: #043e45; /* Deep Signature Teal */
+  color: #ffffff;
+  padding: 64px 0;
+  position: relative;
+  border-top: 3px solid #ff805f;
+}
+
+.about-cta-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.cta-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 4px 11px;
+  border-radius: 999px;
+  color: #ffb8a5;
+  margin-bottom: 12px;
+}
+
+.about-cta-content h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(24px, 2.6vw, 34px);
+  font-weight: 500;
+  line-height: 1.25;
+  color: #ffffff;
+  margin: 0 0 12px;
+}
+
+.about-cta-content p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0 0 20px;
+}
+
+.cta-meta-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.cta-meta-item strong {
+  display: block;
+  font-size: 13px;
+  color: #ffffff;
+  margin-bottom: 2px;
+}
+
+.cta-meta-item span {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+}
+
+.about-cta-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cta-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #22c55e;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14.5px;
+  padding: 13px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(34, 197, 94, 0.3);
+}
+
+.cta-whatsapp-btn:hover {
+  background-color: #16a34a;
+  transform: translateY(-1px);
+}
+
+.cta-contact-btn {
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 13.5px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cta-contact-btn:hover {
+  background: rgba(255, 255, 255, 0.24);
+  border-color: #ffffff;
+}
+
+/* ==================== RESPONSIVE BREAKPOINTS ==================== */
+@media (max-width: 1024px) {
+  .about-hero-body {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 50px;
+  }
+  .about-hero-glass-card {
+    max-width: 100%;
+  }
+  .about-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-story-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .about-image-card.sub-image {
+    right: 0;
+  }
+  .about-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  .division-tabs-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .division-active-card {
+    grid-template-columns: 1fr;
+  }
+  .division-media-col {
+    min-height: 250px;
+  }
+  .about-compliance-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-cta-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero-body {
+    min-height: auto;
+    padding-top: 36px;
+    padding-bottom: 40px;
+  }
+  .about-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .division-tabs-bar {
+    grid-template-columns: 1fr;
+  }
+  .division-content-col {
+    padding: 22px;
+  }
+  .about-compliance-grid {
+    grid-template-columns: 1fr;
+  }
+  .cta-meta-row {
+    grid-template-columns: 1fr;
+  }
+}

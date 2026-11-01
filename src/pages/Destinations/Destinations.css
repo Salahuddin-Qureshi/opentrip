@@ -1,0 +1,1566 @@
+.destinations-page {
+  background: var(--ivory);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+/* 1. HERO BANNER */
+.dest-hero {
+  position: relative;
+  isolation: isolate;
+  color: #fff;
+  background: #043e45;
+  overflow: hidden;
+}
+.dest-hero-bg,
+.dest-hero-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+.dest-hero-bg {
+  object-fit: cover;
+  object-position: center 45%;
+}
+.dest-hero-overlay {
+  z-index: -1;
+  background:
+    linear-gradient(
+      95deg,
+      rgba(3, 47, 53, 0.9) 0%,
+      rgba(4, 58, 65, 0.72) 45%,
+      rgba(3, 35, 41, 0.5) 100%
+    ),
+    linear-gradient(0deg, rgba(4, 56, 62, 0.8) 0%, transparent 50%);
+}
+.dest-hero-body {
+  padding-top: 38px;
+  padding-bottom: 104px;
+}
+.dest-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  color: rgba(215, 235, 235, 0.78);
+  margin-bottom: 16px;
+}
+.dest-breadcrumb-link {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.dest-breadcrumb-current {
+  color: #ff9d82;
+  font-weight: 600;
+}
+.dest-eyebrow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  color: #eb9b78;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+}
+.dest-hero h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: clamp(40px, 4.8vw, 64px);
+  line-height: 1.06;
+  letter-spacing: -1.6px;
+  margin-top: 12px;
+  max-width: 720px;
+}
+.dest-hero-subtitle {
+  margin-top: 16px;
+  max-width: 580px;
+  color: #dcebed;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* 2. FLOATING FILTER, CURRENCY & SEARCH BAR */
+.dest-controls-wrap {
+  position: relative;
+  z-index: 4;
+  margin-top: -46px;
+  margin-bottom: 32px;
+}
+.dest-controls-card {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  border-radius: 22px;
+  padding: 20px 24px;
+  box-shadow: 0 18px 44px rgba(14, 48, 52, 0.08);
+  border: 1px solid rgba(24, 62, 66, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.dest-search-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  gap: 10px;
+  align-items: center;
+}
+.dest-search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f5f9f8;
+  border: 1px solid #dce8e7;
+  border-radius: 999px;
+  padding: 10px 18px;
+  color: #5b787a;
+}
+.dest-search-box input {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 13px;
+}
+.dest-search-box input:focus {
+  outline: none;
+}
+.dest-clear-input {
+  border: 0;
+  background: transparent;
+  padding: 2px;
+  color: #6d8587;
+  display: inline-flex;
+}
+
+/* Currency Toggle (PKR / USD) */
+.dest-currency-switch {
+  display: inline-flex;
+  background: #eff5f4;
+  border: 1px solid #d5e4e3;
+  border-radius: 999px;
+  padding: 3px;
+}
+.dest-currency-switch button {
+  border: 0;
+  background: transparent;
+  color: #48686a;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 6px 13px;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+}
+.dest-currency-switch button.is-active {
+  background: #073d42;
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(7, 61, 66, 0.18);
+}
+
+.dest-select-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f5f9f8;
+  border: 1px solid #dce8e7;
+  border-radius: 999px;
+  padding: 9px 16px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #5a7476;
+}
+.dest-select-group select {
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 12px;
+}
+.dest-saved-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 10px 18px;
+  border: 1px solid #dce8e7;
+  background: #fff;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.dest-saved-toggle:hover {
+  border-color: var(--coral);
+}
+.dest-saved-toggle.is-active {
+  background: var(--coral);
+  border-color: var(--coral);
+  color: #fff;
+}
+.dest-saved-toggle.is-active svg {
+  fill: currentColor;
+}
+.dest-filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #edf3f2;
+}
+.dest-pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.dest-filter-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #6d8486;
+  margin-right: 4px;
+}
+.dest-filter-pill {
+  border: 1px solid #d7e5e4;
+  background: transparent;
+  color: #365a5d;
+  border-radius: 999px;
+  padding: 5px 13px;
+  font-size: 11px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.dest-filter-pill:hover {
+  border-color: #183e42;
+}
+.dest-filter-pill.is-selected {
+  background: #073d42;
+  border-color: #073d42;
+  color: #fff;
+}
+.dest-activity-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 24px;
+  padding-top: 10px;
+  border-top: 1px dashed #dce8e7;
+  font-size: 11.5px;
+}
+.dest-activity-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.dest-activity-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 700;
+  color: #4c6c6e;
+}
+.dest-activity-chip {
+  border: 1px solid #d6e5e4;
+  background: #f4f9f8;
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 3px 11px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.dest-activity-chip--saved {
+  background: #fff1ec;
+  border-color: #ffcab8;
+  color: #b4472a;
+}
+.dest-activity-clear {
+  border: 0;
+  background: transparent;
+  font-size: 11px;
+  color: #728788;
+  text-decoration: underline;
+}
+
+/* 3. BRIGHT, UNOBSTRUCTED EDITORIAL BENTO GALLERY */
+.dest-collection-section {
+  padding-bottom: 42px;
+}
+.dest-results-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  font-size: 12.5px;
+  color: #5c7476;
+}
+.dest-reset-link {
+  border: 0;
+  background: transparent;
+  color: var(--coral);
+  font-weight: 600;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+.dest-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.dest-bento-grid--editorial {
+  grid-template-columns: repeat(12, 1fr);
+}
+.dest-bento-card--wide-left {
+  grid-column: span 7;
+}
+.dest-bento-card--narrow-right {
+  grid-column: span 5;
+}
+.dest-bento-card--third {
+  grid-column: span 4;
+}
+.dest-bento-card--narrow-left {
+  grid-column: span 5;
+}
+.dest-bento-card--wide-right {
+  grid-column: span 7;
+}
+
+.dest-bento-card {
+  position: relative;
+  isolation: isolate;
+  height: 365px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #cbe0e0;
+  box-shadow: 0 10px 28px rgba(14, 48, 52, 0.08);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+.dest-bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 38px rgba(14, 48, 52, 0.14);
+}
+
+.dest-bento-click-area {
+  border: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  color: #fff;
+  text-align: left;
+  position: relative;
+  display: block;
+}
+
+.dest-bento-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  transition: transform 0.55s ease;
+}
+.dest-bento-card:hover .dest-bento-photo {
+  transform: scale(1.05);
+}
+
+/* Soft bottom-edge fade ONLY (top 70% of photo is 100% bright & untouched!) */
+.dest-bento-bottom-fade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 52, 60, 0.88) 0%,
+    rgba(0, 52, 60, 0.34) 36%,
+    transparent 62%
+  );
+}
+
+/* Bright White/Ivory Top Badges (Country + Days/Nights + Rating) */
+.dest-bento-top-left {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 58px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+}
+.dest-light-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.93);
+  color: var(--ink);
+  font-size: 10.5px;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(0, 28, 32, 0.12);
+}
+.dest-light-pill svg {
+  color: var(--coral);
+}
+.dest-light-pill--duration {
+  background: #fff7f4;
+  color: #9f391d;
+  border: 1px solid rgba(255, 128, 95, 0.35);
+}
+.dest-light-pill--rating {
+  color: #183e42;
+}
+
+.dest-light-heart {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(255, 255, 255, 0.93);
+  color: var(--ink);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 4px 14px rgba(0, 28, 32, 0.12);
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+}
+.dest-light-heart:hover {
+  transform: scale(1.08);
+  background: #fff;
+}
+.dest-light-heart.is-saved {
+  background: var(--coral);
+  color: #fff;
+}
+.dest-light-heart.is-saved svg {
+  fill: currentColor;
+}
+
+/* Clean Bottom-Edge Typography (matches Home page's signature look) */
+.dest-bento-caption-row {
+  position: absolute;
+  inset: auto 18px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+}
+.dest-bento-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 64%;
+}
+.dest-bento-eyebrow {
+  font-size: 9.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #ffbfa8;
+}
+.dest-bento-title-block strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.12;
+  color: #fff;
+}
+.dest-bento-includes-line {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: rgba(235, 247, 247, 0.92);
+  margin-top: 2px;
+}
+.dest-bento-hover-line {
+  font-size: 11px;
+  line-height: 1.38;
+  color: rgba(236, 246, 246, 0.88);
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.35s ease,
+    opacity 0.35s ease,
+    margin-top 0.35s ease;
+}
+.dest-bento-card:hover .dest-bento-hover-line {
+  max-height: 36px;
+  opacity: 1;
+  margin-top: 3px;
+}
+
+.dest-bento-right-col {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+}
+.dest-bento-price-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.15;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  backdrop-filter: blur(6px);
+  padding: 6px 12px;
+  border-radius: 14px;
+}
+.dest-bento-price-pill small {
+  font-size: 9.5px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.84);
+}
+.dest-bento-price-pill b {
+  font-size: 13px;
+  font-weight: 800;
+  color: #fff;
+}
+.dest-bento-card:hover .card-arrow {
+  background: var(--coral);
+  border-color: var(--coral);
+}
+
+.dest-btn-secondary {
+  border-radius: 999px;
+  padding: 9px 16px;
+  font-size: 11.5px;
+  font-weight: 600;
+  background: #f2f7f6;
+  border: 1px solid #d5e4e3;
+  color: var(--ink);
+  transition: all 0.2s ease;
+}
+.dest-btn-secondary:hover {
+  background: #e4efee;
+}
+
+/* 3B. OPEN TRIP LUXURY TARIFF & DEPARTURE BOARD */
+.dest-tariff-section {
+  padding-bottom: 58px;
+}
+.dest-tariff-card {
+  background: #f4f9f8;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 1px solid #d5e6e5;
+  box-shadow: 0 22px 52px rgba(7, 48, 53, 0.09);
+}
+
+/* Deep Teal Editorial Top Banner (Solid, Elegant & Balanced Height) */
+.dest-tariff-banner {
+  background: #083e44;
+  color: #fff;
+  padding: 24px 28px 20px;
+}
+.dest-tariff-banner-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+}
+.dest-tariff-banner-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.dest-tariff-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(255, 128, 95, 0.18);
+  border: 1px solid rgba(255, 158, 130, 0.3);
+  color: #ffbfa8;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  width: fit-content;
+}
+.dest-tariff-banner h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: clamp(21px, 2.3vw, 26px);
+  letter-spacing: -0.5px;
+  margin: 0;
+  color: #fff;
+}
+
+.dest-tariff-concierge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 7px 16px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 11.5px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.dest-tariff-concierge:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+.dest-tariff-concierge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3be282;
+  box-shadow: 0 0 0 3px rgba(59, 226, 130, 0.25);
+  flex-shrink: 0;
+}
+.dest-tariff-concierge strong {
+  color: #fff;
+}
+
+/* Quick Filter Bar inside Banner */
+.dest-tariff-Quickbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+.dest-tariff-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.dest-tariff-filter-tab {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(235, 246, 246, 0.9);
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.dest-tariff-filter-tab:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+.dest-tariff-filter-tab.is-active {
+  background: var(--coral);
+  border-color: var(--coral);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(255, 128, 95, 0.35);
+}
+.dest-tariff-legend {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 10.5px;
+  color: rgba(215, 236, 237, 0.85);
+}
+.dest-tariff-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.dest-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dest-dot--teal {
+  background: #5de0e6;
+}
+.dest-dot--coral {
+  background: var(--coral);
+}
+
+/* Column Header Strip */
+.dest-tariff-col-headers {
+  display: grid;
+  grid-template-columns: 1.55fr 0.95fr 1.65fr 1.05fr auto;
+  gap: 14px;
+  padding: 10px 24px 5px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #5b787a;
+}
+
+/* Floating Ticket Rows Container */
+.dest-tariff-list {
+  padding: 8px 16px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dest-tariff-ticket {
+  background: #fff;
+  border-radius: 15px;
+  border: 1px solid #dfeceb;
+  box-shadow: 0 4px 16px rgba(10, 48, 52, 0.04);
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+.dest-tariff-ticket:hover {
+  transform: translateY(-2px);
+  border-color: #b7d4d3;
+  box-shadow: 0 10px 24px rgba(10, 48, 52, 0.08);
+}
+.dest-tariff-ticket.is-expanded {
+  border-color: #09454c;
+  box-shadow: 0 14px 30px rgba(7, 61, 66, 0.11);
+}
+
+.dest-tariff-ticket-main {
+  display: grid;
+  grid-template-columns: 1.55fr 0.95fr 1.65fr 1.05fr auto;
+  gap: 15px;
+  align-items: center;
+  padding: 13px 18px;
+  cursor: pointer;
+}
+
+/* Col 1: Index + Framed Photo + Place Info */
+.dest-tariff-place {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.dest-tariff-index {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13.5px;
+  font-style: italic;
+  color: var(--coral);
+  font-weight: 700;
+  width: 20px;
+  flex-shrink: 0;
+}
+.dest-tariff-thumb {
+  width: 56px;
+  height: 44px;
+  border-radius: 11px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 3px 10px rgba(8, 44, 48, 0.13);
+  border: 1.5px solid #f0f6f5;
+}
+.dest-tariff-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+.dest-tariff-ticket:hover .dest-tariff-thumb img {
+  transform: scale(1.08);
+}
+.dest-tariff-place-text {
+  min-width: 0;
+}
+.dest-tariff-country-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+.dest-tariff-country {
+  font-size: 9.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  color: #5a787a;
+}
+.dest-tariff-rating {
+  font-size: 9.5px;
+  font-weight: 700;
+  background: #fef4e8;
+  color: #b4690e;
+  padding: 1px 6px;
+  border-radius: 999px;
+}
+.dest-tariff-place-text strong {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.18;
+}
+.dest-tariff-place-text small {
+  display: block;
+  font-size: 10.5px;
+  color: #6f8688;
+  margin-top: 2px;
+}
+
+/* Col 2: Split Days / Nights Luxury Capsule */
+.dest-tariff-duration-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+.dest-duration-capsule {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid #d5e5e4;
+  box-shadow: 0 2px 8px rgba(7, 61, 66, 0.06);
+}
+.dest-duration-days {
+  background: #073d42;
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 4px 10px;
+  white-space: nowrap;
+}
+.dest-duration-nights {
+  background: #fff3ee;
+  color: #b04123;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 4px 10px;
+  white-space: nowrap;
+}
+.dest-duration-season {
+  font-size: 10px;
+  color: #6b8284;
+  padding-left: 3px;
+}
+
+/* Col 3: Check-marked Inclusions */
+.dest-tariff-inclusions-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+.dest-tariff-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+}
+.dest-inclusion-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #f1f7f6;
+  border: 1px solid #dce9e8;
+  color: #284e51;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 600;
+}
+.dest-inclusion-badge i {
+  font-style: normal;
+  color: var(--coral);
+  font-weight: 800;
+}
+.dest-inclusion-more {
+  display: inline-block;
+  background: #e7f2f1;
+  color: #3f686c;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* Col 4: Boarding-Pass Perforated Fare Stub */
+.dest-tariff-fare-stub {
+  border-left: 1.5px dashed #d7e6e5;
+  padding-left: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.dest-fare-label {
+  font-size: 8.5px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #6d8587;
+}
+.dest-fare-pkr {
+  font-size: 16px;
+  font-weight: 800;
+  color: #073d42;
+  letter-spacing: -0.2px;
+  white-space: nowrap;
+}
+.dest-fare-sub {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  color: #6d8587;
+}
+.dest-fare-usd {
+  background: #edf6f5;
+  color: #164b50;
+  font-weight: 700;
+  padding: 1px 7px;
+  border-radius: 999px;
+}
+
+/* Col 5: Actions (Side-by-side compact) */
+.dest-tariff-actions-col {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 7px;
+}
+.dest-tariff-btn {
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+.dest-tariff-btn--primary {
+  background: #073d42;
+  border: 1px solid #073d42;
+  color: #fff;
+}
+.dest-tariff-btn--primary:hover {
+  background: var(--coral);
+  border-color: var(--coral);
+}
+.dest-tariff-btn--ghost {
+  background: #f4f9f8;
+  border: 1px solid #cfe1e0;
+  color: #214a4e;
+}
+.dest-tariff-btn--ghost:hover {
+  background: #e5f1f0;
+}
+
+/* Expandable Inline Hotel & Sharing Tiers Drawer */
+.dest-tariff-drawer {
+  background: linear-gradient(180deg, #f7fbfb 0%, #edf6f5 100%);
+  border-top: 1px dashed #c8dedc;
+  padding: 18px 24px 20px;
+}
+.dest-tariff-drawer-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  color: #36595c;
+}
+.dest-tariff-drawer-head small {
+  color: #678082;
+  font-size: 11px;
+}
+.dest-tariff-drawer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+}
+.dest-tariff-tier-card {
+  background: #fff;
+  border: 1px solid #d5e6e5;
+  border-radius: 16px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  box-shadow: 0 6px 16px rgba(8, 46, 50, 0.05);
+}
+.dest-tariff-tier-duration {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #b04123;
+  background: #fff2ec;
+  padding: 3px 9px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+}
+.dest-tariff-tier-top strong {
+  display: block;
+  font-size: 13.5px;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.dest-tariff-tier-top p {
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: #5c7476;
+}
+.dest-tariff-tier-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid #edf4f3;
+}
+.dest-tariff-tier-bottom b {
+  display: block;
+  font-size: 15px;
+  color: #073d42;
+}
+.dest-tariff-tier-bottom small {
+  font-size: 10.5px;
+  color: #6b8385;
+}
+.dest-tier-book-btn {
+  border: 0;
+  background: var(--coral);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 999px;
+  transition: opacity 0.2s ease;
+}
+.dest-tier-book-btn:hover {
+  opacity: 0.92;
+}
+
+/* 4. REAL INTERACTIVE DESTINATION MAP */
+.dest-atlas-section {
+  background: #e5f2f2;
+  border-radius: 52px 52px 0 0;
+  padding: 48px 0 46px;
+}
+.dest-atlas-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 22px;
+}
+.dest-atlas-tab {
+  border: 1px solid #c3dbdb;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--ink);
+  padding: 6px 14px 6px 7px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+.dest-atlas-tab img {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.dest-atlas-tab:hover {
+  border-color: #073d42;
+}
+.dest-atlas-tab.is-active {
+  background: #073d42;
+  border-color: #073d42;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(7, 61, 66, 0.18);
+}
+.dest-atlas-grid {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+.dest-atlas-map-box {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #dcebeb;
+  min-height: 430px;
+  border: 4px solid #fff;
+  box-shadow: 0 18px 40px rgba(10, 48, 52, 0.12);
+}
+.dest-real-map-iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+  border: 0;
+  display: block;
+}
+.dest-map-hud-top {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  pointer-events: none;
+}
+.dest-map-hud-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(0, 28, 32, 0.14);
+}
+.dest-map-hud-pill svg {
+  color: var(--coral);
+}
+
+.dest-atlas-detail-card {
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 14px 34px rgba(17, 56, 60, 0.07);
+}
+.dest-atlas-detail-hero {
+  position: relative;
+  height: 185px;
+  overflow: hidden;
+}
+.dest-atlas-detail-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.dest-atlas-detail-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(6, 42, 47, 0.82), transparent 65%);
+}
+.dest-atlas-detail-title {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 16px;
+  color: #fff;
+}
+.dest-atlas-detail-title span {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: #f6b397;
+  margin-bottom: 3px;
+}
+.dest-atlas-detail-title h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 400;
+}
+.dest-atlas-detail-body {
+  padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.dest-atlas-detail-body > p {
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: #5c7375;
+}
+.dest-atlas-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 16px 0;
+  padding: 13px 15px;
+  border-radius: 14px;
+  background: #f4f9f8;
+}
+.dest-atlas-facts span {
+  display: block;
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #6d8385;
+}
+.dest-atlas-facts strong {
+  font-size: 11.5px;
+  color: var(--ink);
+}
+.dest-atlas-actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.dest-atlas-actions .button {
+  min-height: 44px;
+  padding-inline: 20px;
+  font-size: 12px;
+}
+
+/* 5. SEASONAL CALENDAR */
+.dest-season-section {
+  padding-block: 48px;
+}
+.dest-season-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.dest-season-tab {
+  border: 1px solid #d6e4e3;
+  background: #fff;
+  border-radius: 14px;
+  padding: 10px 16px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.dest-season-tab strong {
+  font-size: 12.5px;
+}
+.dest-season-tab span {
+  font-size: 10px;
+  color: #6d8385;
+}
+.dest-season-tab.is-active {
+  background: #073d42;
+  border-color: #073d42;
+  color: #fff;
+}
+.dest-season-tab.is-active span {
+  color: #c2dfdf;
+}
+.dest-season-panel {
+  background: #f3f2ef;
+  border-radius: 24px;
+  padding: 28px 32px;
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 28px;
+  align-items: center;
+}
+.dest-season-intro h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.dest-season-intro p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #5c7273;
+}
+.dest-season-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.dest-season-mini-card {
+  border: 1px solid #e3e8e6;
+  background: #fff;
+  border-radius: 14px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  transition: transform 0.2s ease;
+}
+.dest-season-mini-card:hover {
+  transform: translateY(-2px);
+}
+.dest-season-mini-card img {
+  width: 54px;
+  height: 54px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.dest-season-mini-card div {
+  flex: 1;
+  min-width: 0;
+}
+.dest-season-mini-card strong {
+  display: block;
+  font-size: 13px;
+}
+.dest-season-mini-card span {
+  display: block;
+  font-size: 10.5px;
+  color: #6e8384;
+}
+
+/* DIALOG EXTRAS */
+.dest-dialog-summary-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  background: #f2f8f7;
+  border: 1px solid #d7e6e5;
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+}
+.dest-dialog-summary-strip span {
+  display: block;
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #668082;
+}
+.dest-dialog-summary-strip strong {
+  font-size: 13px;
+  color: #073d42;
+}
+.dest-dialog-tiers {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.dest-dialog-tier-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background: #f9fbfb;
+  border: 1px solid #e0eceb;
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+.dest-dialog-tier-row strong {
+  display: block;
+  font-size: 12.5px;
+  color: var(--ink);
+}
+.dest-dialog-tier-row span {
+  font-size: 11px;
+  color: #5e7779;
+}
+.dest-dialog-tier-price {
+  text-align: right;
+  flex-shrink: 0;
+}
+.dest-dialog-tier-price b {
+  display: block;
+  font-size: 13px;
+  color: #073d42;
+}
+.dest-dialog-tier-price small {
+  font-size: 10.5px;
+  color: #6a8284;
+}
+.dest-dialog-heading {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 18px 0 10px;
+  color: var(--ink);
+}
+.dest-itinerary-timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 22px;
+  display: grid;
+  gap: 8px;
+}
+.dest-itinerary-timeline li {
+  background: #f2f7f6;
+  border-left: 3px solid var(--coral);
+  padding: 9px 12px;
+  border-radius: 0 8px 8px 0;
+  font-size: 12.5px;
+  color: #2c5053;
+}
+.dest-dialog-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-top: 16px;
+}
+.dest-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-size: 11.5px;
+  font-weight: 700;
+  background: #e9f8ef;
+  border: 1px solid #b8e6ca;
+  color: #136c38;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.dest-whatsapp-btn:hover {
+  background: #d6f3e2;
+}
+
+/* ============================================================
+   THIN & THEME-MATCHED SCROLLBAR (OpenTrip Signature Look)
+   ============================================================ */
+html,
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #073d42 #edf5f4;
+}
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #edf5f4;
+}
+::-webkit-scrollbar-thumb {
+  background: #073d42;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--coral);
+}
+
+/* Modal Dialog Thin Theme Scrollbar */
+.content-dialog {
+  scrollbar-width: thin;
+  scrollbar-color: var(--coral) #f1f6f5;
+  overflow-y: auto;
+}
+.content-dialog::-webkit-scrollbar {
+  width: 6px;
+}
+.content-dialog::-webkit-scrollbar-track {
+  background: #edf5f4;
+  border-radius: 999px;
+  margin-block: 18px;
+}
+.content-dialog::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #073d42 0%, var(--coral) 100%);
+  border-radius: 999px;
+}
+.content-dialog::-webkit-scrollbar-thumb:hover {
+  background: var(--coral);
+}
+
+.dest-empty-state {
+  text-align: center;
+  padding: 48px 20px;
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid #e6efef;
+}
+.dest-empty-state p {
+  max-width: 460px;
+  margin: 10px auto 22px;
+  font-size: 13.5px;
+  color: #617779;
+}
+.dest-empty-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1050px) {
+  .dest-search-row {
+    grid-template-columns: 1fr auto;
+  }
+  .dest-bento-grid,
+  .dest-bento-grid--editorial {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .dest-bento-card--wide-left,
+  .dest-bento-card--narrow-right,
+  .dest-bento-card--third,
+  .dest-bento-card--narrow-left,
+  .dest-bento-card--wide-right {
+    grid-column: span 1;
+  }
+  .dest-tariff-col-headers {
+    display: none;
+  }
+  .dest-tariff-ticket-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .dest-tariff-fare-stub {
+    border-left: 0;
+    padding-left: 0;
+  }
+  .dest-atlas-grid {
+    grid-template-columns: 1fr;
+  }
+  .dest-season-panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .dest-search-row {
+    grid-template-columns: 1fr;
+  }
+  .dest-bento-grid,
+  .dest-bento-grid--editorial {
+    grid-template-columns: 1fr;
+  }
+  .dest-bento-card {
+    height: 330px;
+  }
+  .dest-tariff-banner {
+    padding: 24px 20px 20px;
+  }
+  .dest-tariff-list {
+    padding: 12px 14px 20px;
+  }
+  .dest-tariff-ticket-main {
+    grid-template-columns: 1fr;
+  }
+  .dest-tariff-actions-col {
+    flex-direction: row;
+  }
+  .dest-season-cards {
+    grid-template-columns: 1fr;
+  }
+  .dest-dialog-summary-strip {
+    grid-template-columns: 1fr;
+  }
+}
