@@ -54,11 +54,6 @@ export default function DestinationsSection({ onSelect }) {
         title="Some places stay with you forever."
       >
         <div className="destinations-header-aside">
-          <p>
-            From tranquil tropical atolls to dramatic Karakoram peaks,
-            <br />
-            discover our handpicked destinations around the globe.
-          </p>
           <div className="destinations-nav-row">
             <ArrowLink href="#packages">View All Packages</ArrowLink>
             <div className="destinations-nav-btns">

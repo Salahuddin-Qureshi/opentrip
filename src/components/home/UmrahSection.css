@@ -198,28 +198,30 @@
   letter-spacing: -0.3px;
 }
 
-/* Full-Width Spacious Inquire Button */
+/* Full-Width Lightweight Inquire Button */
 .umrah-inquire-btn-clean {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 7px;
-  padding: 10px 18px;
+  padding: 9.5px 18px;
   border-radius: 10px;
-  background: #043e45;
-  color: #ffffff;
-  border: none;
+  background: #f2f7f8;
+  color: #043e45;
+  border: 1.5px solid rgba(4, 62, 69, 0.16);
   font-size: 12.5px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.22s ease;
 }
 
 .umrah-inquire-btn-clean:hover {
-  background: var(--coral, #ff805f);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(255, 128, 95, 0.3);
+  background: #043e45;
+  color: #ffffff;
+  border-color: #043e45;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(4, 62, 69, 0.15);
 }
 
 /* Footer Guidance Strip */
