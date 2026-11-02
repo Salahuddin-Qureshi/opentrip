@@ -6,6 +6,7 @@ export default function PackageCard({ trip, onSelect }) {
 
   return (
     <article className="package-card">
+      {/* Framed Inset Photo Header */}
       <div className="package-photo-wrap">
         <button
           type="button"
@@ -19,16 +20,22 @@ export default function PackageCard({ trip, onSelect }) {
             loading="lazy"
           />
         </button>
+        <div className="package-photo-overlay" />
         <span className="package-duration-pill">
           <Icon name="calendar" size={10.5} />
           <span>{trip.days}D / {trip.nights}N</span>
         </span>
+        {trip.country && (
+          <span className="package-country-tag">
+            {trip.country}
+          </span>
+        )}
       </div>
 
       <div className="package-copy">
         <div className="package-destination-tag">
           <Icon name="pin" size={11} />
-          <span>{trip.destination}{trip.country ? ` · ${trip.country}` : ""}</span>
+          <span>{trip.destination}</span>
         </div>
 
         <h3 className="package-title">{trip.name}</h3>
@@ -39,7 +46,8 @@ export default function PackageCard({ trip, onSelect }) {
           <div className="package-chips-row">
             {trip.highlights.slice(0, 3).map((h, i) => (
               <span key={i} className="package-feature-chip">
-                {h}
+                <span className="chip-dot">●</span>
+                <span>{h}</span>
               </span>
             ))}
           </div>

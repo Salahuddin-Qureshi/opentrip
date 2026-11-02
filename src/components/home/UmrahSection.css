@@ -6,56 +6,50 @@
 
 .umrah-header-wrap {
   max-width: 760px;
-  margin: 0 auto 32px;
+  margin: 0 auto 36px;
   text-align: center;
 }
 
 .umrah-subtitle {
   font-size: 14.5px;
-  line-height: 1.55;
+  line-height: 1.6;
   color: #556c6e;
   margin-top: 6px;
 }
 
-/* Distinctive Umrah Grid */
+/* Umrah Grid */
 .umrah-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  margin-bottom: 36px;
+  gap: 22px;
+  margin-bottom: 40px;
 }
 
-/* Distinct Card Container */
+/* Clean, Spacious Card */
 .umrah-card {
   background: #ffffff;
-  border-radius: 22px;
+  border-radius: 20px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(4, 62, 69, 0.1);
-  box-shadow: 0 8px 24px rgba(4, 62, 69, 0.05);
+  border: 1px solid rgba(4, 62, 69, 0.08);
+  box-shadow: 0 8px 24px rgba(4, 62, 69, 0.04);
   transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
   position: relative;
 }
 
 .umrah-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 36px rgba(4, 62, 69, 0.12);
-  border-color: rgba(4, 62, 69, 0.24);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(4, 62, 69, 0.1);
+  border-color: rgba(4, 62, 69, 0.2);
 }
 
-.umrah-card--featured {
-  border: 2px solid var(--coral, #ff805f);
-  box-shadow: 0 12px 34px rgba(255, 128, 95, 0.18);
-  background: linear-gradient(180deg, #ffffff 0%, #fffcfb 100%);
-}
-
-/* Inset Framed Photo with Arched Top */
+/* Clean Inset Photo Header */
 .umrah-photo-frame {
   position: relative;
   margin: 10px 10px 0 10px;
-  height: 155px;
-  border-radius: 16px 16px 8px 8px;
+  height: 165px;
+  border-radius: 14px;
   overflow: hidden;
   background: #043e45;
 }
@@ -67,7 +61,37 @@
   transition: transform 0.5s ease;
 }
 
-/* Individual object positions for minarets, dome, and tower preservation */
+.umrah-card:hover .umrah-photo-frame img.umrah-card-img {
+  transform: scale(1.06);
+}
+
+.umrah-photo-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(4, 62, 69, 0.08) 0%, rgba(4, 62, 69, 0.45) 100%);
+  z-index: 1;
+}
+
+/* Single clean duration badge */
+.umrah-floating-duration {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 2;
+  font-size: 11px;
+  font-weight: 600;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(4, 62, 69, 0.85);
+  backdrop-filter: blur(6px);
+  padding: 4px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Photo Framing Presets */
 .umrah-img-economy-umrah {
   object-position: center 30%;
 }
@@ -84,230 +108,118 @@
   object-position: center 25%;
 }
 
-.umrah-card:hover .umrah-photo-frame img.umrah-card-img {
-  transform: scale(1.06);
-}
-
-.umrah-photo-gradient {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(4, 62, 69, 0.1) 0%, rgba(4, 62, 69, 0.55) 100%);
-  z-index: 1;
-}
-
-.umrah-badge-ribbon {
-  position: absolute;
-  top: 9px;
-  left: 9px;
-  z-index: 2;
-  font-size: 10px;
-  font-weight: 700;
-  padding: 3px 9px;
-  border-radius: 12px;
-  background: rgba(4, 62, 69, 0.9);
-  backdrop-filter: blur(6px);
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.umrah-badge-ribbon--popular {
-  background: var(--coral, #ff805f);
-  border-color: var(--coral, #ff805f);
-}
-
-.umrah-duration-badge {
-  position: absolute;
-  bottom: 9px;
-  left: 9px;
-  z-index: 2;
-  font-size: 10.5px;
-  font-weight: 600;
-  color: #ffffff;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(6px);
-  padding: 2.5px 8px;
-  border-radius: 8px;
-}
-
-/* Card Body */
+/* Card Body - Airy & Clean */
 .umrah-card-body {
-  padding: 13px 14px 15px;
+  padding: 16px 18px 18px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
-.umrah-card-headline {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  margin-bottom: 9px;
-}
-
-.umrah-card-headline h4 {
+.umrah-card-title {
   font-family: var(--font-serif);
-  font-size: 17px;
+  font-size: 18.5px;
   font-weight: 700;
   color: #043e45;
-  margin: 0;
-  letter-spacing: -0.2px;
-  white-space: nowrap;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.3px;
 }
 
-.umrah-tier-chip {
-  font-size: 10px;
-  font-weight: 700;
-  color: #854d0e;
-  background: #fef9c3;
-  padding: 2px 7px;
-  border-radius: 6px;
-  white-space: nowrap;
-  border: 1px solid rgba(133, 77, 14, 0.15);
-}
-
-/* Stays Stack (Color-differentiated Makkah vs Madinah) */
-.umrah-stays-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin-bottom: 11px;
-}
-
-.stay-chip {
+/* Minimalist Location Line */
+.umrah-stay-summary {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 11px;
-  font-weight: 500;
-}
-
-.stay-chip--makkah {
-  background: #f0f7f8;
-  color: #043e45;
-  border: 1px solid rgba(4, 62, 69, 0.08);
-}
-
-.stay-chip--makkah .stay-icon-dot {
-  color: #043e45;
-  font-size: 8px;
-}
-
-.stay-chip--madinah {
-  background: #fbf8f0;
-  color: #78520b;
-  border: 1px solid rgba(120, 82, 11, 0.12);
-}
-
-.stay-chip--madinah .stay-icon-dot {
-  color: #b47d15;
-  font-size: 8px;
-}
-
-/* Checklist with Circular Badges */
-.umrah-checklist {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 12px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  flex-grow: 1;
-}
-
-.umrah-checklist li {
-  display: flex;
-  align-items: flex-start;
   gap: 6px;
   font-size: 11.5px;
-  line-height: 1.35;
+  color: #637a7c;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+.umrah-stay-summary svg {
+  color: var(--coral, #ff805f);
+  flex-shrink: 0;
+}
+
+/* Clean, Light Checklist */
+.umrah-features-clean {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.umrah-features-clean li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.4;
   color: #405759;
 }
 
-.check-dot {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: rgba(23, 147, 91, 0.12);
+.umrah-features-clean li svg {
   color: #17935b;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   flex-shrink: 0;
-  margin-top: 1px;
-}
-
-/* Bottom Bar */
-.umrah-bottom-bar {
-  padding-top: 10px;
-  border-top: 1px dashed rgba(4, 62, 69, 0.14);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  margin-top: auto;
-}
-
-.umrah-fare-box {
-  display: flex;
-  flex-direction: column;
-}
-
-.umrah-fare-box small {
-  font-size: 9px;
-  text-transform: uppercase;
-  color: #798e90;
-  font-weight: 700;
-  letter-spacing: 0.4px;
-  line-height: 1;
-}
-
-.umrah-fare-box strong {
-  font-size: 16px;
-  font-weight: 800;
-  color: #043e45;
-  letter-spacing: -0.3px;
-  line-height: 1.2;
   margin-top: 2px;
 }
 
-.umrah-book-btn {
-  display: inline-flex;
+/* Spacious Bottom Area */
+.umrah-bottom-spacious {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid #edf2f2;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.umrah-price-block {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.umrah-price-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #798e90;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.umrah-price-amount {
+  font-size: 18px;
+  font-weight: 800;
+  color: #043e45;
+  letter-spacing: -0.3px;
+}
+
+/* Full-Width Spacious Inquire Button */
+.umrah-inquire-btn-clean {
+  width: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
-  padding: 7px 15px;
-  border-radius: 20px;
+  gap: 7px;
+  padding: 10px 18px;
+  border-radius: 10px;
   background: #043e45;
   color: #ffffff;
   border: none;
-  font-size: 11.5px;
+  font-size: 12.5px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.25s ease;
-  flex-shrink: 0;
 }
 
-.umrah-book-btn:hover {
+.umrah-inquire-btn-clean:hover {
   background: var(--coral, #ff805f);
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(255, 128, 95, 0.35);
-}
-
-.umrah-book-btn--popular {
-  background: var(--coral, #ff805f);
-  box-shadow: 0 4px 14px rgba(255, 128, 95, 0.25);
-}
-
-.umrah-book-btn--popular:hover {
-  background: #e66b4b;
+  box-shadow: 0 4px 14px rgba(255, 128, 95, 0.3);
 }
 
 /* Footer Guidance Strip */

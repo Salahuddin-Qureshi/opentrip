@@ -21,14 +21,11 @@ export default function UmrahSection({ onPlan }) {
           </SectionHeading>
         </div>
 
-        {/* Distinctive Umrah Cards Grid */}
+        {/* Clean, Spacious & Uncluttered Umrah Cards */}
         <div className="umrah-grid">
           {umrahPackages.map((pkg) => (
-            <article
-              key={pkg.id}
-              className={`umrah-card ${pkg.popular ? "umrah-card--featured" : ""}`}
-            >
-              {/* Distinctive Framed Photo with Arched Top */}
+            <article key={pkg.id} className="umrah-card">
+              {/* Clean Framed Photo - Uncluttered */}
               <div className="umrah-photo-frame">
                 <img
                   src={pkg.image}
@@ -37,55 +34,41 @@ export default function UmrahSection({ onPlan }) {
                   className={`umrah-card-img umrah-img-${pkg.id}`}
                 />
                 <div className="umrah-photo-gradient" />
-                <span className={`umrah-badge-ribbon ${pkg.popular ? "umrah-badge-ribbon--popular" : ""}`}>
-                  {pkg.badge}
-                </span>
-                <span className="umrah-duration-badge">
+                <span className="umrah-floating-duration">
                   <Icon name="calendar" size={11} /> {pkg.duration}
                 </span>
               </div>
 
-              {/* Distinctive Card Body */}
+              {/* Spacious Card Body */}
               <div className="umrah-card-body">
-                <div className="umrah-card-headline">
-                  <h4>{pkg.title}</h4>
-                  <span className="umrah-tier-chip">{pkg.tier}</span>
+                <h4 className="umrah-card-title">{pkg.title}</h4>
+
+                {/* Clean, Single-Line Location Info (No bulky colored boxes) */}
+                <div className="umrah-stay-summary">
+                  <Icon name="pin" size={13} />
+                  <span>{pkg.makkahHotel} · {pkg.madinahHotel}</span>
                 </div>
 
-                {/* Pilgrimage Stays with Distinct Styling */}
-                <div className="umrah-stays-stack">
-                  <div className="stay-chip stay-chip--makkah">
-                    <span className="stay-icon-dot">●</span>
-                    <span className="stay-text">{pkg.makkahHotel}</span>
-                  </div>
-                  <div className="stay-chip stay-chip--madinah">
-                    <span className="stay-icon-dot">●</span>
-                    <span className="stay-text">{pkg.madinahHotel}</span>
-                  </div>
-                </div>
-
-                {/* Checklist with Circular Badges */}
-                <ul className="umrah-checklist">
+                {/* Clean, Light Checklist */}
+                <ul className="umrah-features-clean">
                   {pkg.features.map((feat, idx) => (
                     <li key={idx}>
-                      <span className="check-dot">
-                        <Icon name="check" size={10} />
-                      </span>
+                      <Icon name="check" size={13} />
                       <span>{feat}</span>
                     </li>
                   ))}
                 </ul>
 
-                {/* Bottom Pricing & Action */}
-                <div className="umrah-bottom-bar">
-                  <div className="umrah-fare-box">
-                    <small>Starting from</small>
-                    <strong>PKR {pkg.pricePkr}</strong>
+                {/* Spacious Bottom Area: Price above, Clean Full-Width Button below */}
+                <div className="umrah-bottom-spacious">
+                  <div className="umrah-price-block">
+                    <span className="umrah-price-label">Starting From</span>
+                    <strong className="umrah-price-amount">PKR {pkg.pricePkr}</strong>
                   </div>
 
                   <button
                     type="button"
-                    className={`umrah-book-btn ${pkg.popular ? "umrah-book-btn--popular" : ""}`}
+                    className="umrah-inquire-btn-clean"
                     onClick={() =>
                       onPlan({
                         destination: pkg.title,
@@ -94,8 +77,8 @@ export default function UmrahSection({ onPlan }) {
                       })
                     }
                   >
-                    <span>Inquire</span>
-                    <Icon size={13} />
+                    <span>Inquire Package</span>
+                    <Icon size={14} />
                   </button>
                 </div>
               </div>
