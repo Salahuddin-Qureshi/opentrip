@@ -1,0 +1,231 @@
+.site-footer {
+  background: #043e45;
+  color: #ffffff;
+  padding: 70px 0 30px;
+  position: relative;
+  font-size: 13.5px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr 1fr 1fr 1.3fr;
+  gap: 36px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-col h3 {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin: 0 0 18px 0;
+}
+
+.footer-brand-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #bde3e2;
+  margin: 14px 0 20px 0;
+  max-width: 320px;
+}
+
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+  background: var(--coral, #ff805f);
+  transform: translateY(-2px);
+}
+
+.social-btn--wa {
+  color: #25d366;
+  background: rgba(37, 211, 102, 0.15);
+}
+
+.social-btn--wa:hover {
+  background: #25d366;
+  color: #ffffff;
+}
+
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links-list a,
+.footer-link-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #bde3e2;
+  font-size: 13px;
+  text-decoration: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.15s ease, transform 0.15s ease;
+  display: inline-block;
+}
+
+.footer-links-list a:hover,
+.footer-link-btn:hover {
+  color: #ffffff;
+  transform: translateX(3px);
+}
+
+.footer-contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.footer-contact-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: #d1e5e6;
+  white-space: nowrap;
+}
+
+.footer-contact-row svg {
+  color: var(--coral, #ff805f);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.footer-contact-row a {
+  color: #d1e5e6;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.footer-contact-row a:hover {
+  color: #ffffff;
+}
+
+.footer-plan-cta-box {
+  margin-top: 8px;
+}
+
+.footer-plan {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--coral, #ff805f);
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.footer-plan:hover {
+  background: #e66b4b;
+  transform: translateY(-1px);
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 28px;
+  font-size: 12.5px;
+  color: #8da6a8;
+}
+
+.footer-legal-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-legal-links button {
+  background: none;
+  border: none;
+  color: #8da6a8;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s ease;
+}
+
+.footer-legal-links button:hover {
+  color: #ffffff;
+}
+
+.back-to-top {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
+  transform: rotate(90deg);
+  transition: background 0.2s ease;
+}
+
+.back-to-top:hover {
+  background: var(--coral, #ff805f);
+}
+
+@media (max-width: 1100px) {
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footer-col--brand {
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .footer-col--brand {
+    grid-column: span 1;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-legal-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+

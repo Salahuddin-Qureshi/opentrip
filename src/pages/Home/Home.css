@@ -4,6 +4,7 @@
   padding-bottom: 28px;
   scroll-margin-top: 28px;
 }
+
 .section-heading {
   display: flex;
   align-items: end;
@@ -11,6 +12,7 @@
   gap: 30px;
   margin-bottom: 27px;
 }
+
 .section-eyebrow {
   font-size: 10px;
   text-transform: uppercase;
@@ -19,6 +21,7 @@
   color: #577174;
   margin-bottom: 8px;
 }
+
 .section-heading h2,
 .story-section h2,
 .planning-section h2,
@@ -29,20 +32,24 @@
   letter-spacing: -0.8px;
   line-height: 1.12;
 }
+
 .section-heading-aside {
   max-width: 48%;
   flex-shrink: 0;
 }
-.section-heading-aside > p {
+
+.section-heading-aside>p {
   font-size: 12px;
   color: #7a8080;
   line-height: 1.6;
   margin-bottom: 8px;
 }
+
 .section-heading--centered {
   justify-content: center;
   text-align: center;
 }
+
 .arrow-link {
   border: 0;
   padding: 0;
@@ -54,19 +61,23 @@
   font-size: 11px;
   font-weight: 600;
 }
+
 .arrow-link svg {
   color: #ac8d7c;
   transition: transform 0.2s;
 }
+
 .arrow-link:hover svg {
   transform: translateX(4px);
 }
+
 .destinations-grid {
   display: grid;
   grid-template-columns: 1.18fr 0.95fr 0.95fr 1fr;
   grid-template-rows: repeat(2, 176px);
   gap: 16px;
 }
+
 .destination-card {
   position: relative;
   isolation: isolate;
@@ -78,6 +89,7 @@
   text-align: left;
   background-color: #043e45;
 }
+
 .destination-card::after {
   position: absolute;
   inset: 0;
@@ -85,6 +97,7 @@
   background: linear-gradient(0deg, #003b43f0 0%, #003b4360 40%, transparent 80%);
   z-index: -1;
 }
+
 .destination-card img {
   position: absolute;
   inset: 0;
@@ -94,15 +107,19 @@
   z-index: -2;
   transition: transform 0.4s;
 }
+
 .destination-card:hover img {
   transform: scale(1.045);
 }
+
 .destination-card--bali {
   grid-row: span 2;
 }
+
 .destination-card--switzerland {
   grid-column: span 2;
 }
+
 .destination-card-copy {
   position: absolute;
   inset: auto 17px 18px;
@@ -111,17 +128,20 @@
   align-items: end;
   gap: 8px;
 }
+
 .destination-card-copy strong {
   display: block;
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 4px;
 }
+
 .destination-card-copy small {
   display: block;
   font-size: 11px;
   opacity: 0.8;
 }
+
 .card-arrow {
   width: 31px;
   height: 31px;
@@ -134,11 +154,13 @@
   background: #ffffff12;
   color: inherit;
 }
+
 .experiences-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 28px;
 }
+
 .experience-card {
   border: 0;
   background: transparent;
@@ -148,6 +170,7 @@
   gap: 10px;
   padding: 0;
 }
+
 .experience-card img {
   aspect-ratio: 1;
   width: 128px;
@@ -155,16 +178,20 @@
   object-fit: cover;
   transition: transform 0.25s;
 }
+
 .experience-card:hover img {
   transform: translateY(-5px);
 }
+
 .experience-card strong {
   font-size: 11px;
   margin-top: 4px;
 }
+
 .experience-card svg {
   color: #9a8d7f;
 }
+
 .packages-section {
   background: #e5f2f2;
   border-radius: 55px 55px 0 0;
@@ -172,11 +199,13 @@
   margin-top: 10px;
   scroll-margin-top: 10px;
 }
+
 .filter-tabs {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
+
 .filter-tabs button {
   background: transparent;
   border: 1px solid #cbdddd;
@@ -184,25 +213,30 @@
   padding: 8px 18px;
   font-size: 10px;
 }
+
 .filter-tabs button.selected {
   background: #073d42;
   border-color: #073d42;
   color: white;
 }
+
 .filter-tabs button:hover {
   border-color: #2f6469;
 }
+
 .packages-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
 }
+
 .package-card {
   background: white;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 20px #173e4005;
 }
+
 .package-photo {
   border: 0;
   padding: 0;
@@ -211,40 +245,48 @@
   overflow: hidden;
   display: block;
 }
+
 .package-photo img {
   width: 100%;
   height: 166px;
   object-fit: cover;
   transition: transform 0.3s;
 }
+
 .package-photo:hover img {
   transform: scale(1.04);
 }
+
 .package-copy {
   padding: 17px 16px 14px;
 }
+
 .package-copy h3 {
   font-size: 15px;
   margin-bottom: 9px;
 }
+
 .package-meta,
 .package-meta span {
   display: flex;
   align-items: center;
   gap: 6px;
 }
+
 .package-meta {
   gap: 13px;
   font-size: 10px;
   color: #747b7b;
 }
-.package-copy > p {
+
+.package-copy>p {
   font-size: 11px;
   line-height: 1.5;
   color: #8a8d8a;
   min-height: 48px;
   margin-top: 12px;
 }
+
 .package-bottom {
   display: flex;
   align-items: center;
@@ -252,26 +294,31 @@
   gap: 8px;
   margin-top: 10px;
 }
-.package-bottom > span {
+
+.package-bottom>span {
   font-size: 9px;
   color: #6e7b7b;
 }
+
 .package-bottom strong {
   color: var(--ink);
   font-size: 15px;
 }
+
 .package-bottom .card-arrow {
   color: white;
   background: #003c43;
   width: 29px;
   height: 29px;
 }
+
 .sample-caption {
   color: #708283;
   font-size: 10px;
   line-height: 1.6;
   margin-top: 18px;
 }
+
 .search-context {
   display: flex;
   flex-wrap: wrap;
@@ -280,28 +327,33 @@
   margin-bottom: 20px;
   font-size: 13px;
 }
+
 .search-context button {
   border: 0;
   padding: 5px 0;
   background: transparent;
   text-decoration: underline;
 }
+
 .empty-state {
   text-align: center;
   padding: 32px 15px;
 }
+
 .empty-state p {
   margin: 12px auto 20px;
   max-width: 500px;
   line-height: 1.6;
 }
+
 .story-section {
   position: relative;
   isolation: isolate;
   color: white;
   min-height: 350px;
 }
-.story-section > img {
+
+.story-section>img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -310,6 +362,7 @@
   object-position: center 47%;
   z-index: -2;
 }
+
 .story-section::after {
   content: "";
   position: absolute;
@@ -317,27 +370,33 @@
   background: linear-gradient(90deg, #12393612, #1239364d 40%, #143d4bab);
   z-index: -1;
 }
+
 .story-inner {
   display: flex;
   justify-content: flex-end;
   padding-block: 38px;
 }
-.story-inner > div {
+
+.story-inner>div {
   width: 40%;
 }
+
 .story-section .section-eyebrow {
   color: #edcbb7;
 }
+
 .story-section h2 {
   font-size: clamp(35px, 3.6vw, 50px);
 }
-.story-section h2 + p {
+
+.story-section h2+p {
   font-size: 13px;
   line-height: 1.6;
   max-width: 370px;
   margin-top: 18px;
   color: #f4f3ec;
 }
+
 .story-link {
   display: flex;
   align-items: center;
@@ -349,7 +408,8 @@
   font-size: 12px;
   font-weight: 600;
 }
-.story-link > span {
+
+.story-link>span {
   display: grid;
   place-items: center;
   width: 42px;
@@ -357,27 +417,33 @@
   border-radius: 50%;
   background: var(--coral);
 }
+
 .story-link svg {
   fill: white;
 }
+
 .benefits-section {
   padding-top: 34px;
   padding-bottom: 22px;
 }
+
 .benefits-section h2 {
   font-size: 29px;
 }
+
 .benefits-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 28px;
   padding-top: 12px;
 }
+
 .benefit {
   display: flex;
   align-items: flex-start;
   gap: 16px;
 }
+
 .benefit-icon {
   width: 60px;
   height: 60px;
@@ -386,40 +452,48 @@
   place-items: center;
   flex-shrink: 0;
 }
+
 .benefit-icon--blue {
   background: #def1f3;
   color: #4b8b98;
 }
+
 .benefit-icon--green {
   background: #ebeee5;
   color: #7e9670;
 }
+
 .benefit-icon--peach {
   background: #ffead9;
   color: #d78c4f;
 }
+
 .benefit h3 {
   font-size: 11px;
   line-height: 1.4;
   margin: 7px 0;
 }
+
 .benefit p {
   font-size: 10px;
   line-height: 1.6;
   color: #87908d;
 }
+
 .journal-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
+
 .article-card {
   background: white;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 5px 18px #303d3a07;
 }
-.article-card > button {
+
+.article-card>button {
   padding: 0;
   border: 0;
   background: transparent;
@@ -427,15 +501,18 @@
   width: 100%;
   height: 100%;
 }
+
 .article-image {
   position: relative;
 }
+
 .article-image img {
   width: 100%;
   height: 135px;
   object-fit: cover;
 }
-.article-image > span {
+
+.article-image>span {
   position: absolute;
   bottom: -8px;
   left: 15px;
@@ -448,39 +525,48 @@
   font-weight: 700;
   letter-spacing: 0.3px;
 }
-.article-card:nth-child(2) .article-image > span {
+
+.article-card:nth-child(2) .article-image>span {
   background: #b8e0e2;
 }
+
 .article-copy {
   padding: 24px 18px 18px;
 }
+
 .article-copy h3 {
   max-width: 270px;
   font-size: 14px;
   line-height: 1.4;
 }
+
 .article-card button:hover h3 {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
+
 .article-copy p {
   font-size: 9px;
   color: #858a84;
   margin-top: 10px;
 }
+
 .article-copy p span {
   padding-inline: 4px;
 }
+
 .testimonials-section {
   margin-top: 0;
   padding: 27px 0 24px;
   background: #f3f2ef;
   border-radius: 48px 48px 0 0;
 }
+
 .testimonial-controls {
   display: flex;
   gap: 10px;
 }
+
 .testimonial-controls .round-button {
   background: white;
   border: 0;
@@ -488,11 +574,13 @@
   height: 39px;
   color: #597d7d;
 }
+
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
+
 .testimonial-card {
   display: flex;
   gap: 16px;
@@ -501,6 +589,7 @@
   background: white;
   border-radius: 10px;
 }
+
 .testimonial-avatar {
   width: 43px;
   height: 43px;
@@ -513,26 +602,31 @@
   font-family: Georgia, serif;
   font-size: 16px;
 }
+
 .testimonial-card:nth-child(2) .testimonial-avatar {
   background: #f5e7d9;
   color: #a57f5b;
 }
+
 .testimonial-card blockquote {
   margin: 0 0 12px;
   font-size: 11px;
   color: #6b7575;
   line-height: 1.5;
 }
+
 .testimonial-card figcaption {
   display: flex;
   flex-direction: column;
   gap: 3px;
   font-size: 10px;
 }
+
 .testimonial-card figcaption span {
   color: #92978f;
   font-size: 9px;
 }
+
 .planning-section {
   position: relative;
   isolation: isolate;
@@ -540,7 +634,8 @@
   color: white;
   padding: 36px 0 30px;
 }
-.planning-section > img {
+
+.planning-section>img {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -549,6 +644,7 @@
   inset: 0;
   z-index: -2;
 }
+
 .planning-section::after {
   content: "";
   position: absolute;
@@ -556,74 +652,89 @@
   z-index: -1;
   background: linear-gradient(90deg, #123b45ad, #704c447a, #113840a8);
 }
+
 .planning-section .section-eyebrow {
   color: #f8b491;
   font-size: 9px;
 }
+
 .planning-section h2 {
   font-size: clamp(28px, 2.8vw, 40px);
 }
-.planning-section h2 + p {
+
+.planning-section h2+p {
   font-size: 12px;
   margin: 10px 0 20px;
   color: #f1ebe4;
 }
-.planning-section .container > div {
+
+.planning-section .container>div {
   display: flex;
   gap: 16px;
   justify-content: center;
 }
+
 .planning-section .button {
   min-height: 43px;
   padding: 9px 23px;
   font-size: 11px;
 }
+
 .site-footer {
   background: #023b3f;
   color: #c5dada;
 }
+
 .footer-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.75fr 0.95fr 1.1fr 1.25fr;
   gap: 30px;
   padding-block: 35px 28px;
 }
+
 .site-footer .logo {
   color: #f1f8f5;
   font-size: 26px;
   margin-bottom: 14px;
 }
+
 .site-footer h3 {
   font-size: 11px;
   color: #eaf1ed;
   margin-bottom: 13px;
 }
+
 .site-footer p {
   font-size: 10px;
   line-height: 1.6;
 }
-.footer-grid > div > a:not(.logo),
-.footer-grid > div > button {
+
+.footer-grid>div>a:not(.logo),
+.footer-grid>div>button {
   display: block;
   font-size: 10px;
   margin-bottom: 5px;
 }
+
 .site-footer button {
   border: 0;
   padding: 0;
   background: transparent;
   text-align: left;
 }
+
 .footer-grid .footer-compass {
   margin-top: 15px;
 }
-.footer-grid > div > .footer-plan {
+
+.footer-grid>div>.footer-plan {
   display: inline-flex;
   gap: 8px;
   align-items: center;
   margin-top: 16px;
   color: #ffb391;
 }
+
 .newsletter form {
   display: flex;
   background: #e7f0eb;
@@ -631,6 +742,7 @@
   margin-top: 15px;
   padding: 4px;
 }
+
 .newsletter input {
   background: transparent;
   padding: 7px 10px;
@@ -640,6 +752,7 @@
   color: var(--ink);
   font-size: 10px;
 }
+
 .newsletter form button {
   width: 32px;
   height: 32px;
@@ -650,9 +763,11 @@
   background: var(--coral);
   color: white;
 }
+
 .newsletter [role="status"] {
   margin-top: 10px;
 }
+
 .footer-bottom {
   border-top: 1px solid #ffffff12;
   padding-block: 18px;
@@ -662,11 +777,13 @@
   font-size: 9px;
   position: relative;
 }
-.footer-bottom > div {
+
+.footer-bottom>div {
   display: flex;
   gap: 15px;
   margin-left: auto;
 }
+
 .back-to-top {
   background: #078997;
   width: 30px;
@@ -675,13 +792,16 @@
   place-items: center;
   border-radius: 50%;
 }
+
 .back-to-top svg {
   transform: rotate(90deg);
 }
+
 .site-footer a:hover,
 .site-footer button:hover {
   color: white;
 }
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -690,6 +810,7 @@
   clip-path: inset(50%);
   white-space: nowrap;
 }
+
 .content-dialog {
   border: 0;
   padding: 34px;
@@ -700,20 +821,24 @@
   background: var(--ivory);
   box-shadow: 0 20px 100px #00343f40;
 }
+
 .content-dialog::backdrop {
   background: #002e3bc2;
   backdrop-filter: blur(5px);
 }
+
 .content-dialog h2 {
   padding-right: 23px;
   font-size: 33px;
   margin-bottom: 20px;
 }
+
 .dialog-close {
   position: absolute;
   right: 14px;
   top: 14px;
 }
+
 .dialog-image {
   height: 210px;
   width: 100%;
@@ -721,23 +846,27 @@
   border-radius: 10px;
   margin-bottom: 20px;
 }
+
 .content-dialog p {
   line-height: 1.7;
   font-size: 14px;
   margin-bottom: 16px;
   color: #627576;
 }
+
 .planner-form {
   display: grid;
   gap: 16px;
   margin-top: 20px;
 }
+
 .planner-form label {
   display: grid;
   gap: 7px;
   font-size: 12px;
   font-weight: 600;
 }
+
 .planner-form input,
 .planner-form select,
 .planner-form textarea {
@@ -750,18 +879,22 @@
   color: var(--ink);
   font: inherit;
 }
+
 .planner-form textarea {
   resize: vertical;
 }
+
 .planner-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
+
 .planner-form small {
   font-size: 10px;
   color: #6b8181;
 }
+
 .trip-highlights {
   list-style: none;
   padding: 0;
@@ -769,330 +902,1552 @@
   gap: 10px;
   font-size: 13px;
 }
+
 .trip-highlights li {
   display: flex;
   gap: 10px;
   align-items: center;
 }
+
 .trip-summary dl {
   background: #e9f1eb;
   padding: 16px;
   border-radius: 10px;
 }
-.trip-summary dl > div {
+
+.trip-summary dl>div {
   display: grid;
   grid-template-columns: 100px 1fr;
   gap: 15px;
   padding: 8px 0;
   font-size: 13px;
 }
+
 .trip-summary dt {
   text-transform: capitalize;
 }
+
 .trip-summary dd {
   margin: 0;
   overflow-wrap: anywhere;
 }
+
 @media (min-width: 1500px) {
   .destinations-grid {
     grid-template-rows: repeat(2, 200px);
   }
+
   .package-photo img {
     height: 190px;
   }
 }
+
 @media (max-width: 1100px) {
   .section-heading {
     align-items: start;
   }
+
   .packages-section .section-heading {
     flex-direction: column;
   }
+
   .packages-section .section-heading-aside {
     max-width: none;
   }
+
   .experiences-grid {
     gap: 18px;
   }
+
   .experience-card img {
     width: 110px;
   }
+
   .benefits-grid {
     gap: 20px;
   }
+
   .benefit {
     gap: 10px;
   }
+
   .benefit-icon {
     width: 44px;
     height: 44px;
   }
+
   .footer-grid {
     grid-template-columns: 1fr 0.8fr 0.9fr 1.3fr;
   }
-  .footer-grid > div:nth-child(4) {
+
+  .footer-grid>div:nth-child(4) {
     display: none;
   }
+
   .testimonial-card {
     padding: 18px 14px;
     gap: 10px;
   }
+
   .testimonial-avatar {
     width: 33px;
     height: 33px;
     font-size: 12px;
   }
 }
+
 @media (max-width: 800px) {
   .destinations-grid {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 170px);
   }
+
   .destination-card--switzerland {
     grid-column: span 2;
   }
+
   .destination-card--hunza {
     grid-column: span 2;
   }
+
   .packages-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .experiences-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
   }
+
   .experience-card img {
     width: 125px;
   }
+
   .benefits-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 26px;
   }
+
   .benefit-icon {
     width: 56px;
     height: 56px;
   }
-  .story-inner > div {
+
+  .story-inner>div {
     width: 52%;
   }
+
   .testimonials-grid {
     grid-template-columns: 1fr;
   }
+
   .testimonial-card {
     padding: 20px;
   }
+
   .testimonial-avatar {
     width: 43px;
     height: 43px;
     font-size: 16px;
   }
+
   .testimonials-grid .testimonial-card:nth-child(3) {
     display: none;
   }
+
   .journal-grid {
     gap: 12px;
   }
+
   .article-copy {
     padding-inline: 12px;
   }
+
   .article-copy h3 {
     font-size: 12px;
   }
+
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 30px;
   }
 }
+
 @media (max-width: 550px) {
   .page-section {
     padding-block: 24px;
   }
+
   .section-heading {
     flex-direction: column;
     gap: 15px;
     margin-bottom: 22px;
   }
+
   .section-heading-aside {
     max-width: 100%;
   }
+
   .section-heading h2 {
     font-size: 29px;
   }
+
   .section-heading--centered {
     align-items: center;
   }
+
   .destinations-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 180px);
     gap: 12px;
   }
+
   .destination-card--bali {
     grid-row: auto;
   }
+
   .destination-card--switzerland,
   .destination-card--hunza {
     grid-column: auto;
   }
+
   .destination-card-copy {
     inset: auto 12px 14px;
   }
+
   .destination-card-copy strong {
     font-size: 15px;
   }
+
   .destination-card-copy small {
     font-size: 9px;
   }
+
   .destination-card .card-arrow {
     width: 25px;
     height: 25px;
   }
+
   .experience-card img {
     width: 90px;
   }
+
   .experience-card strong {
     font-size: 10px;
   }
+
   .experiences-grid {
     gap: 23px 10px;
   }
+
   .packages-section {
     border-radius: 30px 30px 0 0;
     padding-top: 30px;
   }
+
   .filter-tabs {
     gap: 6px;
   }
+
   .filter-tabs button {
     padding: 8px 12px;
   }
+
   .packages-grid {
     gap: 12px;
   }
+
   .package-photo img {
     height: 130px;
   }
+
   .package-copy {
     padding: 13px 11px;
   }
+
   .package-copy h3 {
     font-size: 13px;
   }
+
   .package-meta {
     gap: 7px;
     font-size: 9px;
     flex-wrap: wrap;
   }
-  .package-copy > p {
+
+  .package-copy>p {
     min-height: 64px;
     font-size: 10px;
   }
+
   .package-bottom {
     align-items: end;
   }
-  .package-bottom > span {
+
+  .package-bottom>span {
     font-size: 8px;
   }
+
   .package-bottom strong {
     font-size: 13px;
   }
+
   .package-bottom .card-arrow {
     width: 25px;
     height: 25px;
   }
-  .story-inner > div {
+
+  .story-inner>div {
     width: 100%;
     padding-left: 17%;
   }
+
   .story-section::after {
     background: #07383f80;
   }
+
   .story-section h2 {
     font-size: 40px;
   }
+
   .story-section {
     min-height: 360px;
   }
+
   .benefits-grid {
     gap: 24px 16px;
   }
+
   .benefit {
     flex-direction: column;
     gap: 5px;
   }
+
   .benefit h3 {
     font-size: 12px;
   }
+
   .benefit p {
     font-size: 11px;
   }
+
   .journal-grid {
     grid-template-columns: 1fr;
     gap: 18px;
   }
+
   .article-image img {
     height: 175px;
   }
+
   .article-copy {
     padding: 23px 18px 18px;
   }
+
   .article-copy h3 {
     font-size: 15px;
   }
+
   .testimonials-section .section-heading {
     flex-direction: row;
     align-items: end;
     gap: 14px;
   }
+
   .testimonial-controls {
     gap: 6px;
   }
+
   .testimonial-controls .round-button {
     width: 30px;
     height: 30px;
   }
+
   .testimonials-section h2 {
     font-size: 26px;
   }
+
   .planning-section {
     padding-block: 33px;
   }
-  .planning-section .container > div {
+
+  .planning-section .container>div {
     flex-wrap: wrap;
     gap: 12px;
   }
+
   .planning-section .button {
     font-size: 10px;
     padding-inline: 16px;
   }
+
   .footer-grid {
     gap: 26px 20px;
   }
-  .footer-grid > div:first-child {
+
+  .footer-grid>div:first-child {
     grid-column: 1 / -1;
   }
-  .footer-grid > div:last-child {
+
+  .footer-grid>div:last-child {
     grid-column: 1 / -1;
   }
+
   .newsletter form {
     max-width: 350px;
   }
+
   .footer-bottom {
     flex-wrap: wrap;
     gap: 15px;
     padding-right: 40px;
   }
-  .footer-bottom > div {
+
+  .footer-bottom>div {
     margin-left: 0;
   }
+
   .back-to-top {
     position: absolute;
     right: 0;
     top: 20px;
   }
+
   .content-dialog {
     padding: 28px 22px;
   }
+
   .content-dialog h2 {
     font-size: 28px;
   }
+}
+
+/* ============================================================
+   OpenTrip Homepage Redesign – Holidays Maker Inspired Layout
+   ============================================================ */
+
+/* 1. Popular Destinations Single-Row Slider */
+.destinations-slider-wrapper {
+  position: relative !important;
+  width: 100% !important;
+  margin-top: 14px !important;
+}
+
+.destinations-header-aside {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  align-items: flex-end !important;
+}
+
+.destinations-nav-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+}
+
+.destinations-nav-btns {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.destinations-ctrl-btn {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(4, 62, 69, 0.15) !important;
+  color: #043e45 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 2px 8px rgba(4, 62, 69, 0.05) !important;
+}
+
+.destinations-ctrl-btn:hover {
+  background: #043e45 !important;
+  color: #ffffff !important;
+  border-color: #043e45 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 14px rgba(4, 62, 69, 0.18) !important;
+}
+
+/* Edge Floating Arrows */
+.destinations-edge-arrow {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(4, 62, 69, 0.15) !important;
+  color: #043e45 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  z-index: 10 !important;
+  box-shadow: 0 8px 20px rgba(4, 62, 69, 0.15) !important;
+  transition: all 0.25s ease !important;
+}
+
+.destinations-edge-arrow--prev {
+  left: -20px !important;
+}
+
+.destinations-edge-arrow--next {
+  right: -20px !important;
+}
+
+.destinations-edge-arrow:hover {
+  background: #043e45 !important;
+  color: #ffffff !important;
+  border-color: #043e45 !important;
+  transform: translateY(-50%) scale(1.08) !important;
+}
+
+/* Single-row carousel track */
+.destinations-grid,
+.destinations-carousel-track {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 20px !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-behavior: smooth !important;
+  scroll-snap-type: x mandatory !important;
+  scrollbar-width: none !important;
+  -webkit-overflow-scrolling: touch !important;
+  padding: 10px 4px 18px !important;
+  margin-top: 0 !important;
+}
+
+.destinations-carousel-track::-webkit-scrollbar {
+  display: none !important;
+}
+
+.destination-card {
+  position: relative !important;
+  flex: 0 0 calc((100% - 60px) / 4) !important;
+  min-width: 270px !important;
+  max-width: 320px !important;
+  height: 320px !important;
+  scroll-snap-align: start !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  cursor: pointer !important;
+  box-shadow: 0 8px 24px rgba(4, 62, 69, 0.08) !important;
+  border: 1px solid rgba(4, 62, 69, 0.08) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  padding: 20px !important;
+  color: #ffffff !important;
+  background-color: #043e45 !important;
+  grid-row: auto !important;
+  grid-column: auto !important;
+}
+
+.destination-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 18px 40px rgba(4, 62, 69, 0.18) !important;
+  border-color: rgba(4, 62, 69, 0.25) !important;
+}
+
+.destination-card img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 0.5s ease !important;
+  z-index: 1 !important;
+}
+
+.destination-card:hover img {
+  transform: scale(1.07) !important;
+}
+
+.destination-card-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(180deg, rgba(4, 62, 69, 0.15) 0%, rgba(4, 62, 69, 0.35) 40%, rgba(4, 62, 69, 0.92) 100%) !important;
+  z-index: 2 !important;
+  transition: background 0.3s ease !important;
+}
+
+.destination-card:hover .destination-card-overlay {
+  background: linear-gradient(180deg, rgba(4, 62, 69, 0.1) 0%, rgba(4, 62, 69, 0.45) 35%, rgba(4, 62, 69, 0.96) 100%) !important;
+}
+
+.destination-card-header {
+  position: relative !important;
+  z-index: 3 !important;
+  display: flex !important;
+  justify-content: flex-start !important;
+}
+
+.dest-country-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 4px 10px !important;
+  border-radius: 20px !important;
+  background: rgba(255, 255, 255, 0.22) !important;
+  backdrop-filter: blur(8px) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  color: #ffffff !important;
+}
+
+.destination-card-copy {
+  position: relative !important;
+  z-index: 3 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  inset: auto !important;
+}
+
+.dest-info strong {
+  display: block !important;
+  font-size: 21px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.3px !important;
+  margin-bottom: 2px !important;
+}
+
+.dest-info small {
+  display: block !important;
+  font-size: 12px !important;
+  color: #d1e5e6 !important;
+  font-weight: 500 !important;
+  margin-bottom: 5px !important;
+}
+
+.dest-desc {
+  font-size: 11.5px !important;
+  line-height: 1.45 !important;
+  color: #e5f1f1 !important;
+  margin: 0 !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
+
+.dest-action-bar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding-top: 10px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.dest-explore-label {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  letter-spacing: 0.3px !important;
+}
+
+.destination-card .card-arrow {
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  color: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+}
+
+.destination-card:hover .card-arrow {
+  background: var(--coral, #ff805f) !important;
+  border-color: var(--coral, #ff805f) !important;
+  transform: translateX(3px) !important;
+}
+
+/* 2. Popular Tour Packages */
+.packages-section {
+  background: #f7fafb !important;
+  padding: 85px 0 90px !important;
+  border-top: 1px solid #e8f0f0 !important;
+}
+
+.packages-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 22px !important;
+  margin-top: 24px !important;
+}
+
+.package-card {
+  background: #ffffff !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  box-shadow: 0 8px 24px rgba(4, 62, 69, 0.06) !important;
+  border: 1px solid rgba(4, 62, 69, 0.08) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+}
+
+.package-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 16px 36px rgba(4, 62, 69, 0.12) !important;
+  border-color: rgba(4, 62, 69, 0.2) !important;
+}
+
+.package-photo-wrap {
+  position: relative !important;
+  width: 100% !important;
+  height: 142px !important;
+  overflow: hidden !important;
+}
+
+.package-photo {
+  width: 100% !important;
+  height: 100% !important;
+  border: 0 !important;
+  padding: 0 !important;
+  background: #eef5f5 !important;
+  cursor: pointer !important;
+  display: block !important;
+}
+
+.package-photo img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 0.4s ease !important;
+}
+
+.package-card:hover .package-photo img {
+  transform: scale(1.06) !important;
+}
+
+.package-duration-pill {
+  position: absolute !important;
+  bottom: 12px !important;
+  left: 12px !important;
+  background: rgba(4, 62, 69, 0.85) !important;
+  backdrop-filter: blur(6px) !important;
+  color: #ffffff !important;
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  padding: 4px 10px !important;
+  border-radius: 20px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  z-index: 2 !important;
+}
+
+.package-copy {
+  padding: 11px 13px 12px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important;
+}
+
+.package-destination-tag {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  color: #637779 !important;
+  margin-bottom: 6px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.4px !important;
+}
+
+.package-destination-tag svg {
+  color: var(--coral, #ff805f) !important;
+}
+
+.package-title {
+  font-size: 15.5px !important;
+  font-weight: 700 !important;
+  color: #043e45 !important;
+  margin: 0 0 5px 0 !important;
+  letter-spacing: -0.2px !important;
+}
+
+.package-desc {
+  font-size: 12.5px !important;
+  line-height: 1.5 !important;
+  color: #556c6e !important;
+  margin: 0 0 14px 0 !important;
+  flex-grow: 1 !important;
+  min-height: 28px !important; font-size: 11.5px !important; line-height: 1.4 !important; margin-bottom: 8px !important;
+}
+
+.package-highlights-mini {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 0 8px 0 !important; gap: 4px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+}
+
+.package-highlights-mini li {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 12px !important;
+  color: #3b5052 !important;
+}
+
+.package-highlights-mini li svg {
+  color: #17935b !important;
+  flex-shrink: 0 !important;
+}
+
+.package-bottom {
+  border-top: 1px solid #edf2f2 !important;
+  padding-top: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+  margin-top: auto !important;
+}
+
+.package-price-box {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.price-prefix {
+  font-size: 9.5px !important;
+  text-transform: uppercase !important;
+  color: #798e90 !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.3px !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+.package-price-box strong,
+.package-price-main {
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  color: #043e45 !important;
+  letter-spacing: -0.3px !important;
+  white-space: nowrap !important;
+  line-height: 1.2 !important;
+  margin-top: 2px !important;
+}
+
+.pkr-price {
+  font-size: 11px !important;
+  color: #6d8486 !important;
+}
+
+.package-card-btns {
+  flex-shrink: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.package-details-btn {
+  white-space: nowrap !important;
+  background: transparent !important;
+  border: 1px solid #dce8e8 !important;
+  color: #043e45 !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  padding: 6px 9px !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.package-details-btn:hover {
+  border-color: #043e45 !important;
+  background: #f0f7f7 !important;
+}
+
+.package-inquire-btn {
+  white-space: nowrap !important;
+  padding: 6px 12px !important;
+  font-size: 11px !important;
+  min-height: auto !important;
+  border-radius: 6px !important;
+}
+
+.packages-view-all-row {
+  display: flex !important;
+  justify-content: center !important;
+  margin-top: 32px !important;
+  margin-bottom: 8px !important;
+}
+
+.packages-view-all-row .button {
+  background: var(--coral, #ff805f) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 6px 18px rgba(255, 128, 95, 0.32) !important;
+  font-weight: 700 !important;
+  padding: 12px 30px !important;
+  min-height: 48px !important;
+  transition: all 0.25s ease !important;
+}
+
+.packages-view-all-row .button:hover {
+  background: var(--coral-hover, #ed6d4e) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 24px rgba(255, 128, 95, 0.45) !important;
+}
+
+/* 3. Travel Experiences */
+.experiences-grid {
+  display: grid !important;
+  grid-template-columns: repeat(6, 1fr) !important;
+  gap: 20px !important;
+  margin-top: 24px !important;
+}
+
+.experience-card {
+  border: 0 !important;
+  background: #ffffff !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  padding: 18px 12px !important;
+  border-radius: 14px !important;
+  box-shadow: 0 4px 16px rgba(4, 62, 69, 0.04) !important;
+  border: 1px solid rgba(4, 62, 69, 0.08) !important;
+  cursor: pointer !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 12px 28px rgba(4, 62, 69, 0.1) !important;
+  border-color: rgba(4, 62, 69, 0.18) !important;
+}
+
+.experience-thumb-wrap {
+  position: relative !important;
+  width: 90px !important;
+  height: 90px !important;
+  margin-bottom: 12px !important;
+}
+
+.experience-thumb-wrap img {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 3px solid #ffffff !important;
+  box-shadow: 0 4px 12px rgba(4, 62, 69, 0.12) !important;
+}
+
+.experience-hover-icon {
+  position: absolute !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  width: 26px !important;
+  height: 26px !important;
+  border-radius: 50% !important;
+  background: var(--coral, #ff805f) !important;
+  color: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15) !important;
+}
+
+.experience-card strong {
+  font-size: 13.5px !important;
+  color: #043e45 !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+  margin-top: 4px !important;
+}
+
+.experience-card small {
+  font-size: 10.5px !important;
+  color: #798e90 !important;
+  text-align: center !important;
+  margin-top: 4px !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
+
+/* 4. Why Choose OpenTrip (Benefits) */
+/* 4. Why Choose OpenTrip (Benefits) - Distinct Soft Mint Contrast */
+.benefits-section {
+  padding: 85px 0 95px !important;
+  background: linear-gradient(180deg, #edf5f5 0%, #e4eeee 100%) !important;
+  border-top: 1px solid #dce8e8 !important;
+  border-bottom: 1px solid #dce8e8 !important;
+  position: relative !important;
+}
+
+.benefits-subtitle {
+  font-size: 15.5px !important;
+  color: #556c6e !important;
+  max-width: 680px !important;
+  margin: 8px auto 0 !important;
+  line-height: 1.6 !important;
+}
+
+.benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 24px !important;
+  margin-top: 40px !important;
+}
+
+.benefit-card {
+  background: #ffffff !important;
+  border-radius: 16px !important;
+  padding: 30px 24px !important;
+  border: 1px solid rgba(4, 62, 69, 0.08) !important;
+  box-shadow: 0 6px 20px rgba(4, 62, 69, 0.03) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+}
+
+.benefit-card:hover {
+  transform: translateY(-4px) !important;
+  background: #ffffff !important;
+  box-shadow: 0 16px 36px rgba(4, 62, 69, 0.08) !important;
+  border-color: rgba(4, 62, 69, 0.16) !important;
+}
+
+.benefit-icon {
+  width: 58px !important;
+  height: 58px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.benefit-icon--blue {
+  background: #def1f3 !important;
+  color: #043e45 !important;
+}
+
+.benefit-icon--green {
+  background: #eaf8f1 !important;
+  color: #17935b !important;
+}
+
+.benefit-icon--peach {
+  background: #fff0eb !important;
+  color: var(--coral, #ff805f) !important;
+}
+
+.benefit-content h3 {
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  color: #043e45 !important;
+  margin: 0 0 8px 0 !important;
+  letter-spacing: -0.2px !important;
+}
+
+.benefit-content p {
+  font-size: 13px !important;
+  line-height: 1.55 !important;
+  color: #556c6e !important;
+  margin: 0 !important;
+}
+
+/* 5. Split Story Section */
+.story-section {
+  background: #043e45 !important;
+  color: #ffffff !important;
+  padding: 85px 0 90px !important;
+  position: relative !important;
+}
+
+.story-split-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 50px !important;
+  align-items: center !important;
+}
+
+.story-image-wrap {
+  position: relative !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25) !important;
+  height: 440px !important;
+}
+
+.story-image-wrap img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+.story-experience-badge {
+  position: absolute !important;
+  bottom: 24px !important;
+  left: 24px !important;
+  background: rgba(4, 62, 69, 0.92) !important;
+  backdrop-filter: blur(10px) !important;
+  padding: 16px 20px !important;
+  border-radius: 14px !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  max-width: 280px !important;
+}
+
+.story-experience-badge strong {
+  font-size: 32px !important;
+  font-weight: 800 !important;
+  color: var(--coral, #ff805f) !important;
+  line-height: 1 !important;
+}
+
+.story-experience-badge span {
+  font-size: 12px !important;
+  line-height: 1.35 !important;
+  color: #ffffff !important;
+  font-weight: 500 !important;
+}
+
+.story-text-side {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.story-text-side .section-eyebrow {
+  color: var(--coral, #ff805f) !important;
+}
+
+.story-text-side h2 {
+  font-size: clamp(28px, 3vw, 42px) !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+  margin: 0 0 18px 0 !important;
+  color: #ffffff !important;
+}
+
+.story-lead {
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+  color: #e4f3f3 !important;
+  margin: 0 0 14px 0 !important;
+  font-weight: 400 !important;
+}
+
+.story-body {
+  font-size: 13.5px !important;
+  line-height: 1.65 !important;
+  color: #bde3e2 !important;
+  margin: 0 0 24px 0 !important;
+}
+
+.story-stats-inline {
+  display: flex !important;
+  gap: 28px !important;
+  padding: 18px 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+  margin-bottom: 26px !important;
+}
+
+.story-stat-item {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+
+.story-stat-item strong {
+  font-size: 24px !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+}
+
+.story-stat-item span {
+  font-size: 12px !important;
+  color: #bde3e2 !important;
+}
+
+.story-actions-row .button {
+  background: var(--coral, #ff805f) !important;
+  color: #ffffff !important;
+  border: none !important;
+  font-size: 13.5px !important;
+  padding: 12px 26px !important;
+}
+
+.story-actions-row .button:hover {
+  background: #e66b4b !important;
+}
+
+/* 6. Testimonials Slider */
+.testimonials-section {
+  padding: 85px 0 90px !important;
+  background: #edf5f5 !important;
+  border-radius: 0 !important;
+}
+
+.testimonials-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px !important;
+  margin-top: 24px !important;
+  margin-bottom: 28px !important;
+}
+
+.testimonial-card {
+  background: #ffffff !important;
+  border-radius: 16px !important;
+  padding: 26px !important;
+  box-shadow: 0 8px 24px rgba(4, 62, 69, 0.05) !important;
+  border: 1px solid rgba(4, 62, 69, 0.08) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  transition: transform 0.2s ease !important;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 14px 32px rgba(4, 62, 69, 0.09) !important;
+}
+
+.testimonial-card-top {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+}
+
+.testimonial-stars {
+  display: flex !important;
+  gap: 3px !important;
+  color: #f5a623 !important;
+}
+
+.testimonial-destination-tag {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: #043e45 !important;
+  background: #eaf4f4 !important;
+  padding: 3px 8px !important;
+  border-radius: 6px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+.testimonial-quote {
+  font-size: 13.5px !important;
+  line-height: 1.6 !important;
+  color: #3b5052 !important;
+  margin: 0 !important;
+  font-style: italic !important;
+  flex-grow: 1 !important;
+}
+
+.testimonial-author-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  border-top: 1px solid #edf2f2 !important;
+  padding-top: 14px !important;
+}
+
+.testimonial-avatar {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  background: #043e45 !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  display: grid !important;
+  place-items: center !important;
+  flex-shrink: 0 !important;
+}
+
+.testimonial-author-info strong {
+  display: block !important;
+  font-size: 13.5px !important;
+  color: #043e45 !important;
+}
+
+.testimonial-author-info span {
+  font-size: 11px !important;
+  color: #798e90 !important;
+}
+
+.testimonial-indicators {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  margin-top: 10px !important;
+}
+
+.indicator-dot {
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  background: #cbd8d8 !important;
+  border: none !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  transition: all 0.2s ease !important;
+}
+
+.indicator-dot.active {
+  width: 24px !important;
+  border-radius: 12px !important;
+  background: #043e45 !important;
+}
+
+/* 7. Travel Journal */
+.journal-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px !important;
+  margin-top: 24px !important;
+}
+
+.article-card {
+  background: #ffffff !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  box-shadow: 0 8px 24px rgba(4, 62, 69, 0.06) !important;
+  border: 1px solid rgba(4, 62, 69, 0.08) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.article-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 16px 36px rgba(4, 62, 69, 0.1) !important;
+}
+
+.article-image-wrap {
+  position: relative !important;
+  height: 200px !important;
+  overflow: hidden !important;
+}
+
+.article-image {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+  border: none !important;
+  background: #f0f7f7 !important;
+  cursor: pointer !important;
+  display: block !important;
+  position: relative !important;
+}
+
+.article-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 0.4s ease !important;
+}
+
+.article-card:hover .article-image img {
+  transform: scale(1.05) !important;
+}
+
+.article-category-badge {
+  position: absolute !important;
+  bottom: 12px !important;
+  left: 14px !important;
+  background: #043e45 !important;
+  color: #ffffff !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  padding: 4px 10px !important;
+  border-radius: 6px !important;
+}
+
+.article-copy {
+  padding: 20px 20px 22px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important;
+}
+
+.article-meta-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 11.5px !important;
+  color: #798e90 !important;
+  margin-bottom: 8px !important;
+}
+
+.article-title {
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  color: #043e45 !important;
+  margin: 0 0 10px 0 !important;
+  line-height: 1.35 !important;
+  cursor: pointer !important;
+  transition: color 0.15s ease !important;
+}
+
+.article-title:hover {
+  color: var(--coral, #ff805f) !important;
+}
+
+.article-preview {
+  font-size: 12.5px !important;
+  line-height: 1.55 !important;
+  color: #556c6e !important;
+  margin: 0 0 18px 0 !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  flex-grow: 1 !important;
+}
+
+.article-read-btn {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  color: var(--coral, #ff805f) !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: gap 0.2s ease, color 0.2s ease !important;
+  margin-top: auto !important;
+}
+
+.article-read-btn:hover {
+  gap: 10px !important;
+  color: #e66b4b !important;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1100px) {
+  .destinations-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .packages-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .experiences-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .story-split-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .story-image-wrap {
+    height: 320px !important;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .testimonials-grid .testimonial-card:nth-child(3) {
+    display: none !important;
+  }
+
+  .journal-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .journal-grid .article-card:nth-child(3) {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .destinations-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .packages-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .experiences-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .journal-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .journal-grid .article-card:nth-child(3) {
+    display: flex !important;
+  }
+
+  .story-stats-inline {
+    flex-direction: column !important;
+    gap: 14px !important;
+  }
+}
+/* Compact & Stylish Tour Package Cards */
+.package-chips-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 5px !important;
+  margin-bottom: 10px !important;
+}
+
+.package-feature-chip {
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  color: #043e45 !important;
+  background: #f0f7f8 !important;
+  border: 1px solid rgba(4, 62, 69, 0.08) !important;
+  padding: 2.5px 7px !important;
+  border-radius: 6px !important;
+  white-space: nowrap !important;
+  letter-spacing: 0.2px !important;
 }

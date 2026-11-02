@@ -1,0 +1,288 @@
+.flights-section {
+  background: #f7fafb;
+  padding: 85px 0 95px;
+  border-top: 1px solid #e8f0f0;
+}
+
+.flights-header-wrap {
+  max-width: 820px;
+  margin: 0 auto 36px;
+  text-align: center;
+}
+
+.flights-subtitle {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: #556c6e;
+  margin-top: 8px;
+}
+
+/* Flight Planner Card */
+.flight-planner-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 28px 32px;
+  box-shadow: 0 10px 30px rgba(4, 62, 69, 0.08);
+  border: 1px solid rgba(4, 62, 69, 0.08);
+  margin-bottom: 40px;
+}
+
+.flight-type-toggles {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.toggle-pill {
+  border: 1px solid #dbe6e6;
+  background: #ffffff;
+  color: #486062;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggle-pill.active {
+  background: #043e45;
+  color: #ffffff;
+  border-color: #043e45;
+}
+
+.flights-note-chip {
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: 600;
+  color: #17935b;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #eaf8f1;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.flight-quick-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.flight-form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.flight-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.flight-field-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #6a8284;
+}
+
+.flight-field-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f7fafb;
+  border: 1px solid #dce8e8;
+  border-radius: 10px;
+  padding: 10px 14px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.flight-field-input:focus-within {
+  border-color: #043e45;
+  background: #ffffff;
+}
+
+.flight-field-input svg {
+  color: #043e45;
+  flex-shrink: 0;
+}
+
+.flight-field-input input,
+.flight-field-input select {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-size: 13px;
+  font-weight: 500;
+  color: #043e45;
+  outline: none;
+  font-family: inherit;
+}
+
+.flight-form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  padding-top: 10px;
+  border-top: 1px solid #edf4f4;
+}
+
+.whatsapp-flight-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 20px;
+  border-radius: 8px;
+  background: rgba(37, 211, 102, 0.12);
+  border: 1px solid #25d366;
+  color: #17935b;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.whatsapp-flight-btn:hover {
+  background: #25d366;
+  color: #ffffff;
+}
+
+/* Routes Showcase */
+.routes-showcase {
+  margin-top: 10px;
+}
+
+.routes-tab-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e5eded;
+  padding-bottom: 12px;
+}
+
+.routes-tab {
+  background: transparent;
+  border: none;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #6a8284;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.routes-tab.active {
+  color: #043e45;
+  background: #e8f3f3;
+}
+
+.routes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.route-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px 20px;
+  border: 1px solid rgba(4, 62, 69, 0.08);
+  box-shadow: 0 4px 12px rgba(4, 62, 69, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.route-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(4, 62, 69, 0.2);
+}
+
+.route-cities {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: #043e45;
+}
+
+.route-arrow svg {
+  color: var(--coral, #ff805f);
+}
+
+.route-airlines {
+  font-size: 12px;
+  color: #637779;
+}
+
+.route-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid #f0f5f5;
+  margin-top: 4px;
+}
+
+.route-duration {
+  font-size: 11.5px;
+  color: #798e90;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.route-inquire-link {
+  background: none;
+  border: none;
+  color: var(--coral, #ff805f);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s ease;
+}
+
+.route-inquire-link:hover {
+  color: #e66b4b;
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .routes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .routes-grid {
+    grid-template-columns: 1fr;
+  }
+  .flight-planner-card {
+    padding: 20px 16px;
+  }
+  .flight-type-toggles {
+    flex-wrap: wrap;
+  }
+  .flights-note-chip {
+    margin-left: 0;
+    width: 100%;
+  }
+  .flight-form-actions {
+    flex-direction: column;
+  }
+  .flight-form-actions .button,
+  .whatsapp-flight-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+

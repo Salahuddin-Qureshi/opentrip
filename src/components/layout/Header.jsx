@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Icon from "../common/Icon";
 import Button from "../common/Button";
 import { useNavigation } from "../../context/NavigationContext";
@@ -28,11 +28,24 @@ export function Logo() {
 
 export default function Header({ onPlan, onExplore }) {
   const [open, setOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
   const nav = useNavigation();
   const currentPage = nav?.page || "home";
 
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   const explore = () => {
     setOpen(false);
+    setDropdownOpen(false);
     if (nav) {
       nav.navigate("destinations");
     } else if (onExplore) {
@@ -42,17 +55,31 @@ export default function Header({ onPlan, onExplore }) {
 
   const handleHomeClick = (event) => {
     setOpen(false);
+    setDropdownOpen(false);
     if (nav && nav.page !== "home") {
       event.preventDefault();
       nav.navigate("home");
     }
   };
 
-  const handleSectionLink = (event, label) => {
+  const handleHashLink = (event, targetId, pageFallback = null) => {
     setOpen(false);
-    if (nav) {
+    setDropdownOpen(false);
+    if (nav && pageFallback && nav.page !== pageFallback) {
       event.preventDefault();
-      nav.navigate(label.toLowerCase());
+      nav.navigate(pageFallback);
+      return;
+    }
+    if (nav && nav.page !== "home") {
+      event.preventDefault();
+      nav.navigate("home", `#${targetId}`);
+      return;
+    }
+    // On home page, let anchor do its work or scroll smoothly
+    const elem = document.getElementById(targetId);
+    if (elem) {
+      event.preventDefault();
+      elem.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -60,6 +87,7 @@ export default function Header({ onPlan, onExplore }) {
     <header className="site-header">
       <div className="container header-inner">
         <Logo />
+
         <nav
           id="main-navigation"
           className={`nav-links ${open ? "is-open" : ""}`}
@@ -73,52 +101,161 @@ export default function Header({ onPlan, onExplore }) {
           >
             Home
           </a>
+
           <button
             className={currentPage === "destinations" ? "active" : ""}
             onClick={explore}
           >
             Destinations
           </button>
-          <a
-            className={currentPage === "packages" ? "active" : ""}
-            href="#packages"
-            aria-current={currentPage === "packages" ? "page" : undefined}
-            onClick={(event) => {
-              setOpen(false);
-              if (nav) {
-                event.preventDefault();
-                nav.navigate("packages");
-              }
-            }}
+
+          {/* Packages with Dropdown */}
+          <div
+            className={`nav-dropdown-wrapper ${dropdownOpen ? "is-active" : ""}`}
+            ref={dropdownRef}
+            onMouseEnter={() => setDropdownOpen(true)}
+            onMouseLeave={() => setDropdownOpen(false)}
           >
-            Packages
-          </a>
-          {["About", "Contact"].map((label) => {
-            const pageKey = label.toLowerCase();
-            return (
+            <a
+              className={`nav-dropdown-toggle ${currentPage === "packages" ? "active" : ""}`}
+              href="#packages"
+              aria-current={currentPage === "packages" ? "page" : undefined}
+              onClick={(e) => {
+                if (window.innerWidth <= 992) {
+                  e.preventDefault();
+                  setDropdownOpen(!dropdownOpen);
+                } else if (nav) {
+                  e.preventDefault();
+                  nav.navigate("packages");
+                }
+              }}
+            >
+              Packages
+              <svg className="dropdown-caret" viewBox="0 0 24 24" width="14" height="14">
+                <path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+            </a>
+
+            <div className={`nav-dropdown-menu ${dropdownOpen ? "show" : ""}`}>
               <a
-                key={label}
-                className={currentPage === pageKey ? "active" : ""}
-                href={`#${pageKey}`}
-                aria-current={currentPage === pageKey ? "page" : undefined}
-                onClick={(event) => handleSectionLink(event, label)}
+                href="#packages"
+                onClick={(e) => {
+                  setDropdownOpen(false);
+                  setOpen(false);
+                  if (nav) {
+                    e.preventDefault();
+                    nav.navigate("packages");
+                  }
+                }}
               >
-                {label}
+                <strong>All Tour Packages</strong>
+                <small>Browse all domestic & international</small>
               </a>
-            );
-          })}
-        </nav>
-        <div className="header-actions">
-          <button
-            className="icon-button header-search"
-            aria-label="Search destinations"
-            onClick={onPlan}
+              <a
+                href="#packages"
+                onClick={(e) => {
+                  setDropdownOpen(false);
+                  setOpen(false);
+                  handleHashLink(e, "packages");
+                }}
+              >
+                <strong>Featured Packages</strong>
+                <small>Handpicked seasonal bestsellers</small>
+              </a>
+              <a
+                href="#experiences"
+                onClick={(e) => {
+                  setDropdownOpen(false);
+                  setOpen(false);
+                  handleHashLink(e, "experiences");
+                }}
+              >
+                <strong>Travel Experiences</strong>
+                <small>Honeymoon, luxury & family escapes</small>
+              </a>
+            </div>
+          </div>
+
+          <a
+            href="#umrah"
+            onClick={(e) => handleHashLink(e, "umrah")}
           >
-            <Icon name="search" size={19} />
-          </button>
+            Umrah
+          </a>
+
+          <a
+            href="#visa"
+            onClick={(e) => handleHashLink(e, "visa")}
+          >
+            Visa Services
+          </a>
+
+          <a
+            href="#flights"
+            onClick={(e) => handleHashLink(e, "flights")}
+          >
+            Flight Tickets
+          </a>
+
+          <a
+            className={currentPage === "about" ? "active" : ""}
+            href="#about"
+            onClick={(e) => handleHashLink(e, "about", "about")}
+          >
+            About Us
+          </a>
+
+          <a
+            href="#journal"
+            onClick={(e) => handleHashLink(e, "journal")}
+          >
+            Blog
+          </a>
+
+          <a
+            className={currentPage === "contact" ? "active" : ""}
+            href="#contact"
+            onClick={(e) => handleHashLink(e, "contact", "contact")}
+          >
+            Contact
+          </a>
+
+          <div className="mobile-only-header-actions">
+            <a
+              className="whatsapp-pill"
+              href="https://wa.me/923101816191"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp VIP Concierge"
+            >
+              <span className="online-pulse" />
+              <Icon name="whatsapp" size={16} />
+              <span>+92 310 1816191</span>
+            </a>
+            <Button onClick={() => { setOpen(false); onPlan(); }}>
+              Plan a Trip <Icon size={16} />
+            </Button>
+          </div>
+        </nav>
+
+        <div className="header-actions">
+          {/* WhatsApp Direct Pill */}
+          <a
+            className="header-whatsapp-pill"
+            href="https://wa.me/923101816191"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Instant WhatsApp Support"
+          >
+            <span className="online-indicator" />
+            <Icon name="whatsapp" size={16} />
+            <span className="whatsapp-text">WhatsApp</span>
+          </a>
+
           <Button onClick={onPlan}>
             Plan a Trip <Icon size={16} />
           </Button>
+
           <button
             className="icon-button menu-button"
             aria-label={open ? "Close menu" : "Open menu"}

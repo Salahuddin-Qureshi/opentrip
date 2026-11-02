@@ -924,7 +924,7 @@ Please share available flight schedules, hotel options, and full package breakdo
 
               {/* CARD 3: EMAIL */}
               <a className="channel-card" href="mailto:bookings@opentrip.pk">
-                <div className="channel-stat-number">bookings@opentrip.pk</div>
+                <div className="channel-stat-number channel-stat-email">bookings@opentrip.pk</div>
                 <div className="channel-stat-label">Official Proposals</div>
                 <div className="channel-stat-caption">
                   Formal written quotations, corporate accounts &amp; visa dossiers

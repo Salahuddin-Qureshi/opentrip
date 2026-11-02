@@ -2,7 +2,10 @@ import SectionHeading from "../common/SectionHeading";
 import FilterTabs from "../common/FilterTabs";
 import PackageCard from "../cards/PackageCard";
 import Button from "../common/Button";
+import Icon from "../common/Icon";
 import { packages } from "../../data/home";
+import { useNavigation } from "../../context/NavigationContext";
+
 export default function PackagesSection({
   category,
   onCategoryChange,
@@ -10,6 +13,8 @@ export default function PackagesSection({
   onClearSearch,
   onSelect,
 }) {
+  const nav = useNavigation();
+
   const filtered = packages.filter(
     (trip) =>
       (category === "All" || trip.categories.includes(category)) &&
@@ -18,11 +23,12 @@ export default function PackagesSection({
           .toLowerCase()
           .includes(search.destination.toLowerCase().trim())),
   );
+
   return (
     <section className="packages-section" id="packages">
       <div className="container">
         <SectionHeading
-          eyebrow="Featured packages"
+          eyebrow="Popular Tour Packages"
           title={
             <>
               Unforgettable journeys,
@@ -44,6 +50,7 @@ export default function PackagesSection({
             onChange={onCategoryChange}
           />
         </SectionHeading>
+
         {search && (
           <div className="search-context">
             <p>
@@ -53,11 +60,13 @@ export default function PackagesSection({
             <button onClick={onClearSearch}>Clear search</button>
           </div>
         )}
+
         <div className="packages-grid" aria-live="polite">
           {filtered.map((trip) => (
             <PackageCard key={trip.id} trip={trip} onSelect={onSelect} />
           ))}
         </div>
+
         {!filtered.length && (
           <div className="empty-state">
             <h3>Your journey deserves a personal touch.</h3>
@@ -72,10 +81,21 @@ export default function PackagesSection({
             </Button>
           </div>
         )}
-        <p className="sample-caption">
-          Sample itineraries and indicative prices. Final availability and
-          pricing are confirmed during planning.
-        </p>
+
+        <div className="packages-view-all-row">
+          <Button
+            variant="primary"
+            onClick={() => {
+              if (nav) {
+                nav.navigate("packages");
+              } else {
+                window.location.hash = "packages";
+              }
+            }}
+          >
+            View All Packages <Icon size={16} />
+          </Button>
+        </div>
       </div>
     </section>
   );
