@@ -1,8 +1,30 @@
 :root {
-  --ink: #183e42;
-  --coral: #ff805f;
-  --coral-hover: #ed6d4e;
-  --ivory: #fbf9f6;
+  /* OPEN TRIP (PVT.) LTD. Official Brand Colors */
+  --navy: #012061;
+  --dark-navy: #012061;
+  --deep-blue: #022f82;
+  --bright-blue: #028af0;
+  --cyan: #03c7fb;
+  --orange: #fb8902;
+  --orange-hover: #e07900;
+
+  /* Theme semantic mappings */
+  --primary: var(--deep-blue);
+  --primary-dark: var(--dark-navy);
+  --accent-blue: var(--bright-blue);
+  --accent-cyan: var(--cyan);
+  --accent-orange: var(--orange);
+
+  --ink: #012061;
+  --ink-secondary: #334155;
+  --ink-muted: #64748b;
+  --coral: var(--orange);
+  --coral-hover: var(--orange-hover);
+  --ivory: #f8fafc;
+  --bg-soft: #f0f6ff;
+  --bg-card: #ffffff;
+  --border-subtle: rgba(1, 32, 97, 0.08);
+
   --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
   --font-sans: "Plus Jakarta Sans", "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }

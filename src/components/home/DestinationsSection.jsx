@@ -1,22 +1,24 @@
 import { useRef } from "react";
 import SectionHeading from "../common/SectionHeading";
-import ArrowLink from "../common/ArrowLink";
+import Button from "../common/Button";
 import Icon from "../common/Icon";
 import DestinationCard from "../cards/DestinationCard";
 import { allDestinations } from "../../data/home";
+import { useNavigation } from "../../context/NavigationContext";
 
 export default function DestinationsSection({ onSelect }) {
   const trackRef = useRef(null);
+  const nav = useNavigation();
 
   const order = [
-    "Bali",
-    "Switzerland",
-    "Maldives",
     "Dubai",
+    "Switzerland",
+    "Bali",
+    "Maldives",
     "Turkey",
+    "Thailand",
     "Hunza",
     "Skardu",
-    "Thailand",
   ];
 
   const scrollNext = () => {
@@ -25,7 +27,6 @@ export default function DestinationsSection({ onSelect }) {
     const card = trackRef.current.querySelector(".destination-card");
     const step = (card?.offsetWidth || 290) + 20;
 
-    // Loop back to start if reached end
     if (scrollLeft + clientWidth >= scrollWidth - 20) {
       trackRef.current.scrollTo({ left: 0, behavior: "smooth" });
     } else {
@@ -39,7 +40,6 @@ export default function DestinationsSection({ onSelect }) {
     const card = trackRef.current.querySelector(".destination-card");
     const step = (card?.offsetWidth || 290) + 20;
 
-    // Loop to end if at start
     if (scrollLeft <= 10) {
       trackRef.current.scrollTo({ left: scrollWidth, behavior: "smooth" });
     } else {
@@ -51,11 +51,25 @@ export default function DestinationsSection({ onSelect }) {
     <section className="page-section container" id="destinations">
       <SectionHeading
         eyebrow="Popular Destinations"
-        title="Some places stay with you forever."
+        title="Discover Your Next Destination"
       >
         <div className="destinations-header-aside">
+          <p className="destinations-lead-copy">
+            Explore travel possibilities in the United Arab Emirates, Saudi Arabia, Turkey, Azerbaijan, Malaysia, Thailand, Switzerland, Italy, Greece, and other destinations. Contact our team to discuss travel options for your preferred destination.
+          </p>
           <div className="destinations-nav-row">
-            <ArrowLink href="#packages">View All Packages</ArrowLink>
+            <Button
+              variant="outline"
+              onClick={() => {
+                if (nav) {
+                  nav.navigate("destinations");
+                } else {
+                  window.location.hash = "destinations";
+                }
+              }}
+            >
+              Explore Destinations <Icon size={15} />
+            </Button>
             <div className="destinations-nav-btns">
               <button
                 type="button"

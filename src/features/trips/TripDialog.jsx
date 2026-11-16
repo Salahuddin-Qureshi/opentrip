@@ -3,35 +3,79 @@ import Dialog from "../../components/common/Dialog";
 import Button from "../../components/common/Button";
 import Icon from "../../components/common/Icon";
 import { allDestinations } from "../../data/home";
-export default function TripDialog({ trip, onClose }) {
+
+const SERVICE_OPTIONS = [
+  "Customized Tour Packages",
+  "Umrah Packages",
+  "Flight Booking",
+  "Hotel Reservations",
+  "Visa Assistance",
+  "Transfers",
+  "International Cruises",
+];
+
+export default function TripDialog({ trip, onClose, onDismiss }) {
   const [summary, setSummary] = useState(null);
+  const handleClose = onClose || onDismiss;
+
+  const defaultService =
+    trip?.type ||
+    (trip?.tier ? "Umrah Packages" : "Customized Tour Packages");
+
   return (
     <Dialog
       title={
         summary
-          ? "Your next chapter starts here."
-          : trip?.name || "Where do you dream of going?"
+          ? "Quotation Request Received!"
+          : trip?.name || trip?.title || "Request a Quotation · OPEN TRIP"
       }
-      onClose={onClose}
+      onClose={handleClose}
     >
       {summary ? (
         <div className="trip-summary">
-          <p>Your trip idea is ready:</p>
+          <p style={{ fontWeight: 600, color: "var(--dark-navy, #012061)", marginBottom: "8px" }}>
+            Thank you! Your quotation request has been prepared:
+          </p>
           <dl>
             {Object.entries(summary).map(([key, value]) => (
               <div key={key}>
-                <dt>{key}</dt>
+                <dt style={{ textTransform: "capitalize" }}>{key}</dt>
                 <dd>{value || "Flexible"}</dd>
               </div>
             ))}
           </dl>
-          <p>
-            No booking has been made. Save these preferences for when you’re
-            ready to plan.
+          <p style={{ fontSize: "12.5px", color: "#64748b", margin: "14px 0" }}>
+            Our team will review your requirements and identify the most suitable options and transparent pricing for you.
           </p>
-          <Button onClick={onClose}>
-            Keep Exploring <Icon />
-          </Button>
+
+          <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", marginTop: "14px" }}>
+            <a
+              href={`https://wa.me/923101816191?text=${encodeURIComponent(
+                `Hello OPEN TRIP, I would like to request a quotation:\nService: ${summary.service || "Travel"}\nDestination: ${summary.destination || "Flexible"}\nTravellers: ${summary.travellers || "2"}\nDate: ${summary.departure || "Flexible"}\nPreferences: ${summary.preferences || "None"}`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px",
+                padding: "12px 20px",
+                background: "#25d366",
+                color: "#ffffff",
+                borderRadius: "30px",
+                textDecoration: "none",
+                fontWeight: 700,
+                fontSize: "13px",
+              }}
+            >
+              <Icon name="whatsapp" size={16} />
+              <span>Send via WhatsApp (+92 310 1816191)</span>
+            </a>
+
+            <Button onClick={handleClose} variant="outline" style={{ color: "var(--dark-navy)" }}>
+              Close <Icon size={14} />
+            </Button>
+          </div>
         </div>
       ) : (
         <>
@@ -39,12 +83,12 @@ export default function TripDialog({ trip, onClose }) {
             <img
               className="dialog-image"
               src={trip.image}
-              alt={trip.destination || trip.name}
+              alt={trip.destination || trip.name || trip.title}
             />
           )}
           <p>
             {trip?.description ||
-              "Tell us a little about the journey you have in mind."}
+              "Share your requirements below and our team will prepare a tailored quotation based on confirmed availability."}
           </p>
           {trip?.highlights && (
             <ul className="trip-highlights">
@@ -64,6 +108,15 @@ export default function TripDialog({ trip, onClose }) {
             }}
           >
             <label>
+              Service Required
+              <select name="service" defaultValue={defaultService}>
+                {SERVICE_OPTIONS.map((srv) => (
+                  <option key={srv}>{srv}</option>
+                ))}
+              </select>
+            </label>
+
+            <label>
               Destination
               <select
                 name="destination"
@@ -80,37 +133,46 @@ export default function TripDialog({ trip, onClose }) {
                   !allDestinations.some(
                     (item) => item.name === trip.destination,
                   ) && <option>{trip.destination}</option>}
-                <option>Surprise me</option>
+                <option>Saudi Arabia (Makkah &amp; Madinah)</option>
+                <option>United Arab Emirates</option>
+                <option>Turkey</option>
+                <option>Azerbaijan</option>
+                <option>Malaysia</option>
+                <option>Thailand</option>
+                <option>Switzerland / Europe</option>
+                <option>Flexible / Other Destination</option>
               </select>
             </label>
+
             <div className="planner-row">
               <label>
                 Travellers
                 <select name="travellers" defaultValue="2">
-                  {[1, 2, 3, 4, 5, 6].map((n) => (
+                  {[1, 2, 3, 4, 5, 6, "7+ Family / Group"].map((n) => (
                     <option key={n}>{n}</option>
                   ))}
                 </select>
               </label>
               <label>
-                Departure date
+                Approximate Travel Date
                 <input type="date" name="departure" />
               </label>
             </div>
+
             <label>
-              Your kind of journey
+              Preferences &amp; Requirements
               <textarea
                 name="preferences"
-                placeholder="Slow mornings, mountain trails, a special occasion…"
+                placeholder="Hotel category, direct flights, special guidance, budget preferences…"
                 rows="3"
               />
             </label>
+
             <Button type="submit">
-              Create My Trip Idea <Icon />
+              Submit Quotation Request <Icon size={16} />
             </Button>
             <small>
-              This planner saves no personal data and does not make a
-              reservation.
+              Quotations and booking conditions will be shared clearly before any reservation is confirmed.
             </small>
           </form>
         </>

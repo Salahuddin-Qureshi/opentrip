@@ -1,19 +1,22 @@
 import { useRef, useState } from "react";
 import HeroSection from "../../components/home/HeroSection";
 import TripSearch from "../../components/home/TripSearch";
+import WelcomeSection from "../../components/home/WelcomeSection";
+import ServicesSection from "../../components/home/ServicesSection";
 import DestinationsSection from "../../components/home/DestinationsSection";
-import ExperiencesSection from "../../components/home/ExperiencesSection";
 import PackagesSection from "../../components/home/PackagesSection";
 import TrustAssuranceSection from "../../components/home/TrustAssuranceSection";
 import UmrahSection from "../../components/home/UmrahSection";
 import VisaSection from "../../components/home/VisaSection";
 import FlightsSection from "../../components/home/FlightsSection";
+import ExperiencesSection from "../../components/home/ExperiencesSection";
 import BenefitsSection from "../../components/home/BenefitsSection";
 import HowItWorksSection from "../../components/home/HowItWorksSection";
 import StorySection from "../../components/home/StorySection";
 import JournalSection from "../../components/home/JournalSection";
 import TestimonialsSection from "../../components/home/TestimonialsSection";
-import NewsletterSection from "../../components/home/NewsletterSection";
+import FaqSection from "../../components/home/FaqSection";
+import FinalCtaSection from "../../components/home/FinalCtaSection";
 import Footer from "../../components/layout/Footer";
 import TripDialog from "../../features/trips/TripDialog";
 import Dialog from "../../components/common/Dialog";
@@ -60,16 +63,22 @@ export default function Home() {
       </a>
 
       <main>
-        {/* 1. Hero with Header inside (Preserved exactly) */}
+        {/* 1. Hero with Header inside */}
         <HeroSection onPlan={() => plan()} />
 
         {/* 2. Premium Trip Search Panel */}
         <TripSearch destinationRef={destinationRef} onSearch={searchTrips} />
 
-        {/* 3. Popular Destinations (8 curated global & domestic hubs) */}
+        {/* 3. Welcome Section (Making Every Journey Memorable) */}
+        <WelcomeSection onPlan={() => plan()} />
+
+        {/* 4. Our Services (Everything You Need for Your Journey) */}
+        <ServicesSection onPlan={plan} />
+
+        {/* 5. Popular Destinations (Discover Your Next Destination) */}
         <DestinationsSection onSelect={selectDestination} />
 
-        {/* 4. Popular Tour Packages (Filterable cards with details & inquiry) */}
+        {/* 6. Featured Packages (Find the Right Package for Your Journey) */}
         <PackagesSection
           category={category}
           onCategoryChange={setCategory}
@@ -81,43 +90,46 @@ export default function Home() {
           onSelect={plan}
         />
 
-        {/* 5. Trust & Assurance Pillars (Zero Photos - High Trust & Peace of Mind) */}
+        {/* 7. Trust & Assurance Pillars */}
         <TrustAssuranceSection />
 
-        {/* 6. Umrah Packages (Dedicated Holy Pilgrimage Showcase) */}
+        {/* 8. Umrah Packages */}
         <UmrahSection onPlan={plan} />
 
-        {/* 6. Visa Assistance (UAE, Saudi, Turkey, Malaysia, Thailand, Azerbaijan) */}
+        {/* 9. Visa Assistance */}
         <VisaSection onPlan={plan} />
 
-        {/* 7. Flight Ticketing Banner (Domestic & International Routes) */}
+        {/* 10. Flight Ticketing Banner */}
         <FlightsSection onPlan={plan} />
 
-        {/* 8. Travel Experiences (Interactive Category Filter) */}
+        {/* 11. Travel Experiences */}
         <ExperiencesSection onSelect={selectExperience} />
 
-        {/* 9. Why Choose OpenTrip (4 Core Agency Value Cards) */}
+        {/* 12. Why Choose Us (Your Journey Deserves the Right Travel Partner) */}
         <BenefitsSection />
 
-        {/* 10. How It Works (3-Step Seamless Process) */}
+        {/* 13. How It Works (Your Journey in Four Simple Steps) */}
         <HowItWorksSection onPlan={() => plan()} />
 
-        {/* 11. About OpenTrip (Split Story Layout) */}
-        <StorySection onReadStory={() => setDialog({ type: "story" })} />
-
-        {/* 12. Customer Testimonials Slider */}
+        {/* 14. Customer Reviews (Real Experiences. Meaningful Journeys.) */}
         <TestimonialsSection />
 
-        {/* 13. Travel Journal (Editorial Articles) */}
+        {/* 15. Home FAQ */}
+        <FaqSection onPlan={() => plan()} />
+
+        {/* 16. About OPEN TRIP (Story) */}
+        <StorySection onReadStory={() => setDialog({ type: "story" })} />
+
+        {/* 17. Travel Journal */}
         <JournalSection
           onSelect={(article) => setDialog({ type: "article", article })}
         />
 
-        {/* 14. Newsletter (Get Inspired for Your Next Adventure) */}
-        <NewsletterSection />
+        {/* 18. Final CTA (Let's Plan Your Next Journey!) */}
+        <FinalCtaSection onPlan={() => plan()} />
       </main>
 
-      {/* 15. Comprehensive Footer */}
+      {/* 19. Comprehensive Footer */}
       <Footer
         onPlan={() => plan()}
         onDestination={selectDestination}
@@ -143,26 +155,21 @@ export default function Home() {
 
       {dialog?.type === "story" && (
         <Dialog
-          title="A world of places. A lifetime of stories."
+          title="Making Every Journey Memorable · OPEN TRIP (PVT.) LTD."
           onClose={close}
         >
           <img
             className="dialog-image"
-            src="/images/mountains.jpg"
-            alt="Mountain landscape"
+            src="/images/destinations/switzerland.jpeg"
+            alt="OPEN TRIP Journey"
           />
           <p>
-            OpenTrip began with a simple vision: the most meaningful journeys are
-            the ones tailored personally to you.
+            At OPEN TRIP (PVT.) LTD., we believe every journey begins with the right travel partner.
+            We offer a comprehensive range of travel-related services designed to make planning easier and more convenient.
           </p>
           <p>
-            From the tranquil shores of the Maldives and the sacred courtyards of Makkah
-            to the jagged peaks of the Karakoram and alpine valleys of Switzerland, we create
-            memories that last a lifetime. Our dedicated curators in Karachi take care of every detail,
-            ensuring your travel is smooth, safe, and truly unforgettable.
-          </p>
-          <p>
-            Explore our curated itineraries, talk to our senior advisors, and begin your next chapter with confidence.
+            From flight bookings and hotel reservations to visa assistance, Umrah packages, and customized tour packages,
+            our team helps travellers explore suitable options based on their needs.
           </p>
         </Dialog>
       )}
@@ -170,9 +177,11 @@ export default function Home() {
       {dialog?.type === "policy" && (
         <Dialog title={dialog.title} onClose={close}>
           <p>
-            {dialog.title === "Privacy"
-              ? "OpenTrip prioritizes your personal privacy. Inquiries and travel preferences submitted on this platform are processed securely by our senior travel desk in Karachi. We do not sell or share your personal contact details with unauthorized third parties."
-              : "All packages, indicative flight rates, and visa processing timelines shown are subject to embassy regulations, airline inventory, and hotel room availability at the time of final confirmation. Official quotes and payment vouchers are issued before departure."}
+            OPEN TRIP (PVT.) LTD. is committed to absolute clarity, legally compliant travel facilitation,
+            and complete pricing transparency for all international holidays, Umrah pilgrimages, and flight bookings.
+          </p>
+          <p>
+            All quotations, inclusions, and booking conditions are formally communicated before reservation confirmation.
           </p>
         </Dialog>
       )}

@@ -1,0 +1,211 @@
+.welcome-section {
+  padding: 30px 0 20px;
+}
+
+.welcome-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f6ff 100%);
+  border-radius: 24px;
+  border: 1px solid rgba(1, 32, 97, 0.09);
+  box-shadow: 0 16px 40px rgba(1, 32, 97, 0.06);
+  padding: 44px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(3, 199, 251, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.welcome-inner {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.welcome-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  color: var(--bright-blue, #028af0);
+  background: rgba(2, 138, 240, 0.08);
+  border: 1px solid rgba(2, 138, 240, 0.2);
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.welcome-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--orange, #fb8902);
+}
+
+.welcome-title {
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 3.2vw, 42px);
+  font-weight: 700;
+  color: var(--dark-navy, #012061);
+  line-height: 1.15;
+  margin-bottom: 18px;
+  letter-spacing: -0.8px;
+}
+
+.welcome-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-secondary, #334155);
+  margin-bottom: 24px;
+}
+
+.welcome-text strong {
+  color: var(--dark-navy, #012061);
+}
+
+.welcome-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.welcome-highlight-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--deep-blue, #022f82);
+  background: #ffffff;
+  padding: 8px 14px;
+  border-radius: 30px;
+  border: 1px solid rgba(2, 47, 130, 0.12);
+  box-shadow: 0 2px 6px rgba(1, 32, 97, 0.03);
+}
+
+.highlight-icon {
+  color: var(--orange, #fb8902);
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.welcome-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.welcome-actions .button--outline {
+  color: var(--dark-navy, #012061);
+  background: #ffffff;
+  border-color: rgba(1, 32, 97, 0.2);
+}
+
+.welcome-actions .button--outline:hover {
+  background: #f0f6ff;
+  border-color: var(--bright-blue, #028af0);
+}
+
+/* Media Column */
+.welcome-media-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.welcome-stat-card {
+  background: linear-gradient(135deg, var(--dark-navy, #012061) 0%, var(--deep-blue, #022f82) 100%);
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 30px 32px;
+  box-shadow: 0 16px 32px rgba(1, 32, 97, 0.18);
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-stat-card::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(3, 199, 251, 0.25) 0%, transparent 70%);
+}
+
+.welcome-stat-number {
+  font-size: 46px;
+  font-weight: 800;
+  font-family: var(--font-serif);
+  color: var(--orange, #fb8902);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.welcome-stat-label {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.welcome-stat-sub {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #cbd5e1;
+}
+
+.welcome-mini-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.welcome-mini-badge {
+  background: #ffffff;
+  border: 1px solid rgba(1, 32, 97, 0.08);
+  border-radius: 14px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 4px 12px rgba(1, 32, 97, 0.04);
+}
+
+.welcome-mini-badge .badge-tag {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--bright-blue, #028af0);
+  letter-spacing: 0.5px;
+}
+
+.welcome-mini-badge strong {
+  font-size: 12.5px;
+  color: var(--dark-navy, #012061);
+  line-height: 1.35;
+}
+
+@media (max-width: 950px) {
+  .welcome-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .welcome-card {
+    padding: 30px 24px;
+  }
+}
+

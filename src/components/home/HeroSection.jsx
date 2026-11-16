@@ -1,79 +1,72 @@
-import { useState } from "react";
 import Header from "../layout/Header";
 import Button from "../common/Button";
 import Icon from "../common/Icon";
-import DestinationSelector from "./DestinationSelector";
-import { destinations } from "../../data/destinations";
 import "./HeroSection.css";
+
 export default function HeroSection({ onPlan }) {
-  const [activeIndex, setActiveIndex] = useState(3);
-  const [hasSelected, setHasSelected] = useState(false);
-  const active = destinations[activeIndex];
-  const select = (index) => {
-    setActiveIndex(index);
-    setHasSelected(true);
+  const exploreServices = () => {
+    const elem = document.getElementById("services") || document.getElementById("destinations");
+    elem?.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "instant"
+        : "smooth",
+    });
   };
-  const explore = () => {
-    document
-      .getElementById("destinations")
-      ?.scrollIntoView({
-        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-          ? "instant"
-          : "smooth",
-      });
-  };
+
   return (
     <section className="hero" id="home" aria-labelledby="hero-title">
       <img
         className="hero-image"
-        src={hasSelected ? active.image : "/images/hero-coast.jpeg"}
-        alt=""
+        src="/images/hero-airplane-right.jpg"
+        alt="OPEN TRIP Flight Soaring Over Tropical Islands"
         fetchPriority="high"
       />
       <div className="hero-shade" />
-      <Header onPlan={onPlan} onExplore={explore} />
+      <Header onPlan={onPlan} onExplore={exploreServices} />
       <div className="hero-body container">
         <div className="hero-copy">
           <p className="eyebrow">
-            Explore <span>·</span> Discover <span>·</span> Belong
+            Your travel partner <span>·</span> Discover the world with confidence.
           </p>
           <h1 id="hero-title">
-            Go Beyond
+            Explore the World
             <br />
-            the Ordinary.
+            with OPEN TRIP
           </h1>
           <p className="hero-description">
-            Discover extraordinary destinations, unforgettable
-            <br className="desktop-break" /> experiences, and journeys made just
-            for you.
+            Whether you are planning an international holiday, booking flights, finding the right hotel,
+            seeking visa assistance, study visa or preparing for your spiritual journey, OPEN TRIP is
+            here to help make your travel planning simpler and more convenient.
           </p>
           <div className="hero-actions">
-            <Button onClick={explore}>
-              Explore Destinations <Icon size={17} />
+            <Button onClick={exploreServices}>
+              Explore Our Services <Icon size={17} />
             </Button>
             <Button variant="outline" onClick={onPlan}>
-              Plan My Trip{" "}
+              Get a Quote{" "}
               <span className="play-icon">
                 <Icon name="play" size={17} />
               </span>
             </Button>
           </div>
         </div>
-        <DestinationSelector
-          destinations={destinations}
-          activeIndex={activeIndex}
-          onSelect={select}
-        />
+
+        {/* Floating Route Badge inspired by reference design */}
+        <div className="hero-flight-card" aria-hidden="true">
+          <div className="flight-card-route">
+            <span className="flight-code">KHI</span>
+            <span className="flight-icon">✈</span>
+            <span className="flight-code">WORLD</span>
+          </div>
+          <span className="flight-card-sub">Direct GDS Airline Ticketing</span>
+        </div>
+
         <a className="scroll-cue" href="#trip-search">
           <span className="mouse-icon">
             <span />
           </span>
           Scroll to explore
         </a>
-        <div className="destination-caption" aria-live="polite">
-          <span>{hasSelected ? active.name : "Discover"}</span>
-          <p>{hasSelected ? active.caption : "A world beyond the ordinary"}</p>
-        </div>
       </div>
     </section>
   );

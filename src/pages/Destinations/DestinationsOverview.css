@@ -1,0 +1,567 @@
+/* ============================================================
+   OPEN TRIP - Destinations Overview Page
+   Palette: #012061 · #022F82 · #028AF0 · #03C7FB · #FB8902
+   Hero, floating bar, CTA & note boxes come from Services.css
+   ============================================================ */
+
+/* ---------- Section heading ---------- */
+.dest-ov-heading {
+  text-align: center;
+  max-width: 680px;
+  margin: 10px auto 34px;
+}
+
+.dest-ov-heading--compact {
+  margin-bottom: 26px;
+}
+
+.dest-ov-eyebrow {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--bright-blue, #028af0);
+  background: rgba(2, 138, 240, 0.08);
+  border: 1px solid rgba(2, 138, 240, 0.2);
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.dest-ov-heading h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 700;
+  color: var(--dark-navy, #012061);
+  margin: 0 0 10px;
+  line-height: 1.2;
+}
+
+.dest-ov-heading p {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--ink-secondary, #334155);
+  margin: 0;
+}
+
+/* ---------- Filter info row ---------- */
+.dest-ov-filter-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+  padding: 0 4px;
+}
+
+.dest-ov-filter-row h3 {
+  font-family: var(--font-serif);
+  font-size: 23px;
+  font-weight: 700;
+  color: var(--dark-navy, #012061);
+  margin: 0 0 3px;
+}
+
+.dest-ov-filter-row small {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.dest-ov-reset {
+  background: #ffffff;
+  color: var(--dark-navy, #012061);
+  border: 1px solid rgba(1, 32, 97, 0.16);
+  padding: 7px 16px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dest-ov-reset:hover {
+  background: var(--dark-navy, #012061);
+  color: #ffffff;
+}
+
+/* ---------- Grid ---------- */
+.dest-ov-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+/* ---------- Card ---------- */
+.dest-ov-card {
+  background: #ffffff;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(1, 32, 97, 0.08);
+  box-shadow: 0 10px 30px rgba(1, 32, 97, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.28s ease,
+    border-color 0.28s ease;
+}
+
+.dest-ov-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--dest-accent, #028af0);
+  box-shadow: 0 20px 44px rgba(1, 32, 97, 0.12);
+}
+
+.dest-ov-media {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+  background: var(--dark-navy, #012061);
+}
+
+.dest-ov-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.dest-ov-card:hover .dest-ov-media img {
+  transform: scale(1.06);
+}
+
+.dest-ov-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(1, 32, 97, 0.15) 0%,
+    rgba(1, 32, 97, 0) 35%,
+    rgba(1, 26, 77, 0.82) 100%
+  );
+  pointer-events: none;
+}
+
+.dest-ov-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(1, 32, 97, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--dest-accent, #028af0);
+}
+
+.dest-ov-region {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #ffffff;
+  color: var(--dark-navy, #012061);
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dest-ov-region svg {
+  color: var(--orange, #fb8902);
+}
+
+.dest-ov-media-title {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 14px;
+  color: #ffffff;
+}
+
+.dest-ov-media-title h3 {
+  font-family: var(--font-serif);
+  font-size: 25px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.15;
+  color: #ffffff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+.dest-ov-media-title span {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--cyan, #03c7fb);
+}
+
+.dest-ov-body {
+  padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.dest-ov-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-secondary, #334155);
+  margin: 0 0 14px;
+}
+
+.dest-ov-ideas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 20px;
+  flex-grow: 1;
+  align-content: flex-start;
+}
+
+.dest-ov-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--dark-navy, #012061);
+  background: #f0f6ff;
+  border: 1px solid rgba(2, 47, 130, 0.1);
+  padding: 3.5px 9px;
+  border-radius: 12px;
+}
+
+.dest-ov-chip svg {
+  color: #16a34a;
+}
+
+.dest-ov-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.dest-ov-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: #f8fafc;
+  color: var(--dark-navy, #012061);
+  border: 1.5px solid rgba(1, 32, 97, 0.1);
+  border-radius: 12px;
+  padding: 11px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+
+.dest-ov-btn-primary svg {
+  transition: transform 0.22s ease;
+}
+
+.dest-ov-card:hover .dest-ov-btn-primary {
+  background: var(--dark-navy, #012061);
+  color: #ffffff;
+  border-color: var(--dark-navy, #012061);
+}
+
+.dest-ov-card:hover .dest-ov-btn-primary svg {
+  transform: translateX(4px);
+  color: var(--orange, #fb8902);
+}
+
+.dest-ov-btn-link {
+  background: transparent;
+  border: 0;
+  padding: 2px 0;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--orange, #fb8902);
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.dest-ov-btn-link:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Informative filler cards (no empty gaps) ---------- */
+.dest-ov-card--filler {
+  padding: 30px 26px;
+  background: linear-gradient(160deg, #ffffff 0%, #eef6ff 100%);
+  border: 1.5px dashed rgba(2, 138, 240, 0.4);
+  justify-content: center;
+}
+
+.dest-ov-card--filler:hover {
+  border-style: solid;
+  border-color: var(--orange, #fb8902);
+}
+
+.dest-filler-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: rgba(2, 138, 240, 0.1);
+  color: var(--bright-blue, #028af0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.dest-filler-eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--orange, #fb8902);
+  margin-bottom: 6px;
+}
+
+.dest-ov-card--filler h3 {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--dark-navy, #012061);
+  margin: 0 0 10px;
+  line-height: 1.25;
+}
+
+.dest-ov-card--filler p {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--ink-secondary, #334155);
+  margin: 0 0 16px;
+}
+
+.dest-filler-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dest-filler-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dark-navy, #012061);
+}
+
+.dest-filler-list svg {
+  color: #16a34a;
+}
+
+.dest-ov-card--filler-dark {
+  background: linear-gradient(150deg, var(--dark-navy, #012061) 0%, var(--deep-blue, #022f82) 100%);
+  border: 1px solid rgba(3, 199, 251, 0.3);
+}
+
+.dest-ov-card--filler-dark h3,
+.dest-ov-card--filler-dark .dest-filler-list li {
+  color: #ffffff;
+}
+
+.dest-ov-card--filler-dark p {
+  color: #dbe7f7;
+}
+
+.dest-ov-card--filler-dark .dest-filler-icon {
+  background: rgba(3, 199, 251, 0.15);
+  color: var(--cyan, #03c7fb);
+}
+
+.dest-ov-card--filler-dark .dest-filler-list svg {
+  color: var(--cyan, #03c7fb);
+}
+
+.dest-ov-card--filler-dark .dest-ov-btn-primary {
+  background: var(--orange, #fb8902);
+  color: #ffffff;
+  border-color: var(--orange, #fb8902);
+}
+
+.dest-ov-card--filler .dest-ov-btn-primary {
+  margin-top: auto;
+}
+
+/* ---------- How we help ---------- */
+.dest-ov-help {
+  margin-top: 64px;
+}
+
+.dest-ov-help-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.dest-ov-help-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px 20px;
+  border: 1px solid rgba(1, 32, 97, 0.08);
+  box-shadow: 0 8px 24px rgba(1, 32, 97, 0.04);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.dest-ov-help-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--bright-blue, #028af0);
+}
+
+.dest-ov-help-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: var(--dark-navy, #012061);
+  color: var(--cyan, #03c7fb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.dest-ov-help-card h4 {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--dark-navy, #012061);
+  margin: 0 0 6px;
+}
+
+.dest-ov-help-card p {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ink-secondary, #334155);
+  margin: 0;
+}
+
+/* ---------- Mobile carousel (hidden on desktop) ---------- */
+.dest-ov-mobile {
+  display: none;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1050px) {
+  .dest-ov-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* In 2 columns the 3-col filler logic can leave a lone card: let fillers span full width */
+  .dest-ov-card--filler {
+    grid-column: span 2;
+  }
+  .dest-ov-help-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .dest-ov-grid {
+    display: none;
+  }
+
+  .dest-ov-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .dest-ov-mobile-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 16px;
+    width: 100%;
+  }
+
+  .dest-ov-mobile-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1.5px solid rgba(1, 32, 97, 0.16);
+    color: var(--dark-navy, #012061);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(1, 32, 97, 0.08);
+    transition: all 0.2s ease;
+  }
+
+  .dest-ov-mobile-btn:active,
+  .dest-ov-mobile-btn:hover {
+    background: var(--dark-navy, #012061);
+    color: #ffffff;
+    border-color: var(--dark-navy, #012061);
+  }
+
+  .dest-ov-mobile-indicators {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .dest-ov-mobile-counter {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--dark-navy, #012061);
+    letter-spacing: 0.5px;
+  }
+
+  .dest-ov-mobile-dots {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .dest-ov-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 4px;
+    background: rgba(1, 32, 97, 0.2);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .dest-ov-dot.active {
+    width: 22px;
+    background: var(--orange, #fb8902);
+  }
+
+  .dest-ov-mobile-stage {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .dest-ov-help-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

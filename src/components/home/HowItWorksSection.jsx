@@ -6,25 +6,24 @@ import "./HowItWorksSection.css";
 
 export default function HowItWorksSection({ onPlan }) {
   return (
-    <section className="page-section how-it-works-section">
+    <section className="page-section how-it-works-section" id="how-it-works">
       <div className="container">
         <SectionHeading
-          eyebrow="Simple 3-Step Journey"
-          title="How OpenTrip Works"
+          eyebrow="How It Works"
+          title="Your Journey in Four Simple Steps"
           centered
         >
           <p className="how-subtitle">
-            From your very first idea to your return flight, we make planning completely effortless,
-            flexible, and transparent.
+            From your very first inquiry to your flight home, our team provides personalized assistance, clear pricing, and verified arrangements every step of the way.
           </p>
         </SectionHeading>
 
-        <div className="steps-grid">
+        <div className="steps-grid steps-grid--4">
           {howItWorksSteps.map((item, idx) => (
             <div key={item.step} className="step-card">
               <div className="step-number-badge">{item.step}</div>
               <div className="step-icon-wrap">
-                <Icon name={item.icon} size={28} />
+                <Icon name={item.icon === "users" ? "users" : item.icon === "calendar" ? "calendar" : item.icon === "sparkles" ? "star" : "compass"} size={26} />
               </div>
               <h4>{item.title}</h4>
               <p>{item.description}</p>
@@ -35,11 +34,10 @@ export default function HowItWorksSection({ onPlan }) {
 
         <div className="how-cta-center">
           <Button onClick={onPlan}>
-            Plan Your Journey Now <Icon size={16} />
+            Get Started — Request a Quote <Icon size={16} />
           </Button>
         </div>
       </div>
     </section>
   );
 }
-

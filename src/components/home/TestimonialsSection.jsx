@@ -13,27 +13,32 @@ export default function TestimonialsSection() {
     setStart((start + 1) % testimonials.length);
 
   return (
-    <section className="testimonials-section">
+    <section className="testimonials-section" id="testimonials">
       <div className="container">
         <SectionHeading
-          eyebrow="Genuine Reviews & Feedback"
-          title="Loved by Travellers Across Pakistan."
+          eyebrow="Customer Reviews"
+          title="Real Experiences. Meaningful Journeys."
         >
-          <div className="testimonial-controls">
-            <button
-              className="round-button"
-              aria-label="Previous traveler review"
-              onClick={prev}
-            >
-              <Icon name="chevronLeft" size={18} />
-            </button>
-            <button
-              className="round-button"
-              aria-label="Next traveler review"
-              onClick={next}
-            >
-              <Icon name="chevronRight" size={18} />
-            </button>
+          <div className="destinations-header-aside">
+            <p className="destinations-lead-copy">
+              We value every customer and continuously aim to make travel planning convenient and clear. Read feedback shared by our customers.
+            </p>
+            <div className="testimonial-controls">
+              <button
+                className="round-button"
+                aria-label="Previous traveler review"
+                onClick={prev}
+              >
+                <Icon name="chevronLeft" size={18} />
+              </button>
+              <button
+                className="round-button"
+                aria-label="Next traveler review"
+                onClick={next}
+              >
+                <Icon name="chevronRight" size={18} />
+              </button>
+            </div>
           </div>
         </SectionHeading>
 
@@ -53,6 +58,13 @@ export default function TestimonialsSection() {
               aria-label={`Go to slide ${idx + 1}`}
             />
           ))}
+        </div>
+
+        <div className="reviews-verification-banner">
+          <span className="verification-pill">
+            <span className="verification-check">✓</span>
+            Verified Customer Feedback · Published only with authentic traveller permission
+          </span>
         </div>
       </div>
     </section>

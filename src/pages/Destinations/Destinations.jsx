@@ -8,6 +8,7 @@ import Dialog from "../../components/common/Dialog";
 import TripDialog from "../../features/trips/TripDialog";
 import { useNavigation } from "../../context/NavigationContext";
 import { downloadDestinationPdf } from "../../utils/itineraryPdf";
+import "../Services/Services.css";
 import "./Destinations.css";
 
 const DESTINATIONS_CATALOG = [
@@ -109,11 +110,9 @@ const DESTINATIONS_CATALOG = [
     timezone: "GMT+8 (MYT)",
     mapBbox: "101.35,2.85,101.95,3.45",
     mapMarker: "3.1390,101.6869",
-    image:
-      "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/destinations/malaysia.jpg",
     fallbackImage: "/images/destinations/dubai.jpeg",
-    galleryImage:
-      "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1200&q=80",
+    galleryImage: "/images/destinations/malaysia.jpg",
     includes: ["4N Hotel", "Breakfast", "Genting Cable Car", "Sunway Lagoon", "E-Visa"],
     pricingTiers: [
       {
@@ -184,11 +183,9 @@ const DESTINATIONS_CATALOG = [
     timezone: "GMT+4 (AZT)",
     mapBbox: "49.65,40.25,50.15,40.55",
     mapMarker: "40.4093,49.8671",
-    image:
-      "https://images.unsplash.com/photo-1596306499300-0b7b1689b9f6?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/destinations/azerbaijan.jpg",
     fallbackImage: "/images/destinations/instanbul.jpeg",
-    galleryImage:
-      "https://images.unsplash.com/photo-1596306499300-0b7b1689b9f6?auto=format&fit=crop&w=1200&q=80",
+    galleryImage: "/images/destinations/azerbaijan.jpg",
     includes: ["4N Hotel", "Breakfast", "Baku & Absheron Tour", "Azerbaijan E-Visa", "Transfers"],
     pricingTiers: [
       {
@@ -317,11 +314,9 @@ const DESTINATIONS_CATALOG = [
     timezone: "GMT+7 (ICT)",
     mapBbox: "100.30,12.85,101.05,13.95",
     mapMarker: "13.7563,100.5018",
-    image:
-      "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/cities/bangkok.jpg",
     fallbackImage: "/images/destinations/bali.jpeg",
-    galleryImage:
-      "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1200&q=80",
+    galleryImage: "/images/cities/bangkok.jpg",
     includes: ["3N Pattaya + 2N Bangkok", "Breakfast", "Coral Island Tour", "Thailand Visa"],
     pricingTiers: [
       {
@@ -761,6 +756,141 @@ const DESTINATIONS_CATALOG = [
     ],
   },
   {
+    id: "italy",
+    name: "Rome, Florence & Amalfi Coast",
+    country: "Italy",
+    region: "Europe",
+    vibe: "Culture & Heritage",
+    secondaryVibe: "Luxury & City",
+    caption: "Art, coastal cliffs & food culture",
+    tagline:
+      "Colosseum grandeur, Tuscan hill towns & clifftop Amalfi coastal vistas.",
+    description:
+      "Discover historic cities, art, architecture, and food culture from Rome’s imperial forum to Positano’s colourful coastal cliffs.",
+    longDescription:
+      "Italy is an open-air museum. From sunrise espresso near Rome's Trevi Fountain to scenic high-speed trains through Florence and pastel clifftop villages of the Amalfi Coast, experience Europe's most celebrated art, cuisine, and coastal landscapes.",
+    bestTime: "Apr – Jun · Sep – Oct",
+    seasons: ["Spring", "Summer", "Autumn"],
+    days: 7,
+    nights: 6,
+    daysNights: "7 Days / 6 Nights",
+    shortDaysNights: "7D / 6N",
+    duration: "7 Days / 6 Nights",
+    pricePkr: 345000,
+    priceFrom: 1240,
+    rating: 4.93,
+    reviews: 88,
+    featuredRank: 12,
+    bentoSpan: "third",
+    coordsLabel: "41.9028° N, 12.4964° E",
+    airportHub: "Rome Fiumicino (FCO)",
+    timezone: "GMT+1 (CET)",
+    mapBbox: "12.30,41.75,12.70,42.05",
+    mapMarker: "41.9028,12.4964",
+    image: "/images/destinations/italy.jpg",
+    fallbackImage: "/images/destinations/switzerland.jpeg",
+    galleryImage: "/images/destinations/italy.jpg",
+    includes: ["6N 4★ Hotels", "Breakfast", "Colosseum & Vatican Tour", "Amalfi Coastal Trip", "Schengen Visa File"],
+    pricingTiers: [
+      {
+        label: "Rome & Florence Heritage",
+        duration: "7 Days / 6 Nights",
+        pricePkr: 345000,
+        priceUsd: 1240,
+        notes: "4N Rome + 2N Florence · High-speed rail · Vatican tour · Schengen visa file",
+      },
+      {
+        label: "Grand Italy & Amalfi Coast",
+        duration: "9 Days / 8 Nights",
+        pricePkr: 420000,
+        priceUsd: 1499,
+        notes: "Adds 2N Sorrento & Amalfi coastal private chauffeur excursion",
+      },
+    ],
+    tags: ["Colosseum & Vatican", "Amalfi Clifftops", "Schengen Visa"],
+    highlights: [
+      "Rome Colosseum, Roman Forum & Vatican Museums guided skip-the-line tour",
+      "Scenic high-speed train to Florence & picturesque Amalfi coastal excursion",
+      "Complete Schengen visa file preparation and official embassy guidance",
+    ],
+    sampleItinerary: [
+      "Day 1: Arrival at Rome (FCO) & private transfer to central hotel",
+      "Day 2: Colosseum & Imperial Rome guided walking tour",
+      "Day 3: Vatican City, Sistine Chapel & St. Peter's Basilica tour",
+      "Day 4: Day excursion to Naples & scenic cliffside Amalfi Coast",
+      "Day 5: High-speed Frecciarossa train to Florence & Duomo walk",
+      "Day 6: Florence artisan markets & evening Piazza Navona stroll",
+      "Day 7: Italian breakfast & airport transfer for return flight",
+    ],
+  },
+  {
+    id: "greece",
+    name: "Athens & Santorini Island",
+    country: "Greece",
+    region: "Europe",
+    vibe: "Islands & Beach",
+    secondaryVibe: "Culture & Heritage",
+    caption: "Islands, coastal views & ancient temples",
+    tagline:
+      "Acropolis sunset, whitewashed caldera villas & Aegean catamaran sails.",
+    description:
+      "Explore islands, coastal views, and historic landmarks from Athens' ancient temples to Santorini's cliffside blue-domed villages.",
+    longDescription:
+      "Sail across deep azure waters to postcard-perfect Santorini. Stand among the marble columns of the Parthenon in Athens, gaze at crimson sunsets over Oia’s whitewashed caldera, and relax on volcanic black sand beaches.",
+    bestTime: "May – Oct",
+    seasons: ["Spring", "Summer", "Autumn"],
+    days: 6,
+    nights: 5,
+    daysNights: "6 Days / 5 Nights",
+    shortDaysNights: "6D / 5N",
+    duration: "6 Days / 5 Nights",
+    pricePkr: 310000,
+    priceFrom: 1115,
+    rating: 4.91,
+    reviews: 76,
+    featuredRank: 13,
+    bentoSpan: "third",
+    coordsLabel: "36.3932° N, 25.4615° E",
+    airportHub: "Athens (ATH) · Santorini (JTR)",
+    timezone: "GMT+2 (EET)",
+    mapBbox: "25.30,36.30,25.60,36.50",
+    mapMarker: "36.3932,25.4615",
+    image: "/images/destinations/greece.jpg",
+    fallbackImage: "/images/destinations/switzerland.jpeg",
+    galleryImage: "/images/destinations/greece.jpg",
+    includes: ["2N Athens + 3N Santorini", "Breakfast", "High-Speed Ferry", "Caldera Sunset Cruise", "Schengen Visa File"],
+    pricingTiers: [
+      {
+        label: "Athens & Santorini Classic",
+        duration: "6 Days / 5 Nights",
+        pricePkr: 310000,
+        priceUsd: 1115,
+        notes: "2N Athens 4★ + 3N Santorini Caldera Hotel · Ferry tickets · Acropolis tour",
+      },
+      {
+        label: "Santorini Luxury Villa with Jacuzzi",
+        duration: "7 Days / 6 Nights",
+        pricePkr: 395000,
+        priceUsd: 1419,
+        notes: "Private caldera pool/hot-tub suite & catamaran sunset barbecue cruise",
+      },
+    ],
+    tags: ["Acropolis Athens", "Santorini Sunset", "Caldera Catamaran"],
+    highlights: [
+      "Athens Acropolis & Parthenon historical guided tour with Plaka walk",
+      "Blue-domed Oia sunset viewpoint & volcanic caldera catamaran cruise",
+      "Inter-island high-speed ferry & private airport/port hotel transfers",
+    ],
+    sampleItinerary: [
+      "Day 1: Arrival at Athens (ATH) & private transfer to Plaka hotel",
+      "Day 2: Acropolis guided tour & historic Plaka neighborhood evening",
+      "Day 3: High-speed ferry to Santorini & check-in at cliffside caldera hotel",
+      "Day 4: Oia village walk, Ammoudi Bay & luxury catamaran sunset cruise",
+      "Day 5: Red & Black sand volcanic beaches & Santorini wine tasting",
+      "Day 6: Domestic flight to Athens & departure back home",
+    ],
+  },
+  {
     id: "umrah",
     name: "Makkah & Madinah Umrah",
     country: "Saudi Arabia",
@@ -792,11 +922,9 @@ const DESTINATIONS_CATALOG = [
     timezone: "GMT+3 (AST)",
     mapBbox: "39.70,21.32,39.98,21.52",
     mapMarker: "21.4225,39.8262",
-    image:
-      "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=1200&q=80",
-    fallbackImage: "/images/destinations/instanbul.jpeg",
-    galleryImage:
-      "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/cities/makkah-kaaba-wide.jpg",
+    fallbackImage: "/images/cities/makkah-kaaba.jpg",
+    galleryImage: "/images/cities/makkah-kaaba-wide.jpg",
     includes: [
       "Return Air Ticket",
       "Umrah Visa",
@@ -933,6 +1061,20 @@ export default function DestinationsPage() {
   const [expandedTariffId, setExpandedTariffId] = useState("malaysia");
   const [dialog, setDialog] = useState(null);
 
+  const [galleryPage, setGalleryPage] = useState(1);
+  const GALLERY_PER_PAGE = 5;
+
+  const [tariffPage, setTariffPage] = useState(1);
+  const TARIFF_PER_PAGE = 5;
+
+  useEffect(() => {
+    setGalleryPage(1);
+  }, [query, region, vibe, sortBy, onlySaved]);
+
+  useEffect(() => {
+    setTariffPage(1);
+  }, [tariffTab]);
+
   const [wishlist, setWishlist] = useState(() =>
     loadStoredArray(WISHLIST_STORAGE_KEY),
   );
@@ -1037,6 +1179,28 @@ export default function DestinationsPage() {
     });
   }, [query, region, vibe, sortBy, onlySaved, wishlist]);
 
+  const totalGalleryPages = Math.ceil(filteredDestinations.length / GALLERY_PER_PAGE) || 1;
+  const currentGalleryItems = useMemo(() => {
+    const start = (galleryPage - 1) * GALLERY_PER_PAGE;
+    return filteredDestinations.slice(start, start + GALLERY_PER_PAGE);
+  }, [filteredDestinations, galleryPage]);
+
+  const filteredTariff = useMemo(() => {
+    return DESTINATIONS_CATALOG.filter((item) => {
+      if (tariffTab === "under200k") return item.pricePkr < 200000;
+      if (tariffTab === "short") return item.days <= 5;
+      if (tariffTab === "week") return item.days >= 6 && item.days <= 8;
+      if (tariffTab === "umrah") return item.id === "umrah";
+      return true;
+    });
+  }, [tariffTab]);
+
+  const totalTariffPages = Math.ceil(filteredTariff.length / TARIFF_PER_PAGE) || 1;
+  const currentTariffItems = useMemo(() => {
+    const start = (tariffPage - 1) * TARIFF_PER_PAGE;
+    return filteredTariff.slice(start, start + TARIFF_PER_PAGE);
+  }, [filteredTariff, tariffPage]);
+
   const activeMapDestination =
     DESTINATIONS_CATALOG.find((d) => d.id === mapSelectedId) ||
     DESTINATIONS_CATALOG[0];
@@ -1056,15 +1220,16 @@ export default function DestinationsPage() {
 
   return (
     <div className="destinations-page" id="home">
-      {/* 1. DESTINATIONS HERO BANNER */}
-      <section className="dest-hero" aria-labelledby="destinations-page-title">
+      {/* 1. DESTINATIONS HERO (100% MATCHING SERVICES / PACKAGES ARCHITECTURE & SIZE) */}
+      <section className="hero hero--service" aria-labelledby="destinations-page-title">
         <img
-          className="dest-hero-bg"
-          src="/images/destinations/switzerland.jpeg"
-          alt="Panoramic mountain and lake landscape"
+          className="hero-image"
+          src="/images/destinations-hero-wide.jpg"
+          alt="Explore Destinations"
           fetchPriority="high"
+          style={{ objectPosition: "right 45%" }}
         />
-        <div className="dest-hero-overlay" />
+        <div className="hero-shade" />
         <Header
           onPlan={() => openPlanner()}
           onExplore={() => {
@@ -1074,21 +1239,48 @@ export default function DestinationsPage() {
           }}
         />
 
-        <div className="container dest-hero-body">
-          <p className="dest-eyebrow">
-            Open Trip (Pvt.) Ltd. <span>·</span> Visa · Flight · Hotel · Tour{" "}
-            <span>·</span> 12 Curated Packages
-          </p>
-          <h1 id="destinations-page-title">
-            Extraordinary Places,
-            <br />
-            With Clear Days, Nights & Rates.
-          </h1>
-          <p className="dest-hero-subtitle">
-            Explore Open Trip’s signature international and domestic getaways—from
-            5D/4N Malaysia, Baku, Bali & Dubai escapes to Northern Pakistan and
-            20-Day Umrah journeys.
-          </p>
+        <div className="hero-body container">
+          <div className="hero-copy">
+            <p className="eyebrow">
+              The World Is Waiting <span>·</span> Destination Ideas &amp; Packages
+            </p>
+            <h1 id="destinations-page-title">
+              Explore
+              <br />
+              Destinations
+            </h1>
+            <p className="hero-description">
+              The World Is Waiting. Discover places, cultures, and experiences for your next journey. Browse destination ideas and contact OPEN TRIP to discuss travel arrangements for your preferred location.
+            </p>
+            <div className="hero-actions">
+              <Button onClick={() => openPlanner()}>
+                Ask About a Destination <Icon size={17} />
+              </Button>
+              <Button
+                variant="outline"
+                onClick={() => {
+                  document
+                    .getElementById("tariff-board")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                All Trips &amp; Package Rates{" "}
+                <span className="play-icon">
+                  <Icon name="play" size={17} />
+                </span>
+              </Button>
+            </div>
+          </div>
+
+          {/* Floating Route Badge */}
+          <div className="hero-flight-card" aria-hidden="true">
+            <div className="flight-card-route">
+              <span className="flight-code">KHI</span>
+              <span className="flight-icon">✈</span>
+              <span className="flight-code">WORLD</span>
+            </div>
+            <span className="flight-card-sub">Govt. Approved · DTS #3941 · 12+ Curated Trips</span>
+          </div>
         </div>
       </section>
 
@@ -1274,125 +1466,203 @@ export default function DestinationsPage() {
       {/* 3. BRIGHT, UNOBSTRUCTED EDITORIAL GALLERY WITH DAYS, NIGHTS & MONEY */}
       <section className="container dest-collection-section">
         <div className="dest-results-bar">
-          <p>
-            Showing <strong>{filteredDestinations.length}</strong> Open Trip
-            destinations with <strong>Days / Nights & {currency} Rates</strong>
-            {region !== "All" ? ` in ${region}` : ""}
-            {vibe !== "All" ? ` · ${vibe}` : ""}
-            {onlySaved ? " · Saved in Wishlist" : ""}
-          </p>
-          {!isDefaultEditorialView && (
-            <button
-              type="button"
-              className="dest-reset-link"
-              onClick={resetFilters}
-            >
-              Reset view
-            </button>
-          )}
+          <div className="dest-results-info">
+            <p>
+              Showing <strong>{filteredDestinations.length > 0 ? (galleryPage - 1) * GALLERY_PER_PAGE + 1 : 0}–{Math.min(galleryPage * GALLERY_PER_PAGE, filteredDestinations.length)}</strong> of <strong>{filteredDestinations.length}</strong> Open Trip destinations with <strong>Days / Nights &amp; {currency} Rates</strong>
+              {region !== "All" ? ` in ${region}` : ""}
+              {vibe !== "All" ? ` · ${vibe}` : ""}
+              {onlySaved ? " · Saved in Wishlist" : ""}
+            </p>
+          </div>
+
+          <div className="dest-results-actions">
+            {!isDefaultEditorialView && (
+              <button
+                type="button"
+                className="dest-reset-link"
+                onClick={resetFilters}
+              >
+                Reset view
+              </button>
+            )}
+
+            {totalGalleryPages > 1 && (
+              <div className="dest-nav-controls" role="group" aria-label="Destinations navigation">
+                <button
+                  type="button"
+                  className="dest-nav-btn"
+                  onClick={() => setGalleryPage((p) => Math.max(1, p - 1))}
+                  disabled={galleryPage === 1}
+                  aria-label="Previous 5 destinations"
+                >
+                  <Icon name="chevronLeft" size={14} /> Prev
+                </button>
+                <span className="dest-nav-counter">
+                  {galleryPage} / {totalGalleryPages}
+                </span>
+                <button
+                  type="button"
+                  className="dest-nav-btn"
+                  onClick={() => setGalleryPage((p) => Math.min(totalGalleryPages, p + 1))}
+                  disabled={galleryPage === totalGalleryPages}
+                  aria-label="Next 5 destinations"
+                >
+                  Next <Icon name="chevronRight" size={14} />
+                </button>
+              </div>
+            )}
+          </div>
         </div>
 
         {filteredDestinations.length > 0 ? (
-          <div
-            className={`dest-bento-grid ${isDefaultEditorialView ? "dest-bento-grid--editorial" : ""}`}
-          >
-            {filteredDestinations.map((dest) => {
-              const isSaved = wishlist.includes(dest.name);
-              const spanClass = isDefaultEditorialView
-                ? `dest-bento-card--${dest.bentoSpan}`
-                : "";
+          <>
+            <div
+              className={`dest-bento-grid ${isDefaultEditorialView ? "dest-bento-grid--editorial" : ""}`}
+            >
+              {currentGalleryItems.map((dest) => {
+                const isSaved = wishlist.includes(dest.name);
+                const spanClass = isDefaultEditorialView
+                  ? `dest-bento-card--${dest.bentoSpan}`
+                  : "";
 
-              return (
-                <article
-                  key={dest.id}
-                  className={`dest-bento-card ${spanClass}`}
-                >
-                  {/* Full-bleed bright image button (75%+ unobstructed) */}
-                  <button
-                    type="button"
-                    className="dest-bento-click-area"
-                    onClick={() => openGuide(dest)}
-                    aria-label={`Explore ${dest.name}, ${dest.country} - ${dest.daysNights} from ${formatMoney(dest)}`}
+                return (
+                  <article
+                    key={dest.id}
+                    className={`dest-bento-card ${spanClass}`}
                   >
-                    <img
-                      className="dest-bento-photo"
-                      src={dest.image}
-                      alt={`${dest.name}, ${dest.country}`}
-                      loading="lazy"
-                      onError={(e) => {
-                        if (
-                          dest.fallbackImage &&
-                          e.currentTarget.src !==
-                            window.location.origin + dest.fallbackImage
-                        ) {
-                          e.currentTarget.src = dest.fallbackImage;
-                        }
-                      }}
-                    />
-                    <span className="dest-bento-bottom-fade" />
+                    {/* Full-bleed bright image button (75%+ unobstructed) */}
+                    <button
+                      type="button"
+                      className="dest-bento-click-area"
+                      onClick={() => openGuide(dest)}
+                      aria-label={`Explore ${dest.name}, ${dest.country} - ${dest.daysNights} from ${formatMoney(dest)}`}
+                    >
+                      <img
+                        className="dest-bento-photo"
+                        src={dest.image}
+                        alt={`${dest.name}, ${dest.country}`}
+                        loading="lazy"
+                        onError={(e) => {
+                          if (
+                            dest.fallbackImage &&
+                            e.currentTarget.src !==
+                              window.location.origin + dest.fallbackImage
+                          ) {
+                            e.currentTarget.src = dest.fallbackImage;
+                          }
+                        }}
+                      />
+                      <span className="dest-bento-bottom-fade" />
 
-                    {/* Clean bottom-edge typography with Days/Nights & Money (no dark box covering the middle!) */}
-                    <span className="dest-bento-caption-row">
-                      <span className="dest-bento-title-block">
-                        <small className="dest-bento-eyebrow">
-                          {dest.caption} · Best: {dest.bestTime}
-                        </small>
-                        <strong>{dest.name}</strong>
-                        <span className="dest-bento-includes-line">
-                          {dest.includes.slice(0, 3).join(" · ")}
-                        </span>
-                        <span className="dest-bento-hover-line">
-                          {dest.tagline}
-                        </span>
-                      </span>
-
-                      <span className="dest-bento-right-col">
-                        <span className="dest-bento-price-pill">
-                          <small>
-                            {dest.shortDaysNights} · {formatSecondaryMoney(dest)}
+                      {/* Clean bottom-edge typography with Days/Nights & Money (no dark box covering the middle!) */}
+                      <span className="dest-bento-caption-row">
+                        <span className="dest-bento-title-block">
+                          <small className="dest-bento-eyebrow">
+                            {dest.caption} · Best: {dest.bestTime}
                           </small>
-                          <b>{formatMoney(dest)}</b>
+                          <strong>{dest.name}</strong>
+                          <span className="dest-bento-includes-line">
+                            {dest.includes.slice(0, 3).join(" · ")}
+                          </span>
+                          <span className="dest-bento-hover-line">
+                            {dest.tagline}
+                          </span>
                         </span>
-                        <span className="card-arrow">
-                          <Icon size={17} />
+
+                        <span className="dest-bento-right-col">
+                          <span className="dest-bento-price-pill">
+                            <small>
+                              {dest.shortDaysNights} · {formatSecondaryMoney(dest)}
+                            </small>
+                            <b>{formatMoney(dest)}</b>
+                          </span>
+                          <span className="card-arrow">
+                            <Icon size={17} />
+                          </span>
                         </span>
                       </span>
-                    </span>
-                  </button>
+                    </button>
 
-                  {/* Bright ivory top-left Country + Days/Nights + Rating pills */}
-                  <div className="dest-bento-top-left">
-                    <span className="dest-light-pill">
-                      <Icon name="pin" size={12} />
-                      {dest.country}
-                    </span>
-                    <span className="dest-light-pill dest-light-pill--duration">
-                      <Icon name="calendar" size={12} />
-                      {dest.days}D / {dest.nights}N
-                    </span>
-                    <span className="dest-light-pill dest-light-pill--rating">
-                      ★ {dest.rating}
-                    </span>
-                  </div>
+                    {/* Bright ivory top-left Country + Days/Nights + Rating pills */}
+                    <div className="dest-bento-top-left">
+                      <span className="dest-light-pill">
+                        <Icon name="pin" size={12} />
+                        {dest.country}
+                      </span>
+                      <span className="dest-light-pill dest-light-pill--duration">
+                        <Icon name="calendar" size={12} />
+                        {dest.days}D / {dest.nights}N
+                      </span>
+                      <span className="dest-light-pill dest-light-pill--rating">
+                        ★ {dest.rating}
+                      </span>
+                    </div>
 
-                  {/* Bright ivory top-right Heart button */}
-                  <button
-                    type="button"
-                    className={`dest-light-heart ${isSaved ? "is-saved" : ""}`}
-                    aria-label={
-                      isSaved
-                        ? `Remove ${dest.name} from wishlist`
-                        : `Save ${dest.name} to wishlist`
-                    }
-                    aria-pressed={isSaved}
-                    onClick={() => toggleWishlist(dest.name)}
-                  >
-                    <Icon name="heart" size={15} />
-                  </button>
-                </article>
-              );
-            })}
-          </div>
+                    {/* Bright ivory top-right Heart button */}
+                    <button
+                      type="button"
+                      className={`dest-light-heart ${isSaved ? "is-saved" : ""}`}
+                      aria-label={
+                        isSaved
+                          ? `Remove ${dest.name} from wishlist`
+                          : `Save ${dest.name} to wishlist`
+                      }
+                      aria-pressed={isSaved}
+                      onClick={() => toggleWishlist(dest.name)}
+                    >
+                      <Icon name="heart" size={15} />
+                    </button>
+                  </article>
+                );
+              })}
+            </div>
+
+            {/* Bottom Numbered Pagination */}
+            {totalGalleryPages > 1 && (
+              <nav className="dest-gallery-bottom-nav" aria-label="Destinations gallery navigation">
+                <button
+                  type="button"
+                  className="dest-pagi-btn"
+                  onClick={() => {
+                    setGalleryPage((p) => Math.max(1, p - 1));
+                    document.getElementById("destinations-catalog")?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  disabled={galleryPage === 1}
+                >
+                  <Icon name="chevronLeft" size={15} /> Previous
+                </button>
+
+                <div className="dest-pagi-pills">
+                  {Array.from({ length: totalGalleryPages }, (_, i) => i + 1).map((pageNum) => (
+                    <button
+                      key={pageNum}
+                      type="button"
+                      className={`dest-pagi-pill ${galleryPage === pageNum ? "is-active" : ""}`}
+                      onClick={() => {
+                        setGalleryPage(pageNum);
+                        document.getElementById("destinations-catalog")?.scrollIntoView({ behavior: "smooth" });
+                      }}
+                      aria-current={galleryPage === pageNum ? "page" : undefined}
+                    >
+                      {pageNum}
+                    </button>
+                  ))}
+                </div>
+
+                <button
+                  type="button"
+                  className="dest-pagi-btn"
+                  onClick={() => {
+                    setGalleryPage((p) => Math.min(totalGalleryPages, p + 1));
+                    document.getElementById("destinations-catalog")?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  disabled={galleryPage === totalGalleryPages}
+                >
+                  Next <Icon name="chevronRight" size={15} />
+                </button>
+              </nav>
+            )}
+          </>
         ) : (
           <div className="dest-empty-state">
             <h3>No destinations match your current filters.</h3>
@@ -1417,9 +1687,9 @@ export default function DestinationsPage() {
       </section>
 
       {/* 3B. OPEN TRIP (PVT.) LTD. — LUXURY TARIFF & DEPARTURE BOARD */}
-      <section className="container dest-tariff-section">
+      <section className="container dest-tariff-section" id="tariff-board">
         <div className="dest-tariff-card">
-          {/* Dark Teal Sleek Editorial Header */}
+          {/* Dark Navy Sleek Editorial Header */}
           <div className="dest-tariff-banner">
             <div className="dest-tariff-banner-main">
               <div className="dest-tariff-banner-left">
@@ -1450,7 +1720,7 @@ export default function DestinationsPage() {
                 aria-label="Filter package schedule"
               >
                 {[
-                  { id: "all", label: "All Packages (12)" },
+                  { id: "all", label: `All Packages (${DESTINATIONS_CATALOG.length})` },
                   { id: "under200k", label: "Under PKR 200k" },
                   { id: "short", label: "4–5 Days" },
                   { id: "week", label: "6–8 Days" },
@@ -1471,10 +1741,10 @@ export default function DestinationsPage() {
 
               <div className="dest-tariff-legend">
                 <span>
-                  <i className="dest-dot dest-dot--teal" /> Days & Nights
+                  <i className="dest-dot dest-dot--navy" /> Days &amp; Nights
                 </span>
                 <span>
-                  <i className="dest-dot dest-dot--coral" /> Rates
+                  <i className="dest-dot dest-dot--orange" /> Package Rates
                 </span>
               </div>
             </div>
@@ -1489,16 +1759,11 @@ export default function DestinationsPage() {
             <span>Actions</span>
           </div>
 
-          {/* Floating Ticket-Style Row Cards */}
+          {/* Floating Ticket-Style Row Cards: Exactly 5 at a Time with Numbered Pagination */}
           <div className="dest-tariff-list">
-            {DESTINATIONS_CATALOG.filter((item) => {
-              if (tariffTab === "under200k") return item.pricePkr < 200000;
-              if (tariffTab === "short") return item.days <= 5;
-              if (tariffTab === "week") return item.days >= 6 && item.days <= 8;
-              if (tariffTab === "umrah") return item.id === "umrah";
-              return true;
-            }).map((item, idx) => {
+            {currentTariffItems.map((item, idx) => {
               const isExpanded = expandedTariffId === item.id;
+              const globalIdx = (tariffPage - 1) * TARIFF_PER_PAGE + idx + 1;
               return (
                 <div
                   key={`row-${item.id}`}
@@ -1513,7 +1778,7 @@ export default function DestinationsPage() {
                     {/* Col 1: Index + Photo + Destination Title */}
                     <div className="dest-tariff-place">
                       <span className="dest-tariff-index">
-                        {String(idx + 1).padStart(2, "0")}
+                        {String(globalIdx).padStart(2, "0")}
                       </span>
                       <div className="dest-tariff-thumb">
                         <img
@@ -1668,6 +1933,48 @@ export default function DestinationsPage() {
               );
             })}
           </div>
+
+          {/* Numbered Pagination for Tariff Board: Exactly 5 items per page */}
+          {totalTariffPages > 1 && (
+            <div className="dest-tariff-pagination">
+              <div className="dest-tariff-pagi-info">
+                Showing <strong>{(tariffPage - 1) * TARIFF_PER_PAGE + 1}–{Math.min(tariffPage * TARIFF_PER_PAGE, filteredTariff.length)}</strong> of <strong>{filteredTariff.length}</strong> travel packages (Page {tariffPage} of {totalTariffPages})
+              </div>
+              <div className="dest-tariff-pagi-nav">
+                <button
+                  type="button"
+                  className="dest-pagi-btn"
+                  onClick={() => setTariffPage((p) => Math.max(1, p - 1))}
+                  disabled={tariffPage === 1}
+                  aria-label="Previous 5 packages"
+                >
+                  <Icon name="chevronLeft" size={15} /> Previous
+                </button>
+                <div className="dest-pagi-pills">
+                  {Array.from({ length: totalTariffPages }, (_, i) => i + 1).map((p) => (
+                    <button
+                      key={p}
+                      type="button"
+                      className={`dest-pagi-pill ${tariffPage === p ? "is-active" : ""}`}
+                      onClick={() => setTariffPage(p)}
+                      aria-current={tariffPage === p ? "page" : undefined}
+                    >
+                      {p}
+                    </button>
+                  ))}
+                </div>
+                <button
+                  type="button"
+                  className="dest-pagi-btn"
+                  onClick={() => setTariffPage((p) => Math.min(totalTariffPages, p + 1))}
+                  disabled={tariffPage === totalTariffPages}
+                  aria-label="Next 5 packages"
+                >
+                  Next <Icon name="chevronRight" size={15} />
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -1865,24 +2172,42 @@ export default function DestinationsPage() {
         </div>
       </section>
 
-      {/* 6. BOTTOM PLANNING CALLOUT */}
-      <section className="planning-section">
-        <img src="/images/hero-coast.jpeg" alt="" loading="lazy" />
-        <div className="container">
-          <p className="section-eyebrow">Can’t decide on just one place?</p>
-          <h2>Let’s craft a journey tailored around you.</h2>
-          <p>
-            Combine destinations, adjust your travel pace, or request a custom
-            itinerary brief from Open Trip (Pvt.) Ltd.
-          </p>
-          <div>
+      {/* 6. CTA: HAVE ANOTHER DESTINATION IN MIND? */}
+      <section className="dest-custom-cta-section container">
+        <div className="dest-custom-cta-card">
+          <div className="dest-custom-cta-text">
+            <span className="dest-custom-kicker">
+              <Icon name="compass" size={13} /> Open Trip (Pvt.) Ltd. · Bespoke Travel Desk
+            </span>
+            <h2>Have Another Destination in Mind?</h2>
+            <p>
+              Tell us where you would like to travel and we will help you explore available options. Share your preferred dates, group size, and budget for a personalized itinerary.
+            </p>
+          </div>
+          <div className="dest-custom-cta-actions">
             <Button onClick={() => openPlanner()}>
-              Start Custom Trip Planner <Icon size={17} />
+              Ask About a Destination <Icon size={17} />
             </Button>
-            <Button variant="outline" onClick={() => nav?.navigate("home")}>
-              Back to Home Screen
+            <Button variant="outline" onClick={() => nav?.navigate("custom-tour")}>
+              Customize My Trip{" "}
+              <span className="play-icon">
+                <Icon name="play" size={15} />
+              </span>
             </Button>
           </div>
+        </div>
+      </section>
+
+      {/* 7. OFFICIAL PUBLISHING NOTE */}
+      <section className="dest-publishing-note container">
+        <div className="dest-publishing-card">
+          <div className="dest-publishing-badge">
+            <Icon name="info" size={15} />
+            <span>Publishing Note &amp; Official Travel Advisories</span>
+          </div>
+          <p>
+            Destination descriptions, visa information, entry rules, and travel advisories must be checked against current official sources before publication. Visa policies and border regulations are established solely by governmental authorities and are subject to change.
+          </p>
         </div>
       </section>
 

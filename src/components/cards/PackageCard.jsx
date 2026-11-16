@@ -1,18 +1,35 @@
 import Icon from "../common/Icon";
-import Button from "../common/Button";
+import { useNavigation } from "../../context/NavigationContext";
 
 export default function PackageCard({ trip, onSelect }) {
+  const nav = useNavigation();
   const pkrVal = trip.pricePkr || (trip.price * 278).toLocaleString("en-US");
+
+  const handleViewDetails = (e) => {
+    e.stopPropagation();
+    if (nav?.navigate) {
+      nav.navigate("packages");
+    } else {
+      window.location.hash = "packages";
+    }
+  };
+
+  const handleInquire = (e) => {
+    e.stopPropagation();
+    if (onSelect) {
+      onSelect(trip);
+    }
+  };
 
   return (
     <article className="package-card">
-      {/* Framed Inset Photo Header */}
+      {/* Photo Header with Top Duration and Bottom Country Tags */}
       <div className="package-photo-wrap">
         <button
           type="button"
           className="package-photo"
-          onClick={() => onSelect(trip)}
-          aria-label={`View ${trip.name}`}
+          onClick={handleInquire}
+          aria-label={`Inquire about ${trip.name}`}
         >
           <img
             src={trip.image}
@@ -22,14 +39,12 @@ export default function PackageCard({ trip, onSelect }) {
         </button>
         <div className="package-photo-overlay" />
         <span className="package-duration-pill">
-          <Icon name="calendar" size={10.5} />
+          <Icon name="calendar" size={11} />
           <span>{trip.days}D / {trip.nights}N</span>
         </span>
-        {trip.country && (
-          <span className="package-country-tag">
-            {trip.country}
-          </span>
-        )}
+        <span className="package-country-tag">
+          {trip.country || trip.destination}
+        </span>
       </div>
 
       <div className="package-copy">
@@ -38,7 +53,9 @@ export default function PackageCard({ trip, onSelect }) {
           <span>{trip.destination}</span>
         </div>
 
-        <h3 className="package-title">{trip.name}</h3>
+        <h3 className="package-title" onClick={handleInquire}>
+          {trip.name}
+        </h3>
 
         <p className="package-desc">{trip.description}</p>
 
@@ -46,7 +63,7 @@ export default function PackageCard({ trip, onSelect }) {
           <div className="package-chips-row">
             {trip.highlights.slice(0, 3).map((h, i) => (
               <span key={i} className="package-feature-chip">
-                <span className="chip-dot">●</span>
+                <span className="chip-dot">✓</span>
                 <span>{h}</span>
               </span>
             ))}
@@ -54,25 +71,31 @@ export default function PackageCard({ trip, onSelect }) {
         )}
 
         <div className="package-bottom">
-          <div className="package-price-box">
-            <span className="price-prefix">Starting from</span>
-            <strong className="package-price-main">PKR {pkrVal}</strong>
+          <div className="package-price-row">
+            <div className="package-price-box">
+              <span className="price-prefix">Starting From</span>
+              <strong className="package-price-main">PKR {pkrVal}</strong>
+            </div>
+            <span className="package-price-unit">Per Person</span>
           </div>
 
           <div className="package-card-btns">
             <button
               type="button"
               className="package-details-btn"
-              onClick={() => onSelect(trip)}
+              onClick={handleViewDetails}
+              title="Explore all package itineraries"
             >
-              View Details
+              <span>View Details</span>
             </button>
-            <Button
+            <button
+              type="button"
               className="package-inquire-btn"
-              onClick={() => onSelect(trip)}
+              onClick={handleInquire}
+              title="Request a customized quotation"
             >
-              Inquire
-            </Button>
+              <span>Inquire</span>
+            </button>
           </div>
         </div>
       </div>

@@ -7,191 +7,84 @@ import TripDialog from "../../features/trips/TripDialog";
 import { useNavigation } from "../../context/NavigationContext";
 import "./About.css";
 
-/* ==================== PROFESSIONAL SVG ICONS FOR DIVISIONS ==================== */
-function IconKaaba(props) {
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <rect x="4" y="9" width="16" height="12" rx="1" />
-      <path d="M4 13h16" />
-      <path d="M12 3v6" />
-      <path d="M10 5h4" />
-      <path d="M7 9l5-4 5 4" />
-    </svg>
-  );
-}
-
-function IconPlane(props) {
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z" />
-    </svg>
-  );
-}
-
-function IconMountain(props) {
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
-      <path d="m4.14 15 .86-1 3.5 2 3-3 2.5 2" />
-    </svg>
-  );
-}
-
-function IconBriefcase(props) {
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
-      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-    </svg>
-  );
-}
-
-const CORE_PILLARS = [
+const CORE_VALUES = [
   {
-    id: "visa",
-    badge: "98.4% Approval",
-    title: "End-to-End Visa Filing",
-    subtitle: "Zero Hassle Embassy Documentation",
-    description:
-      "Full professional documentation, cover letters, flight reservations, bank audits, and appointment scheduling for Schengen, UK, USA, Umrah e-visas, and Southeast Asia.",
-    perks: [
-      "Dedicated visa specialist assigned to your file",
-      "Mock visa interview prep for Schengen & US",
-      "Direct Saudi Nusuk e-visa integration",
-    ],
+    id: "customer-focus",
+    title: "Customer Focus",
+    description: "Understanding the needs and preferences of every traveller.",
+    icon: "heart",
+    colorKey: "orange",
+    colorHex: "#FB8902",
+    badge: "Traveller First",
   },
   {
-    id: "hotels",
-    badge: "Personally Inspected",
-    title: "Vetted 4★ & 5★ Accommodations",
-    subtitle: "Prime City & Haram Locations",
-    description:
-      "We never place our guests in unverified motels. Every hotel in Makkah, Madinah, Bali, Dubai, and Baku is pre-screened for hygiene, central proximity, and hot buffet breakfasts.",
-    perks: [
-      "Walking distance from Haram gates in Makkah & Madinah",
-      "Central downtown hotels near metro hubs in Europe & Asia",
-      "Complimentary room upgrades when available",
-    ],
+    id: "transparency",
+    title: "Transparency",
+    description: "Communicating quotations, conditions, inclusions, and exclusions clearly.",
+    icon: "shield",
+    colorKey: "deep-blue",
+    colorHex: "#022F82",
+    badge: "100% Clear Pricing",
   },
   {
-    id: "pricing",
-    badge: "Zero Hidden Surcharges",
-    title: "Guaranteed Transparent Tariffs",
-    subtitle: "Clear PKR & USD Quotations",
-    description:
-      "What you see is exactly what you pay. Our published tariffs cover airfares, visa fees, hotel stays, tax invoices, and private air-conditioned airport transfers with zero surprise border taxes.",
-    perks: [
-      "Transparent breakdown of flights, hotels & visas",
-      "Flexible split installment plans for early bookings",
-      "PayPak, Credit Card, and Bank Wire accepted",
-    ],
+    id: "professionalism",
+    title: "Professionalism",
+    description: "Handling inquiries and travel arrangements responsibly.",
+    icon: "star",
+    colorKey: "dark-navy",
+    colorHex: "#012061",
+    badge: "Licensed & Accountable",
   },
   {
-    id: "concierge",
-    badge: "24/7 Karachi Desk",
-    title: "Dedicated Ground Concierge",
-    subtitle: "Round-the-Clock Peace of Mind",
-    description:
-      "From your boarding gate at Jinnah International Karachi to your return flight, our 24/7 WhatsApp emergency desk and on-ground city coordinators remain by your side.",
-    perks: [
-      "Instant WhatsApp assistance in Urdu & English",
-      "Direct Muallim supervision for Umrah pilgrims",
-      "Real-time flight delay tracking & re-routing",
-    ],
+    id: "personalized-service",
+    title: "Personalized Service",
+    description: "Helping customers explore options suited to their plans.",
+    icon: "compass",
+    colorKey: "bright-blue",
+    colorHex: "#028AF0",
+    badge: "Bespoke Curation",
+  },
+  {
+    id: "continuous-improvement",
+    title: "Continuous Improvement",
+    description: "Improving our services and customer experience.",
+    icon: "sparkles",
+    colorKey: "cyan",
+    colorHex: "#03C7FB",
+    badge: "Always Evolving",
   },
 ];
 
-const DIVISIONS = [
+const SERVICES_LIST = [
   {
-    id: "umrah",
-    name: "Spiritual Journeys (Umrah)",
-    label: "20-Day Complete Dossiers",
-    icon: IconKaaba,
-    headline: "Devotion, Dignity & Absolute Peace of Mind",
-    lead: "Our flagship 20-Day Umrah delegations operate with direct return flights from Karachi, Lahore, and Islamabad, vetted 4-Star hotels within comfortable walking distance of Masjid al-Haram, the high-speed Haramain bullet train, and dedicated experienced Karachi Muallims.",
-    features: [
-      "Vetted Clock Tower / Ajyad hotels in Makkah & Markaziya hotels in Madinah",
-      "4 Comprehensive guided historical Ziyaraat in private AC coaches",
-      "High-speed Haramain bullet train tickets between Makkah & Madinah",
-      "Direct group flight blocks with Saudia, PIA, and Emirates",
-    ],
-    image: "/images/makkah.jpg",
-    actionLabel: "Explore 20-Day Umrah Package",
-    actionTarget: "packages",
+    title: "Flight Bookings",
+    desc: "Domestic and international airline ticketing assistance according to your schedule.",
+    icon: "plane",
+    colorHex: "#028AF0",
   },
   {
-    id: "international",
-    name: "International Escapes",
-    label: "Bespoke & Group Holidays",
-    icon: IconPlane,
-    headline: "Unforgettable Horizons Across 25+ Countries",
-    lead: "From emerald rice terraces in Bali and high-octane luxury in Dubai, to the ancient Silk Road charm of Baku, the tropical beaches of Thailand, and alpine lakes in Switzerland — every itinerary is crafted with handpicked stays and private excursions.",
-    features: [
-      "Custom honeymoon packages with candlelight beach dinners and private pool villas",
-      "Fixed group departures for families with all tours, transfers, and visas included",
-      "Comprehensive Schengen and UK visa guidance with verified flight reservations",
-      "English and Urdu-speaking chauffeurs and licensed local guides",
-    ],
-    image: "/images/destinations/bali.jpeg",
-    actionLabel: "View International Holidays",
-    actionTarget: "destinations",
+    title: "Hotel Reservations",
+    desc: "Comfortable accommodations tailored to your destination, budget, and preferences.",
+    icon: "pin",
+    colorHex: "#FB8902",
   },
   {
-    id: "northern",
-    name: "Northern Pakistan",
-    label: "Domestic Expeditions",
-    icon: IconMountain,
-    headline: "The Crown of Karakoram & Himalayas",
-    lead: "Experience Pakistan's breathtaking north in absolute comfort. From the turquoise waters of Attabad Lake and ancient Baltit Fort in Hunza Valley to the cold deserts of Skardu and Shangrila Resort, guided by expert mountain chauffeurs in 4x4 Prados.",
-    features: [
-      "Luxury 4x4 Toyota Prado transport with seasoned mountain drivers",
-      "Vetted luxury resort stays (Luxus Hunza, Serena, Shangrila)",
-      "Daily hot buffet breakfast and scenic bonfire evenings",
-      "Direct return flights to Skardu or scenic Karakoram Highway overland routes",
-    ],
-    image: "/images/hunza.jpg",
-    actionLabel: "View Northern Pakistan Packages",
-    actionTarget: "packages",
+    title: "Visa Assistance",
+    desc: "Guidance and documentation assistance for smooth visa application processes.",
+    icon: "shield",
+    colorHex: "#022F82",
   },
   {
-    id: "corporate",
-    name: "Corporate & MICE",
-    label: "Executive Delegations",
-    icon: IconBriefcase,
-    headline: "Flawless Global Logistics for Corporate Teams",
-    lead: "Trusted by leading Pakistani commercial banks, pharmaceutical firms, and multinational corporations for annual incentive trips, global conference delegations, and executive leadership retreats across Dubai, Baku, Turkey, and Europe.",
-    features: [
-      "Dedicated corporate account manager and single-invoice billing",
-      "Embassy invitation letters and fast-track group visa documentation",
-      "Private conference room rentals and gala dinner arrangements",
-      "Round-the-clock ground transportation and VIP airport protocol",
-    ],
-    image: "/images/destinations/dubai.jpeg",
-    actionLabel: "Inquire Corporate Tour",
-    actionTarget: "contact",
-  },
-];
-
-const MILESTONES = [
-  {
-    number: "15,000+",
-    label: "Travelers Served",
-    caption: "Pakistani families, pilgrims & couples since 2018",
+    title: "Umrah Packages",
+    desc: "Spiritual journeys with verified hotels, seamless transfers, and pilgrim support.",
+    icon: "sparkles",
+    colorHex: "#012061",
   },
   {
-    number: "98.4%",
-    label: "Visa Approval Rate",
-    caption: "Across Schengen, UK, Umrah & Southeast Asia",
-  },
-  {
-    number: "25+",
-    label: "Global Destinations",
-    caption: "Direct partnerships across 4 continents",
-  },
-  {
-    number: "4.9 / 5.0",
-    label: "Customer Rating",
-    caption: "Verified Google, Facebook & traveler reviews",
+    title: "Customized Tour Packages",
+    desc: "Tailored holiday itineraries crafted around your specific duration and budget.",
+    icon: "compass",
+    colorHex: "#03C7FB",
   },
 ];
 
@@ -199,44 +92,62 @@ const COMPLIANCE_ITEMS = [
   {
     title: "SECP Incorporation",
     badge: "Official (Pvt.) Ltd.",
-    description: "Registered under the Companies Act with Securities and Exchange Commission of Pakistan.",
+    description: "Registered and incorporated under the Companies Act with the Securities and Exchange Commission of Pakistan.",
   },
   {
-    title: "DTS Tour Operator License",
-    badge: "Dept. of Tourist Services",
-    description: "Authorized tour operator by the Government of Pakistan Ministry of Tourism (License # 2481).",
+    title: "DTS Licensed Tour Operator",
+    badge: "DTS Reg. # 3941",
+    description: "Officially licensed and recognized by the Department of Tourist Services, Government of Pakistan.",
   },
   {
-    title: "IATA Ticketing Network",
-    badge: "Accredited Partners",
-    description: "Direct airline ticketing access to Emirates, Qatar, Saudia, PIA, FlyDubai, and Turkish Airlines.",
+    title: "IATA Certified Ticketing",
+    badge: "Aviation Accredited",
+    description: "Direct airline inventory and global ticketing network access for domestic and international carriers.",
   },
   {
     title: "Ministry of Hajj & Umrah",
-    badge: "Nusuk Portal Authorized",
-    description: "Direct Saudi Nusuk portal access for authorized e-visas and verified Makkah/Madinah hotel contracts.",
+    badge: "Nusuk Portal Verified",
+    description: "Authorized pilgrim visa processing, verified Makkah/Madinah accommodation, and licensed ground transportation.",
   },
 ];
 
 export default function AboutPage() {
-  const [activeTab, setActiveTab] = useState("umrah");
   const [dialog, setDialog] = useState(null);
+  const [srvIdx, setSrvIdx] = useState(0);
   const nav = useNavigation();
+
+  const srvCount = SERVICES_LIST.length;
+  const safeSrvIdx = Math.min(srvIdx, srvCount - 1);
+  const prevSrv = () => setSrvIdx((prev) => (prev - 1 + srvCount) % srvCount);
+  const nextSrv = () => setSrvIdx((prev) => (prev + 1) % srvCount);
 
   const plan = (trip = null) => setDialog({ type: "trip", trip });
   const close = () => setDialog(null);
 
-  const currentDivision = DIVISIONS.find((d) => d.id === activeTab) || DIVISIONS[0];
-  const ActiveDivisionIcon = currentDivision.icon;
+  const goToContact = () => {
+    if (nav) {
+      nav.navigate("contact");
+    } else {
+      window.location.hash = "contact";
+    }
+  };
+
+  const goToServices = () => {
+    if (nav) {
+      nav.navigate("services");
+    } else {
+      window.location.hash = "services";
+    }
+  };
 
   return (
     <div className="about-page">
-      {/* ===================== HERO (EXACT HOME HERO HEIGHT & BALANCE) ===================== */}
+      {/* ===================== HERO SECTION ===================== */}
       <section className="about-hero" aria-labelledby="about-hero-title">
         <img
           className="about-hero-bg"
-          src="/images/mountains.jpg"
-          alt="Breathtaking travel scenery"
+          src="/images/hero-airplane-right.jpg"
+          alt="OPEN TRIP Travel Experience"
           fetchPriority="high"
         />
         <div className="about-hero-shade" />
@@ -245,295 +156,291 @@ export default function AboutPage() {
 
         <div className="about-hero-body container">
           <div className="about-hero-copy">
-            <p className="eyebrow">
-              EST. 2018 <span>·</span> BUKHARI COMMERCIAL, DHA PHASE 6 <span>·</span> KARACHI
-            </p>
+            <span className="about-eyebrow">Your Travel Partner</span>
 
-            <h1 id="about-hero-title">
-              Crafting Journeys That
-              <br />
-              Stay With You Forever.
-            </h1>
+            <h1 id="about-hero-title">About OPEN TRIP</h1>
 
-            <p className="about-hero-subtitle">
-              Open Trip (Pvt.) Ltd. is Pakistan’s trusted boutique travel curator, headquartered at
-              Bukhari Commercial, DHA Phase 6, Karachi. From sacred 20-Day Umrah pilgrimages to
-              handcrafted international escapes across 25+ global destinations.
+            <p className="about-hero-intro">
+              OPEN TRIP (PVT.) LTD. is a registered and licensed travel and tourism company offering a range of travel-related services, including flight bookings, hotel reservations, visa assistance, Umrah packages, and customized tour packages. We aim to make travel planning more convenient by understanding each customer's requirements and helping them explore suitable travel arrangements.
             </p>
 
             <div className="about-hero-actions">
-              <button
-                className="about-btn-primary"
-                onClick={() => {
-                  if (nav) nav.navigate("packages");
-                }}
-              >
-                Explore Curated Packages <Icon name="chevronRight" size={17} />
+              <button className="about-btn-primary" onClick={goToContact}>
+                Contact Our Team <Icon name="chevronRight" size={17} />
               </button>
-              <button
-                className="about-btn-secondary"
-                onClick={() => {
-                  if (nav) nav.navigate("contact");
-                }}
-              >
-                Visit Our Karachi Lounge <Icon name="compass" size={17} />
+              <button className="about-btn-secondary" onClick={goToServices}>
+                Explore Our Services <Icon name="compass" size={17} />
               </button>
             </div>
           </div>
 
-          {/* FLOATING GLASS FEATURE CARD (MIRRORS HOME HERO'S RIGHT SELECTOR BALANCE) */}
-          <div className="about-hero-glass-card">
-            <div className="glass-card-pill">
-              <span className="glass-pill-dot" />
-              <span>DHA PHASE 6 · KARACHI HQ</span>
+          {/* Floating Credentials Badge */}
+          <div className="about-hero-credentials-card">
+            <div className="about-cred-pill">
+              <span className="cred-dot" />
+              <span>DTS Reg. #3941 · SECP Registered</span>
             </div>
-            <h3>Boutique Travel Curation</h3>
+            <h3>Registered & Licensed Travel Partner</h3>
             <p>
-              Direct Muallim supervision for Umrah and handpicked luxury resorts for couples and families.
+              Dedicated travel facilitation, transparent quotations, and confirmed bookings across global destinations.
             </p>
-
-            <div className="glass-card-features">
-              <div className="glass-feature-item">
-                <span className="glass-feature-bullet">✦</span>
-                <span>Flagship 20-Day Escorted Umrah</span>
+            <div className="about-cred-stats">
+              <div className="cred-stat-item">
+                <strong style={{ color: "#FB8902" }}>100%</strong>
+                <span>Legal Compliance</span>
               </div>
-              <div className="glass-feature-item">
-                <span className="glass-feature-bullet">✦</span>
-                <span>End-to-End Visa Filing (98.4% Success)</span>
+              <div className="cred-stat-item">
+                <strong style={{ color: "#028AF0" }}>24/7</strong>
+                <span>Karachi Desk</span>
               </div>
-              <div className="glass-feature-item">
-                <span className="glass-feature-bullet">✦</span>
-                <span>Guaranteed Transparent PKR Tariffs</span>
+              <div className="cred-stat-item">
+                <strong style={{ color: "#03C7FB" }}>Clear</strong>
+                <span>Pricing Policy</span>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===================== MILESTONES STATS STRIP (WARM BALANCED LIGHT BG) ===================== */}
-      <section className="about-stats-strip">
-        <div className="container">
-          <div className="about-stats-grid">
-            {MILESTONES.map((item) => (
-              <div key={item.label} className="about-stat-card">
-                <div className="about-stat-number">{item.number}</div>
-                <div className="about-stat-label">{item.label}</div>
-                <div className="about-stat-caption">{item.caption}</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
 
       <main className="about-main">
-        {/* ===================== SECTION 1: STYLISH EDITORIAL STORY (CRISP WHITE BG) ===================== */}
-        <section className="about-story-section">
-          <div className="container about-story-grid">
-            <div className="about-story-content">
-              <span className="section-eyebrow">OUR HERITAGE & MISSION</span>
-              <h2 className="about-story-heading">
-                Born in Karachi to Elevate Every Journey.
-              </h2>
-              
-              <p className="about-story-lead">
-                Founded in Bukhari Commercial, DHA Phase 6, Open Trip eliminates vague hotel ratings,
-                hidden border surcharges, and impersonal ticketing. We personally inspect every property,
-                publish transparent PKR tariffs, and escort every Umrah delegation with dedicated Karachi Muallims.
-              </p>
-
-              {/* 3 SLEEK FEATURE PILLS */}
-              <div className="story-highlights-list">
-                <div className="story-highlight-item">
-                  <span className="highlight-bullet">✦</span>
-                  <div>
-                    <strong>Direct Hotel Vetting</strong>
-                    <span>Walking distance from Haram gates & downtown city centers.</span>
+        {/* ===================== SECTION 1: MISSION & VISION ===================== */}
+        <section className="about-mv-section">
+          <div className="container">
+            <div className="about-mv-grid">
+              {/* Mission Card */}
+              <div className="about-mv-card mission-card">
+                <div className="mv-card-top">
+                  <div className="mv-icon-box mv-icon-box--mission">
+                    <Icon name="sparkles" size={26} />
                   </div>
+                  <span className="mv-badge mv-badge--mission">Customer Focused</span>
                 </div>
-                <div className="story-highlight-item">
-                  <span className="highlight-bullet">✦</span>
-                  <div>
-                    <strong>100% Fixed Tariffs</strong>
-                    <span>Zero surprise border taxes or arrival surcharges.</span>
-                  </div>
-                </div>
-                <div className="story-highlight-item">
-                  <span className="highlight-bullet">✦</span>
-                  <div>
-                    <strong>24/7 Karachi Ground Care</strong>
-                    <span>Karachi WhatsApp concierge + seasoned on-ground city leads.</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="about-quote-box">
-                <p className="about-quote-text">
-                  “We do not sell generic ticket vouchers. We build relationships, safeguard your family’s
-                  comfort, and ensure every journey delivers memories you cherish for a lifetime.”
+                <h2>Our Mission</h2>
+                <p className="mv-text">
+                  To make travel planning simpler and more convenient through customer-focused services, clear communication, and practical travel assistance.
                 </p>
-                <div className="about-quote-author">
-                  <strong>Muhammad Tariq Qureshi</strong>
-                  <span>Managing Director, Open Trip (Pvt.) Ltd.</span>
-                </div>
               </div>
-            </div>
 
-            {/* GORGEOUS LUXURY TRAVEL IMAGERY */}
-            <div className="about-story-media">
-              <div className="about-media-stack">
-                <div className="about-image-card main-image">
-                  <img
-                    src="/images/story-resort.jpg"
-                    alt="Luxury Tropical Resort & Travel Experiences"
-                    loading="lazy"
-                  />
-                  <div className="about-image-badge">
-                    <Icon name="compass" size={14} />
-                    <span>DHA Phase 6, Karachi Headquarters</span>
+              {/* Vision Card */}
+              <div className="about-mv-card vision-card">
+                <div className="mv-card-top">
+                  <div className="mv-icon-box mv-icon-box--vision">
+                    <Icon name="compass" size={26} />
                   </div>
+                  <span className="mv-badge mv-badge--vision">Trusted Guidance</span>
                 </div>
-
-                <div className="about-image-card sub-image">
-                  <img
-                    src="/images/story-travelers.jpg"
-                    alt="Happy Open Trip Travelers Exploring Scenic Horizons"
-                    loading="lazy"
-                  />
-                  <div className="about-image-caption">
-                    <strong>15,000+ Happy Guests</strong>
-                    <small>Families, Couples & Pilgrims</small>
-                  </div>
-                </div>
+                <h2>Our Vision</h2>
+                <p className="mv-text">
+                  To become a trusted travel partner for individuals, families, and groups by delivering helpful guidance and dependable travel arrangements.
+                </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ===================== SECTION 2: THE 4 PILLARS (SERENE ICE-TEAL LIGHT BG) ===================== */}
-        <section className="about-pillars-section">
+        {/* ===================== SECTION 2: OUR VALUES (EXECUTIVE SPLIT SHOWCASE WITH FEATURED IMAGE) ===================== */}
+        <section className="about-values-section" id="values">
           <div className="container">
             <div className="about-section-header text-center">
-              <span className="section-eyebrow">THE OPEN TRIP DIFFERENCE</span>
-              <h2>Why Pakistani Travelers Rely on Us</h2>
+              <span className="section-eyebrow">OUR GUIDING PRINCIPLES</span>
+              <h2>Our Values</h2>
               <p>
-                Four steadfast promises that separate Open Trip from standard commercial ticket agencies.
+                Every itinerary, quotation, and customer relationship is shaped by our five steadfast values.
               </p>
             </div>
 
-            <div className="about-pillars-grid">
-              {CORE_PILLARS.map((pillar) => (
-                <div key={pillar.id} className="about-pillar-card">
-                  <div className="pillar-header">
-                    <span className="pillar-badge">{pillar.badge}</span>
+            <div className="about-values-showcase-split">
+              {/* Left Column: Premium Visual Anchor Image Card */}
+              <div className="about-values-visual-card">
+                <img
+                  src="/images/destinations/maldives.jpeg"
+                  alt="OPEN TRIP Travel Experience"
+                  className="values-visual-img"
+                  loading="lazy"
+                />
+                <div className="values-visual-overlay" />
+
+                <div className="values-visual-top-badge">
+                  <span className="visual-badge-dot" />
+                  <span>Licensed & Registered Travel Partner</span>
+                </div>
+
+                <div className="values-visual-glass-content">
+                  <span className="values-visual-eyebrow">OPEN TRIP COMMITMENT</span>
+                  <h3 className="values-visual-title">Integrity in Every Quote. Care in Every Journey.</h3>
+                  <p className="values-visual-lead">
+                    From transparent pricing to personalized assistance, our values guide every interaction with our travellers.
+                  </p>
+
+                  <div className="values-visual-bottom-row">
+                    <button
+                      type="button"
+                      className="values-visual-cta-btn"
+                      onClick={goToContact}
+                    >
+                      <span>Contact Our Team</span>
+                      <Icon name="arrow" size={14} />
+                    </button>
+                    <span className="values-visual-reg-pill">DTS #3941 · SECP</span>
                   </div>
-                  <h3 className="pillar-title">{pillar.title}</h3>
-                  <div className="pillar-subtitle">{pillar.subtitle}</div>
-                  <p className="pillar-description">{pillar.description}</p>
-                  <ul className="pillar-perks">
-                    {pillar.perks.map((perk, idx) => (
-                      <li key={idx}>
-                        <span className="check-bullet">✓</span> {perk}
-                      </li>
-                    ))}
-                  </ul>
+                </div>
+              </div>
+
+              {/* Right Column: 5 Core Values Sleek Cards */}
+              <div className="about-values-cards-stack">
+                {CORE_VALUES.map((val, idx) => (
+                  <div
+                    key={val.id}
+                    className={`about-value-strip about-value-strip--${val.colorKey}`}
+                    style={{ "--card-accent": val.colorHex }}
+                  >
+                    <div className="value-strip-left">
+                      <span className="value-strip-num">0{idx + 1}</span>
+                      <div
+                        className="value-strip-icon-box"
+                        style={{
+                          backgroundColor: `${val.colorHex}15`,
+                          color: val.colorHex,
+                          border: `1.5px solid ${val.colorHex}30`,
+                        }}
+                      >
+                        <Icon name={val.icon} size={20} />
+                      </div>
+                    </div>
+
+                    <div className="value-strip-content">
+                      <div className="value-strip-top">
+                        <h3 className="value-strip-title">{val.title}</h3>
+                        <span
+                          className="value-strip-badge"
+                          style={{
+                            backgroundColor: `${val.colorHex}12`,
+                            color: val.colorHex,
+                            borderColor: `${val.colorHex}25`,
+                          }}
+                        >
+                          {val.badge}
+                        </span>
+                      </div>
+                      <p className="value-strip-desc">{val.description}</p>
+                    </div>
+
+                    <div
+                      className="value-strip-accent-edge"
+                      style={{ backgroundColor: val.colorHex }}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ===================== SECTION 3: SERVICES WE OFFER ===================== */}
+        <section className="about-services-section">
+          <div className="container">
+            <div className="about-section-header text-center">
+              <span className="section-eyebrow">COMPLETE TRAVEL FACILITATION</span>
+              <h2>Services Offered by OPEN TRIP</h2>
+              <p>
+                From domestic journeys to international holidays and sacred pilgrimages, we assist at every stage.
+              </p>
+            </div>
+
+            {/* Desktop & Tablet Grid */}
+            <div className="about-services-grid">
+              {SERVICES_LIST.map((srv, idx) => (
+                <div
+                  key={idx}
+                  className="about-service-item"
+                  style={{ "--srv-accent": srv.colorHex }}
+                >
+                  <span
+                    className="about-srv-icon"
+                    style={{
+                      backgroundColor: `${srv.colorHex}15`,
+                      color: srv.colorHex,
+                      border: `1px solid ${srv.colorHex}30`,
+                    }}
+                  >
+                    <Icon name={srv.icon} size={22} />
+                  </span>
+                  <h4>{srv.title}</h4>
+                  <p>{srv.desc}</p>
                 </div>
               ))}
             </div>
-          </div>
-        </section>
 
-        {/* ===================== SECTION 3: SPECIALIZED DIVISIONS (WARM PEACH/IVORY LIGHT BG) ===================== */}
-        <section className="about-divisions-section">
-          <div className="container">
-            <div className="about-section-header text-center">
-              <span className="section-eyebrow">OUR SPECIALIZED DIVISIONS</span>
-              <h2>Bespoke Expertise for Every Travel Purpose</h2>
-              <p>
-                Select a division below to see how our specialized travel desks operate.
-              </p>
-            </div>
+            {/* Mobile (<= 768px): Exactly 1 Card at a Time with Forward & Backward Buttons */}
+            <div className="about-services-mobile-carousel">
+              <div className="mobile-carousel-controls">
+                <button
+                  type="button"
+                  className="mobile-nav-btn mobile-nav-prev"
+                  onClick={prevSrv}
+                  aria-label="Previous service"
+                >
+                  <Icon name="chevronLeft" size={18} />
+                </button>
 
-            {/* TAB SELECTORS WITH PROFESSIONAL ICONS */}
-            <div className="division-tabs-bar">
-              {DIVISIONS.map((div) => {
-                const DivIcon = div.icon;
-                return (
-                  <button
-                    key={div.id}
-                    className={`division-tab-btn ${activeTab === div.id ? "active" : ""}`}
-                    onClick={() => setActiveTab(div.id)}
-                  >
-                    <span className="division-tab-icon">
-                      <DivIcon />
-                    </span>
-                    <span className="division-tab-texts">
-                      <strong>{div.name}</strong>
-                      <small>{div.label}</small>
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* TAB CONTENT CARD */}
-            <div className="division-active-card">
-              <div className="division-content-col">
-                <div className="division-badge">
-                  <ActiveDivisionIcon style={{ marginRight: "6px", verticalAlign: "middle" }} />
-                  {currentDivision.label}
-                </div>
-                <h3 className="division-headline">{currentDivision.headline}</h3>
-                <p className="division-lead">{currentDivision.lead}</p>
-
-                <div className="division-features-list">
-                  <h4>Key Inclusions & Highlights:</h4>
-                  <ul>
-                    {currentDivision.features.map((feat, idx) => (
-                      <li key={idx}>
-                        <span className="feat-bullet">✦</span>
-                        <span>{feat}</span>
-                      </li>
+                <div className="mobile-carousel-indicators">
+                  <span className="mobile-counter">
+                    {String(safeSrvIdx + 1).padStart(2, "0")} / {String(srvCount).padStart(2, "0")}
+                  </span>
+                  <div className="mobile-dots">
+                    {SERVICES_LIST.map((_, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        className={`mobile-dot ${i === safeSrvIdx ? "active" : ""}`}
+                        onClick={() => setSrvIdx(i)}
+                        aria-label={`Go to service ${i + 1}`}
+                      />
                     ))}
-                  </ul>
+                  </div>
                 </div>
 
-                <div className="division-action-row">
-                  <button
-                    className="about-btn-primary"
-                    onClick={() => {
-                      if (nav) nav.navigate(currentDivision.actionTarget);
+                <button
+                  type="button"
+                  className="mobile-nav-btn mobile-nav-next"
+                  onClick={nextSrv}
+                  aria-label="Next service"
+                >
+                  <Icon name="chevronRight" size={18} />
+                </button>
+              </div>
+
+              <div className="mobile-card-stage">
+                <div
+                  className="about-service-item"
+                  style={{ "--srv-accent": SERVICES_LIST[safeSrvIdx].colorHex }}
+                >
+                  <span
+                    className="about-srv-icon"
+                    style={{
+                      backgroundColor: `${SERVICES_LIST[safeSrvIdx].colorHex}15`,
+                      color: SERVICES_LIST[safeSrvIdx].colorHex,
+                      border: `1px solid ${SERVICES_LIST[safeSrvIdx].colorHex}30`,
                     }}
                   >
-                    {currentDivision.actionLabel} <Icon name="chevronRight" size={16} />
-                  </button>
-                  <button
-                    className="about-btn-outline"
-                    onClick={() => plan({ destination: currentDivision.name })}
-                  >
-                    Custom Itinerary Request
-                  </button>
+                    <Icon name={SERVICES_LIST[safeSrvIdx].icon} size={22} />
+                  </span>
+                  <h4>{SERVICES_LIST[safeSrvIdx].title}</h4>
+                  <p>{SERVICES_LIST[safeSrvIdx].desc}</p>
                 </div>
-              </div>
-
-              <div className="division-media-col">
-                <img
-                  src={currentDivision.image}
-                  alt={currentDivision.name}
-                  loading="lazy"
-                />
               </div>
             </div>
           </div>
         </section>
 
-        {/* ===================== SECTION 4: REGULATORY COMPLIANCE (CALM PALE SAGE LIGHT BG) ===================== */}
+        {/* ===================== SECTION 4: CREDENTIALS & LICENSING ===================== */}
         <section className="about-compliance-section">
           <div className="container">
             <div className="about-section-header text-center">
-              <span className="section-eyebrow">CREDENTIALS & INTEGRITY</span>
-              <h2>Government Licensed & Aviation Accredited</h2>
+              <span className="section-eyebrow">LEGAL CREDENTIALS & INTEGRITY</span>
+              <h2>Licensed, Registered & Accredited</h2>
               <p>
-                Operating with complete fiscal, legal, and operational compliance under Pakistani and international travel law.
+                Operating with complete fiscal, legal, and operational compliance under Pakistani and international travel regulations.
               </p>
             </div>
 
@@ -549,65 +456,54 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ===================== SECTION 5: VISIT KARACHI HQ CTA (DEEP TEAL) ===================== */}
-        <section className="about-cta-section">
+        {/* ===================== SECTION 5: CLOSING CTA ===================== */}
+        <section className="about-closing-cta">
           <div className="container about-cta-inner">
             <div className="about-cta-content">
-              <span className="cta-badge">📍 DHA PHASE 6, KARACHI</span>
-              <h2>Join Us for Fresh Coffee & Personalized Trip Planning</h2>
+              <span className="about-cta-pill">LET'S CONNECT</span>
+              <h2>Let's Make Your Next Journey Happen.</h2>
               <p>
-                Our client lounge in Bukhari Commercial is open Monday through Saturday. Drop by to review
-                itineraries on large screens, discuss visa requirements, or chat directly with our Senior Muallim.
+                Tell us where you would like to go, and our team will help you explore the next steps.
               </p>
-              <div className="cta-meta-row">
-                <div className="cta-meta-item">
-                  <strong>Building 34-C, Lane 5</strong>
-                  <span>Bukhari Commercial Area, Phase 6, DHA, Karachi</span>
-                </div>
-                <div className="cta-meta-item">
-                  <strong>Monday – Saturday</strong>
-                  <span>10:30 AM – 8:30 PM (Walk-ins Welcome)</span>
-                </div>
-              </div>
             </div>
 
             <div className="about-cta-actions">
+              <button className="about-cta-btn-main" onClick={goToContact}>
+                Contact Our Team <Icon name="chevronRight" size={16} />
+              </button>
               <a
-                className="cta-whatsapp-btn"
-                href="https://wa.me/923101816191?text=Hello%20OpenTrip%20Karachi%2C%20I%20would%20like%20to%20visit%20your%20DHA%20office%20for%20trip%20consultation."
+                className="about-cta-whatsapp"
+                href="https://wa.me/923101816191?text=Hello%20OpenTrip%2C%20I%20would%20like%20to%20plan%20a%20journey%20with%20your%20team."
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span>💬</span> Chat on WhatsApp (+92 310 1816191)
+                <Icon name="whatsapp" size={17} />
+                <span>Chat on WhatsApp</span>
               </a>
-              <button
-                className="cta-contact-btn"
-                onClick={() => {
-                  if (nav) nav.navigate("contact");
-                }}
-              >
-                Open Contact & Directions Page
-              </button>
             </div>
           </div>
         </section>
       </main>
 
+      {/* Footer */}
       <Footer
         onPlan={() => plan()}
         onDestination={(item) => plan({ ...item, destination: item.name })}
         onPolicy={(title) => setDialog({ type: "policy", title })}
       />
 
+      {/* Interactive Modals */}
       {dialog?.type === "trip" && (
         <TripDialog trip={dialog.trip} onClose={close} />
       )}
       {dialog?.type === "policy" && (
         <Dialog title={dialog.title} onClose={close}>
           <p>
-            Open Trip (Pvt.) Ltd. operates strictly according to the Department of
-            Tourist Services guidelines. All air tickets and hotel bookings are subject
-            to carrier and hotel cancellation terms. Contact our Karachi office for full details.
+            OPEN TRIP (PVT.) LTD. is committed to absolute clarity, legally compliant travel facilitation,
+            and complete pricing transparency for all international holidays, Umrah pilgrimages, and flight bookings.
+          </p>
+          <p>
+            All quotations, inclusions, and booking conditions are formally communicated before reservation confirmation.
           </p>
         </Dialog>
       )}
